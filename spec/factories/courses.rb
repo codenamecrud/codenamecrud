@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :course do
-    title "MyString"
+    sequence(:title) { |n| "Ruby #{n}" }
     description "MyText"
     active false
   end
