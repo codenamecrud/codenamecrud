@@ -1,4 +1,12 @@
+before_script:
+  - cp config/database.yml.travis config/database.yml
+
 language: ruby
 cache: bundler
 rvm:
   - 2.2.1
+
+addons:
+  postgresql: "9.3"
+  code_climate:
+    repo_token: 922a1d5f9bd1031196c6f7aef399a7d015f407d681231bcb0961a37562840980
