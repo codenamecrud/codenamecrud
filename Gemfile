@@ -14,6 +14,7 @@ gem 'font-awesome-sass', '~> 4.3.0'
 gem 'slim-rails'
 gem 'simple_form'
 gem 'figaro'
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'byebug'
@@ -29,4 +30,6 @@ group :test do
   gem 'capybara', '~> 2.4.0'
   gem 'launchy', '~> 2.4'
   gem 'database_cleaner', '~> 1.3'
+  gem 'shoulda-matchers', require: false
+  gem 'codeclimate-test-reporter', require: nil
 end
