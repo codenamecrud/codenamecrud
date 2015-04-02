@@ -1,4 +1,6 @@
-class Admin::HomeController < ApplicationController
-  def index
+module Admin
+  class HomeController < ApplicationController
+    def index
+    end
   end
 end

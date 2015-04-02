@@ -1,18 +1,15 @@
 doctype html
 html lang="ru"
   head
-    title= head_title "Admin interface"
+    title "Admin interface"
     meta charset=Rails.application.config.encoding
     =yield :meta
-    = stylesheet_link_tag 'admin'
-    = javascript_include_tag 'admin'
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
     = csrf_meta_tag
   body
-    div class=(content_for?(:container_fluid) ? 'container-fluid' : 'container')
-      - flash.each do |type, message|
-        .alert.alert-dismissible role="alert" class=status_class(type, 'alert')
-          button.close type="button" data-dismiss="alert"
-            span aria-hidden="true" &times;
-          = message
+    = render 'shared/navbar'
 
+    .container
+      = render 'admin/shared/nav'
       = yield
