@@ -1,9 +1,30 @@
-h2 = @course.title
+.col-sm-12
+  h2 = @course.title
 
-.status= "Опубликован? #{@course.is_active?}"
-.actions
-  => link_to icon('edit'), edit_admin_course_path(@course)
-  = link_to icon('remove'), [:admin, @course], data: { method: :delete, confirm: 'Вы уверены?' }
+  .status= "Опубликован? #{@course.is_active?}"
+  .actions
+    => link_to icon('edit'), edit_admin_course_path(@course)
+    = link_to icon('remove'), [:admin, @course], data: { method: :delete, confirm: 'Вы уверены?' }
 
-.content
- p= @course.description
+  .content
+    .short-description.clearfix
+      .col-sm-6
+        .you-learn
+          h4 Вы изучите:
+          ul
+            - @course.you_learn.each do |yl|
+              li= yl
+
+      .col-sm-6
+        .you-build
+          h4 Вы создадите:
+          ul
+            - @course.you_build.each do |yb|
+              li= yb
+
+      .col-sm-12
+        h4 Короткое описание
+        p= @course.short_description
+
+    h4 Описание
+    p= @course.description
