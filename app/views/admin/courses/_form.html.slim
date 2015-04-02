@@ -1,0 +1,6 @@
+= simple_form_for [:admin, course] do |f|
+  = f.input :title, label: 'Название курса'
+  = f.input :description, label: 'Описание'
+  = f.input :active, label: 'Опубликован?'
+
+  = f.button :submit, label: 'Сохранить курс'

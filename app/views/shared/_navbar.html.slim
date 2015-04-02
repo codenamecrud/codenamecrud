@@ -1,0 +1,14 @@
+nav.navbar.navbar-default role="navigation"
+  .container
+    .navbar-header
+      = link_to 'Enfield', root_path, class: 'navbar-brand'
+
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        / - if current_user
+        /   li= link_to 'Settings', edit_user_registration_path
+        /   li= link_to 'Logout', destroy_user_session_path, data: {method: :delete}
+        / - else
+        /   li= link_to 'Login', new_user_session_path
+        /   li= link_to 'Register', new_user_registration_path
+

@@ -1,2 +1,6 @@
-- Course.find_each do |course|
-  p= link_to course.title, ''
+h4 Список курсов
+
+.courses
+  ul.courses-list
+    - Course.find_each do |course|
+      li= link_to course.title, course
