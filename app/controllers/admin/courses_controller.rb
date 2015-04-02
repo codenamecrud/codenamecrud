@@ -42,7 +42,8 @@ module Admin
     private
 
     def course_params
-      params.require(:course).permit(:title, :description, :active)
+      params.require(:course).permit(:title, :short_description, :description,
+        :is_active, :slug, you_build: [], you_learn: [])
     end
 
     def set_course
