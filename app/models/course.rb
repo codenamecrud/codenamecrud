@@ -1,4 +1,6 @@
 class Course < ActiveRecord::Base
+  include FriendlyId
+  friendly_id :slug
   validates :title, presence: true
   validates :description, presence: true
 
