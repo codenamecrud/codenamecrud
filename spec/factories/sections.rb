@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :section do
     title "MyString"
-slug "MyString"
-references ""
-description "MyText"
+    slug "mystring"
+    course { create(:course) }
+    description "MyText"
   end
 
 end

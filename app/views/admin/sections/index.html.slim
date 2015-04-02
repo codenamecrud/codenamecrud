@@ -1,0 +1,8 @@
+h4 Список разделов
+
+.actions
+  = link_to 'Добавить раздел', new_admin_section_path, class: 'btn btn-default'
+
+  ul.sections-list
+    - Section.find_each do |section|
+      li= link_to section.title, edit_admin_section_path(section)
