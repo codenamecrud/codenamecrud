@@ -14,6 +14,11 @@ module Admin
     end
 
     def update
+      if @course.update(course_params)
+        redirect_to [:admin, @course], notice: 'Курс обновлен'
+      else
+        render :edit
+      end
     end
 
     def destroy
