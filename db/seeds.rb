@@ -1,5 +1,6 @@
 Course.destroy_all
 Section.destroy_all
+Lesson.destroy_all
 
 Course.create(
   title: 'Введение в веб-разработку',
@@ -17,4 +18,12 @@ Section.create(
   slug: 'about-web-developers',
   description: 'Начните с начала и узнайте, чем на самом деле занимаются веб-разработчики и на что похожа сфера веб-разработки.',
   course: Course.find_by(slug: 'introduction-to-web-development')
+  )
+
+Lesson.create(
+  title: 'Чем занимается веб-разработчик',
+  slug: 'what-a-web-developer-does',
+  description: 'От того, чем на самом деле занимается разработчик к ключевым различиям вроде разделения на бэк-енд и фронт-енд, веб-разработчиков против веб-дизайнеров и веб-сайтов против веб-приложений',
+  is_project: false,
+  section: Section.find_by(slug: 'about-web-developers')
   )
