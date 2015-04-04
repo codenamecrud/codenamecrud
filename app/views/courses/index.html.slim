@@ -1,6 +1,33 @@
-h4 Список курсов
+.col-sm-8.col-sm-offset-2.courses-list
+  h1.text-center Это ваш путь к изучению веб-разработки
 
-.courses
-  ul.courses-list
-    - Course.find_each do |course|
-      li= link_to course.title, course
+  .course-content.text-muted
+    p Если вы хотите изучать веб-разработку, вы попали в нужное место. Мы отобрали лучшие бесплатные ресурсы и объединили их в курсы, перечисленные ниже, чтобы избавить вас от необходимости тратить время, делая это самим. Так же мы разработали для вас практические задания. Работая над ними, вы сами будете создавать свои проекты, изучать материал, а завершенные работы сможете добавить в ваше портфолио.
+
+    p Курсы разработаны с расчетом на то, что вы будете проходить их по порядку, так что начните с верхнего и постепенно двигайтесь вниз.
+    p Самое лучшее, что все это <strong>бесплатно</strong>!
+
+  .courses
+    ul.courses-list
+      - Course.find_each.with_index(1) do |course, index|
+        li
+          h1= link_to "#{index}: #{course.title}", course
+          .col-sm-3.teaser
+            h3= course.teaser
+
+          .col-sm-9.description.text-muted
+            = course.description
+
+        .col-sm-6.you-learn
+          h3 Вы изучите
+          ul
+            - course.you_learn.each do |yl|
+              li= yl
+
+        .col-sm-6.you-build
+          h3 Вы создадите
+          ul
+            - course.you_build.each do |yb|
+              li= yb
+
+
