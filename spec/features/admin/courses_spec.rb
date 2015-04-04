@@ -14,7 +14,7 @@ feature 'Courses administration' do
     fill_in 'Короткое описание', with: course.short_description
     fill_in 'Описание', with: course.description
     check 'Опубликован?'
-    click_on 'Создать Course'
+    click_on 'Сохранить курс'
 
     expect(page).to have_content course.title
     expect(page).to have_content 'Курс создан'
@@ -29,7 +29,7 @@ feature 'Courses administration' do
     click_on new_course.title
 
     fill_in 'Название курса', with: 'Updated title'
-    click_on 'Сохранить Course'
+    click_on 'Сохранить курс'
 
     within 'h2' do
       expect(page).to have_content 'Updated title'

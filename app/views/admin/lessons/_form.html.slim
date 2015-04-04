@@ -1,0 +1,8 @@
+= simple_form_for [:admin, lesson] do |f|
+  = f.input :title, label: 'Название урока'
+  = f.input :slug, label: 'Адрес урока в URL'
+  = f.input :description, label: 'Описание'
+  = f.input :section_id, collection: Section.all
+  = f.input :is_project, label: 'Проект?'
+
+  = f.button :submit, 'Сохранить урок'

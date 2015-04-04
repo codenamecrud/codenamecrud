@@ -13,7 +13,7 @@ feature 'Sections administration' do
     fill_in 'Адрес раздела в URL', with: section.slug
     fill_in 'Описание', with: section.description
     select course.title, from: 'section_course_id'
-    click_on 'Создать Section'
+    click_on 'Сохранить раздел'
 
     expect(page).to have_content section.title
     expect(page).to have_content 'Раздел создан'
@@ -27,7 +27,7 @@ feature 'Sections administration' do
     click_on new_section.title
 
     fill_in 'Название раздела', with: 'Updated title'
-    click_on 'Сохранить Section'
+    click_on 'Сохранить раздел'
 
     within 'h2' do
       expect(page).to have_content 'Updated title'
