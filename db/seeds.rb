@@ -1,3 +1,11 @@
+# Lesson.create(
+#   title: '',
+#   slug: '',
+#   description: '',
+#   is_project: false,
+#   section: Section.find_by(slug: '')
+#   )
+
 Course.destroy_all
 Section.destroy_all
 Lesson.destroy_all
@@ -24,6 +32,56 @@ Lesson.create(
   title: 'Чем занимается веб-разработчик',
   slug: 'what-a-web-developer-does',
   description: 'От того, чем на самом деле занимается разработчик к ключевым различиям вроде разделения на бэк-енд и фронт-енд, веб-разработчиков против веб-дизайнеров и веб-сайтов против веб-приложений',
+  is_project: false,
+  section: Section.find_by(slug: 'about-web-developers')
+  )
+
+Lesson.create(
+  title: 'Работа и карьера в веб-разработке',
+  slug: 'web-development-jobs-and-careers',
+  description: 'Несколько кратких примеров ролей веб-разработчиков в различных организациях',
+  is_project: false,
+  section: Section.find_by(slug: 'about-web-developers')
+  )
+
+Lesson.create(
+  title: 'Рабочие инструменты',
+  slug: 'tools-of-trade',
+  description: 'Обзор различных инструментов, испольуемых веб-разработчиками для выполнения своей работы',
+  is_project: false,
+  section: Section.find_by(slug: 'about-web-developers')
+  )
+
+Lesson.create(
+  title: 'Сообщества веб-разработчиков',
+  slug: 'web-development-communities',
+  description: 'Разработчики - на удивление социальная группа, и здесь вы узнаете, как найти их онлайн и лично',
+  is_project: false,
+  section: Section.find_by(slug: 'about-web-developers')
+  )
+
+Lesson.create(
+  title: 'Лучшие веб-разработчики',
+  slug: 'the-best-web-developers',
+  description: 'Несколько советов о том, что делает веб-разрабочтика великим',
+  is_project: false,
+  section: Section.find_by(slug: 'about-web-developers')
+  )
+
+
+Lesson.create(
+  title: 'Ищем работу в качестве веб-разработчика',
+  slug: 'getting-hired-as-a-web-developer',
+  description: 'Кратко проясняем, что на самом деле хотят получить работодатели от веб-разработчика и как может выглядеть процесс найма',
+  is_project: false,
+  section: Section.find_by(slug: 'about-web-developers')
+  )
+
+
+Lesson.create(
+  title: 'Заключение',
+  slug: 'conclusion',
+  description: 'Общий взгляд на предстоящее путешествие вниз по кроличьей норе',
   is_project: false,
   section: Section.find_by(slug: 'about-web-developers')
   )
