@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'figaro'
 gem 'rails-i18n'
 gem 'friendly_id'
+gem 'github_api'
 
 group :development, :test do
   gem 'byebug'
