@@ -1,23 +1,24 @@
 namespace :curriculum do
+
   desc "Get lessons from Github"
   task update_content: :environment do
     puts 'Getting content...'
 
     puts 'Authorizing on Github'
-    github = Github::Repos.new user: 'enfield-rookies', repo: 'curriculum', oauth_token: "#{ENV['GITHUB_API_TOKEN']}"
+    github = Github::Client::Repos.new user: 'enfield-rookies', repo: 'curriculum', oauth_token: "#{ENV['GITHUB_API_TOKEN']}"
 
     lessons = Lesson.all
     count = lessons.count
 
     puts "Cycling through #{count} lessons... \n\n\n"
-    lessons.each_with_index do |lesson, index|
+    lessons.each.with_index(1) do |lesson, index|
       puts "Retrieving Lesson #{index}/#{count}: #{lesson.title}"
       response = github.contents.get path: lesson.url
 
       decoded_file = Base64.decode64(response['content'])
 
       if decoded_file
-        snippet_end = decoded_file.index('\n')-1 || 03
+        snippet_end = decoded_file.index("\n")-1 || 03
         if lesson.content == decoded_file
           puts '    ...No new content.'
         else
@@ -32,13 +33,13 @@ namespace :curriculum do
       end
     end
 
-    puts '\nChecking for any nils or blanks in the database'
+    puts "\nChecking for any nils or blanks in the database"
     Lesson.all.each do |l|
       print '.'
       raise "Nil lesson content error! Lesson was #{l.title}." if l.content.nil?
       raise "Blank lesson content error! Lesson was #{l.title}." if l.content.blank?
     end
-    puts '\n...All lessons appear to have content.'
+    puts "\n...All lessons appear to have content."
     puts '...so we\'re ALL DONE! Updated the curriculum.'
   end
 

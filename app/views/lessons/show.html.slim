@@ -1,3 +1,6 @@
 .col-sm-8.col-sm-offset-2
   .lesson
     h1 = @lesson.title
+
+    .content
+      = @lesson.content if @lesson.content.present?
