@@ -17,6 +17,22 @@ feature 'Courses administration' do
     click_on 'Создать Course'
 
     expect(page).to have_content course.title
+    expect(page).to have_content 'Курс создан'
     expect(page).to have_content 'Опубликован? true'
+  end
+
+  scenario 'course editing' do
+    new_course = create(:course)
+    visit admin_root_path
+    click_on 'Курсы'
+
+    click_on new_course.title
+
+    fill_in 'Название курса', with: 'Updated title'
+    click_on 'Сохранить Course'
+
+    within 'h2' do
+      expect(page).to have_content 'Updated title'
+    end
   end
 end
