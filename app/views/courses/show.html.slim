@@ -11,3 +11,11 @@
       .container.section-description
         .col-sm-8
           p.text-muted= section.description
+
+          .container
+            ul.lessons-list
+              - section.lessons.each.with_index(1) do |lesson, index|
+                li= link_to [@course, lesson] do
+                  h2.text-muted
+                    ' Шаг #{index}:
+                    span.text-primary= lesson.title
