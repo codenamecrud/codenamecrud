@@ -1,0 +1,11 @@
+.col-sm-12
+  h2 = @section.title
+  h4 = @section.course.title
+
+  .actions
+    => link_to icon('edit'), edit_admin_section_path(@section)
+    = link_to icon('remove'), [:admin, @section], data: { method: :delete, confirm: 'Вы уверены?' }
+
+  .content
+    h4 Описание
+    p= @section.description

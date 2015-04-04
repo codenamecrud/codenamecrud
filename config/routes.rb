@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'courses#index'
 
   namespace :admin do
+    root 'home#index'
     resources :courses
+    resources :sections
   end
 end

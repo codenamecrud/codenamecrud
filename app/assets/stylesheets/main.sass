@@ -1,3 +1,8 @@
+// Variables
+$bold: 700
+
+
+/* Common */
 footer
   position: absolute
   bottom: 0
@@ -6,3 +11,38 @@ footer
   height: 60px
   padding: 10px
   background-color: #f5f5f5
+
+h1, h2, h3, h4, h5, h6
+  font-weight: $bold
+
+  a
+    font-weight: $bold
+    &:hover
+      text-decoration: none
+
+.alert
+  z-index: 999
+  position: absolute
+
+
+/* Courses */
+ul
+  padding: 0
+
+.courses-list
+  list-style-type: none
+
+  .teaser
+    color: orange
+
+.course-description, .section-description
+  font-size: 18px
+
+.you-learn, .you-build
+  li
+    font-style: italic
+
+  h3
+    text-decoration: underline
+
+

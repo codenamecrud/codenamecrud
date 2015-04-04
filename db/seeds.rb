@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Course.destroy_all
+Section.destroy_all
+
+Course.create(
+  title: 'Введение в веб-разработку',
+  slug: 'introduction-to-web-development',
+  short_description: 'Этот короткий курс начнет обучение с нуля, ответит на стандартные задаваемые вопросы о практике и карьере в сфере веб-разработки. Вы получите намного лучшее представление о том, во что вы готовитесь погрузиться!',
+  description: 'Этот короткий курс ответит на стандартные вопросы о практике и карьере в сфере веб-разработки. Поэтому, давайте будем честны, даже если вы явно ощущаете, что создание вещей и путь веб-разработчика словно созданы для вас, вы, вероятно, всё еще не особо представляете, чем на самом деле занимаются разработчики... и это то, с чего начинают все, так что всё в порядке.',
+  you_learn: ['Что на самом деле делают веб-разработчики', 'Рабочие инструменты', 'Как найти работу веб-разработчиком'],
+  you_build: ['Не спешите, скоро вы приступите к практике!'],
+  teaser: 'Начните отсюда!',
+  is_active: true
+  )
+
+Section.create(
+  title: 'О веб-разработчиках',
+  slug: 'about-web-developers',
+  description: 'Начните с начала и узнайте, чем на самом деле занимаются веб-разработчики и на что похожа сфера веб-разработки.',
+  course: Course.find_by(slug: 'introduction-to-web-development')
+  )
