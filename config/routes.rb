@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'sections/show'
-
   resources :courses, only: [:index, :show]
 
   root 'courses#index'

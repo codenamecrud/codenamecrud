@@ -1,5 +1,13 @@
 .col-sm-8.col-sm-offset-2.text-center
   h1 = @course.title
 
-  .course-content
-   p.text-muted= @course.description
+  .course-description
+    p.text-muted= @course.description
+
+.col-sm-8.col-sm-offset-2
+  - @course.sections.each do |section|
+      h2 = section.title
+
+      .container.section-description
+        .col-sm-8
+          p.text-muted= section.description
