@@ -4,8 +4,7 @@ class Course < ActiveRecord::Base
 
   has_many :sections
 
-  validates :title, :slug, :short_description, :description, :you_learn,
-            :you_build, presence: true
+  validates :title, :slug, :short_description, :description, presence: true
 
   serialize :you_learn
   serialize :you_build

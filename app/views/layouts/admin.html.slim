@@ -11,4 +11,6 @@ html lang="ru"
 
     .container
       = render 'admin/shared/nav'
+      .col-sm-offset-8.col-sm-4.text-center
+        = render 'shared/flash_messages', locals: { flash: flash }
       = yield

@@ -8,19 +8,21 @@
 
   .content
     .short-description.clearfix
-      .col-sm-4
-        .you-learn
-          h4 Вы изучите:
-          ul
-            - @course.you_learn.each do |yl|
-              li= yl
+      - if @course.you_learn.present?
+        .col-sm-4
+          .you-learn
+            h4 Вы изучите:
+            ul
+              - @course.you_learn.each do |yl|
+                li= yl
 
       .col-sm-4
-        .you-build
-          h4 Вы создадите:
-          ul
-            - @course.you_build.each do |yb|
-              li= yb
+        - if @course.you_build.present?
+          .you-build
+            h4 Вы создадите:
+            ul
+              - @course.you_build.each do |yb|
+                li= yb
 
       .col-sm-4
         .sections
