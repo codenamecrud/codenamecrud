@@ -8,19 +8,26 @@
 
   .content
     .short-description.clearfix
-      .col-sm-6
+      .col-sm-4
         .you-learn
           h4 Вы изучите:
           ul
             - @course.you_learn.each do |yl|
               li= yl
 
-      .col-sm-6
+      .col-sm-4
         .you-build
           h4 Вы создадите:
           ul
             - @course.you_build.each do |yb|
               li= yb
+
+      .col-sm-4
+        .sections
+          h4 Разделы курса
+          ul
+            - @course.sections.each do |section|
+              li= link_to section.title, admin_section_path(section)
 
       .col-sm-12
         h4 Короткое описание

@@ -42,7 +42,7 @@ module Admin
     private
 
     def section_params
-      params.require(:course).permit(:title, :description, :slug)
+      params.require(:section).permit(:title, :description, :slug, :course_id)
     end
 
     def set_section
