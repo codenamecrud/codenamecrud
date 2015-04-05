@@ -15,7 +15,9 @@
           .container
             ul.lessons-list
               - section.lessons.each.with_index(1) do |lesson, index|
-                li= link_to [@course, lesson] do
+                li= link_to [@course, lesson], class: 'link-to-lesson' do
                   h2.text-muted
                     ' Шаг #{index}:
                     span.text-primary= lesson.title
+                  .col-sm-6.lesson-description
+                    = lesson.description
