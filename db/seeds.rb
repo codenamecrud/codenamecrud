@@ -34,7 +34,7 @@ Lesson.create(
   description: 'От того, чем на самом деле занимается разработчик к ключевым различиям вроде разделения на бэк-енд и фронт-енд, веб-разработчиков против веб-дизайнеров и веб-сайтов против веб-приложений',
   is_project: false,
   section: Section.find_by(slug: 'about-web-developers'),
-  url: '/introduction_to_web_development/test_lesson.md'
+  url: '/introduction_to_web_development/what_does_a_web_dev_do.md'
   )
 
 # Lesson.create(
