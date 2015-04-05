@@ -17,6 +17,8 @@ gem 'figaro'
 gem 'rails-i18n'
 gem 'friendly_id'
 gem 'github_api'
+gem 'kramdown'
+gem 'disqus_rails'
 
 group :development, :test do
   gem 'byebug'
