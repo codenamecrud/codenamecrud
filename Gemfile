@@ -19,6 +19,7 @@ gem 'friendly_id'
 gem 'github_api'
 gem 'kramdown'
 gem 'disqus_rails'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
