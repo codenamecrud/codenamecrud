@@ -3,7 +3,6 @@ class Course < ActiveRecord::Base
   friendly_id :slug
 
   has_many :sections
-  has_many :lesson
 
   validates :title, :slug, :short_description, :description, presence: true
 

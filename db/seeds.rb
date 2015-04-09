@@ -34,39 +34,32 @@ Lesson.create(
   description: 'От того, чем на самом деле занимается разработчик к ключевым различиям вроде разделения на бэк-енд и фронт-енд, веб-разработчиков против веб-дизайнеров и веб-сайтов против веб-приложений',
   is_project: false,
   section: Section.find_by(slug: 'about-web-developers'),
-  course: Course.find_by(slug: 'introduction-to-web-development'),
   url: '/introduction_to_web_development/what_does_a_web_dev_do.md'
   )
 
-Lesson.create(
-  title: 'Работа и карьера в веб-разработке',
-  slug: 'web-development-jobs-and-careers',
-  description: 'Несколько кратких примеров ролей веб-разработчиков в различных организациях',
-  is_project: false,
-  section: Section.find_by(slug: 'about-web-developers'),
-  course: Course.find_by(slug: 'introduction-to-web-development'),
-  url: '/introduction_to_web_development/web_dev_jobs.md'
-  )
+# Lesson.create(
+#   title: 'Работа и карьера в веб-разработке',
+#   slug: 'web-development-jobs-and-careers',
+#   description: 'Несколько кратких примеров ролей веб-разработчиков в различных организациях',
+#   is_project: false,
+#   section: Section.find_by(slug: 'about-web-developers')
+#   )
 
-Lesson.create(
-  title: 'Рабочие инструменты',
-  slug: 'tools-of-trade',
-  description: 'Обзор различных инструментов, испольуемых веб-разработчиками для выполнения своей работы',
-  is_project: false,
-  section: Section.find_by(slug: 'about-web-developers'),
-  course: Course.find_by(slug: 'introduction-to-web-development'),
-  url: '/introduction_to_web_development/tools_of_trade.md'
-  )
+# Lesson.create(
+#   title: 'Рабочие инструменты',
+#   slug: 'tools-of-trade',
+#   description: 'Обзор различных инструментов, испольуемых веб-разработчиками для выполнения своей работы',
+#   is_project: false,
+#   section: Section.find_by(slug: 'about-web-developers')
+#   )
 
-Lesson.create(
-  title: 'Сообщества веб-разработчиков',
-  slug: 'web-development-communities',
-  description: 'Разработчики - на удивление социальная группа, и здесь вы узнаете, как найти их онлайн и лично',
-  is_project: false,
-  section: Section.find_by(slug: 'about-web-developers'),
-  course: Course.find_by(slug: 'introduction-to-web-development'),
-  url: '/introduction_to_web_development/web_dev_communities.md'
-  )
+# Lesson.create(
+#   title: 'Сообщества веб-разработчиков',
+#   slug: 'web-development-communities',
+#   description: 'Разработчики - на удивление социальная группа, и здесь вы узнаете, как найти их онлайн и лично',
+#   is_project: false,
+#   section: Section.find_by(slug: 'about-web-developers')
+#   )
 
 # Lesson.create(
 #   title: 'Лучшие веб-разработчики',
