@@ -1,10 +1,10 @@
 h2
-  | Resend confirmation instructions
+  | Переотправка инструкций по подтверждению
 = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
   = f.error_notification
   = f.full_error :confirmation_token
   .form-inputs
     = f.input :name, required: true, autofocus: true
   .form-actions
-    = f.button :submit, "Resend confirmation instructions"
+    = f.button :submit, "Выслать инструкции еще раз"
 = render "devise/shared/links"
