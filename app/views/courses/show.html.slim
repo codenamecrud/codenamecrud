@@ -6,7 +6,7 @@
 
 .col-sm-8.col-sm-offset-2
   - @course.sections.each do |section|
-      h2 id=("section-#{section.slug}") = section.title
+      h2 = section.title
 
       .container.section-description
         .col-sm-8
@@ -15,7 +15,7 @@
           .container
             ul.lessons-list
               - section.lessons.each.with_index(1) do |lesson, index|
-                li.row= link_to [@course, lesson], class: 'link-to-lesson' do
+                li= link_to [@course, lesson], class: 'link-to-lesson' do
                   h2.text-muted
                     ' Шаг #{index}:
                     span.text-primary= lesson.title
