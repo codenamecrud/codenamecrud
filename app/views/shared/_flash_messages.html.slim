@@ -1,10 +1,10 @@
 - if locals[:flash]
   - flash = locals[:flash]
   - if flash[:warn] || flash[:alert]
-    .alert #{flash[:warn]} #{flash[:alert]}
+    .alert.flash #{flash[:warn]} #{flash[:alert]}
   - if flash[:notice] || flash[:success]
-    .alert.alert-success #{flash[:notice]} #{flash[:success]}
+    .alert.flash.alert-success #{flash[:notice]} #{flash[:success]}
   - if flash[:info]
-    .alert.alert-info #{flash[:info]}
+    .alert.flash.alert-info #{flash[:info]}
   - if flash[:error]
-    .alert.alert-error #{flash[:error]}
+    .alert.flash.alert-error #{flash[:error]}

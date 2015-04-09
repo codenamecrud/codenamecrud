@@ -1,3 +1,3 @@
 jQuery ->
-    $('.alert').delay(6000).slideUp()
-    $('.alert').delete
+    $('.alert.flash').delay(6000).slideUp()
+    $('.alert.flash').delete

@@ -6,6 +6,15 @@
 #   section: Section.find_by(slug: '')
 #   )
 
+user = User.new(
+    name: 'Frey',
+    email: "frey@list.ru",
+    password: "00000000",
+    password_confirmation: "00000000"
+)
+user.save!
+
+
 Course.destroy_all
 Section.destroy_all
 Lesson.destroy_all

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   namespace :admin do
     root 'home#index'
     resources :courses
@@ -8,6 +7,7 @@ Rails.application.routes.draw do
     resources :lessons
   end
 
+  devise_for :users
   resources :courses, only: [:index, :show], path: '' do
     resources :lessons, only: :show, path: ''
   end
