@@ -15,9 +15,14 @@
           .container
             ul.lessons-list
               - section.lessons.each.with_index(1) do |lesson, index|
-                li.row= link_to [@course, lesson], class: 'link-to-lesson' do
-                  h2.text-muted
-                    ' Шаг #{index}:
-                    span.text-primary= lesson.title
-                  .col-sm-6.lesson-description
-                    = lesson.description
+                li.row
+                  - if user_signed_in?
+                    = simple_form_for [@course, lesson]
+                      = link_to 'Check', '', remote: true
+
+                  = link_to [@course, lesson], class: 'link-to-lesson' do
+                    h2.text-muted
+                      ' Шаг #{index}:
+                      span.text-primary= lesson.title
+                    .col-sm-6.lesson-description
+                      = lesson.description
