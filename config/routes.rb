@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :courses, only: [:index, :show], path: '' do
-    resources :lessons, only: :show, path: ''
+    resources :lessons, only: :show, path: '' do
+      post :mark_as_completed, on: :member
+    end
   end
 
   root 'courses#index'

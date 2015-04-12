@@ -17,8 +17,10 @@
               - section.lessons.each.with_index(1) do |lesson, index|
                 li.row
                   - if user_signed_in?
-                    = simple_form_for [@course, lesson]
-                      = link_to 'Check', '', remote: true
+                    - if current_user.lessons.include?(lesson)
+                      = link_to 'Uncheck', mark_as_completed_course_lesson_path(@course, lesson), method: :post
+                    - else
+                      = link_to 'Check', mark_as_completed_course_lesson_path(@course, lesson), method: :post
 
                   = link_to [@course, lesson], class: 'link-to-lesson' do
                     h2.text-muted
