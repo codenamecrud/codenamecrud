@@ -16,12 +16,14 @@
             ul.lessons-list
               - section.lessons.each.with_index(1) do |lesson, index|
                 li.row
-                  - if user_signed_in?
-                    - if current_user.lessons.include?(lesson)
-                      = link_to 'Uncheck', mark_as_completed_course_lesson_path(@course, lesson), method: :post
-                    - else
-                      = link_to 'Check', mark_as_completed_course_lesson_path(@course, lesson), method: :post
-
+                  .mark id=(dom_id(lesson))
+                    - if user_signed_in?
+                      - if current_user.lessons.include?(lesson)
+                        = link_to mark_as_completed_course_lesson_path(@course, lesson), class: 'mark-as-uncompleted', remote: true, method: :post do
+                          i.glyphicon.glyphicon-ok
+                      - else
+                        = link_to mark_as_completed_course_lesson_path(@course, lesson), class: 'mark-as-completed', remote: true, method: :post do
+                          i.glyphicon.glyphicon-unchecked
                   = link_to [@course, lesson], class: 'link-to-lesson' do
                     h2.text-muted
                       ' Шаг #{index}:

@@ -37,8 +37,24 @@ ul
   list-style-type: none
 
   .link-to-lesson
-    &:hover
-      opacity: 0.6
+    h2
+      transition: all 0.4s ease-in-out
+      &:hover
+        -webkit-transform: translate(10px,0)
+
+  .mark
+    z-index: 5
+    position: absolute
+    margin-top: 25px
+    margin-left: -30px
+    background-color: white
+
+  .mark-as-completed
+    color: gray
+
+  .mark-as-uncompleted
+    color: green
+
 
   .lesson-description
     margin-left: 90px
