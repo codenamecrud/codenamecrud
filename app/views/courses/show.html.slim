@@ -19,10 +19,10 @@
                   .mark id=(dom_id(lesson))
                     - if user_signed_in?
                       - if current_user.lessons.include?(lesson)
-                        = link_to mark_as_completed_course_lesson_path(@course, lesson), class: 'mark-as-uncompleted', remote: true, method: :post do
+                        = link_to toggle_check_course_lesson_path(@course, lesson), class: 'mark-as-uncompleted', remote: true, method: :post do
                           i.glyphicon.glyphicon-check
                       - else
-                        = link_to mark_as_completed_course_lesson_path(@course, lesson), class: 'mark-as-completed', remote: true, method: :post do
+                        = link_to toggle_check_course_lesson_path(@course, lesson), class: 'mark-as-completed', remote: true, method: :post do
                           i.glyphicon.glyphicon-unchecked
                   = link_to [@course, lesson], class: 'link-to-lesson' do
                     h2.text-muted

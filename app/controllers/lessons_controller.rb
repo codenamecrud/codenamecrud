@@ -4,7 +4,7 @@ class LessonsController < ApplicationController
     @course = @lesson.course
   end
 
-  def mark_as_completed
+  def toggle_check
     @lesson = Lesson.friendly.find(params[:id])
     @course = @lesson.course
     if current_user.lessons.include? @lesson
