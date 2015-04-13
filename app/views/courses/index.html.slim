@@ -10,7 +10,7 @@
   .courses
     ul.courses-list
       - Course.find_each.with_index(1) do |course, index|
-        li.course
+        li.row.course
           h1= link_to "#{index}: #{course.title}", course
           .col-sm-3.teaser
             h3= course.teaser
@@ -18,17 +18,17 @@
           .col-sm-9.description.text-muted
             = course.description
 
-        - if course.you_learn.present?
-          .col-sm-6.you-learn
-            h3 Вы изучите
-            ul
-              - course.you_learn.each do |yl|
-                li= yl
-        - if course.you_build.present?
-          .col-sm-6.you-build
-            h3 Вы создадите
-            ul
-              - course.you_build.each do |yb|
-                li= yb
+          - if course.you_learn.present?
+            .col-sm-6.you-learn
+              h3 Вы изучите
+              ul
+                - course.you_learn.each do |yl|
+                  li= yl
+          - if course.you_build.present?
+            .col-sm-6.you-build
+              h3 Вы создадите
+              ul
+                - course.you_build.each do |yb|
+                  li= yb
 
 

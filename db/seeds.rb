@@ -6,6 +6,12 @@
 #   section: Section.find_by(slug: '')
 #   )
 
+
+Course.destroy_all
+Section.destroy_all
+Lesson.destroy_all
+User.destroy_all
+
 user = User.new(
     name: 'Frey',
     email: "frey@list.ru",
@@ -14,10 +20,6 @@ user = User.new(
 )
 user.save!
 
-
-Course.destroy_all
-Section.destroy_all
-Lesson.destroy_all
 
 # == Первый курс == #
 
@@ -84,7 +86,8 @@ Lesson.create(
   slug: 'the-best-web-developers',
   description: 'Несколько советов о том, что делает веб-разрабочтика великим',
   is_project: false,
-  section: Section.find_by(slug: 'about-web-developers')
+  section: Section.find_by(slug: 'about-web-developers'),
+  url: '/introduction_to_web_development/the_best_web_devs.md'
   )
 
 
@@ -93,7 +96,8 @@ Lesson.create(
   slug: 'getting-hired-as-a-web-developer',
   description: 'Кратко проясняем, что на самом деле хотят получить работодатели от веб-разработчика и как может выглядеть процесс найма',
   is_project: false,
-  section: Section.find_by(slug: 'about-web-developers')
+  section: Section.find_by(slug: 'about-web-developers'),
+  url: '/introduction_to_web_development/getting_hired_as_a_web_dev.md'
   )
 
 
@@ -102,7 +106,8 @@ Lesson.create(
   slug: 'conclusion',
   description: 'Общий взгляд на предстоящее путешествие вниз по кроличьей норе',
   is_project: false,
-  section: Section.find_by(slug: 'about-web-developers')
+  section: Section.find_by(slug: 'about-web-developers'),
+  url: '/introduction_to_web_development/conclusion.md'
   )
 
 # == Второй курс == #

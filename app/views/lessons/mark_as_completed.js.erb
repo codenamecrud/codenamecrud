@@ -1,6 +1,6 @@
 <% if current_user.lessons.include?(@lesson) %>
   $('#lesson_' + <%= @lesson.id %>).html(
-    '<%= j link_to "<i class=\"glyphicon glyphicon-ok\"></i>".html_safe, mark_as_completed_course_lesson_path(@course, @lesson), class: "mark-as-uncompleted", remote: true, method: :post %>'
+    '<%= j link_to "<i class=\"glyphicon glyphicon-check\"></i>".html_safe, mark_as_completed_course_lesson_path(@course, @lesson), class: "mark-as-uncompleted", remote: true, method: :post %>'
     );
 <% else %>
   $('#lesson_' + <%= @lesson.id %>).html(
