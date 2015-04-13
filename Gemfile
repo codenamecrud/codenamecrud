@@ -37,4 +37,5 @@ group :test do
   gem 'database_cleaner', '~> 1.3'
   gem 'shoulda-matchers', require: false
   gem 'codeclimate-test-reporter', require: nil
+  gem 'capybara-webkit'
 end

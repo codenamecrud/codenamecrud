@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :lesson do
-    title "MyString"
-    slug "MyString"
-    description "MyString"
+    title "lesson"
+    slug "lesson"
+    description "lesson description"
     section { create(:section) }
     is_project false
   end
