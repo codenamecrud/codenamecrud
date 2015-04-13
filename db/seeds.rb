@@ -6,9 +6,22 @@
 #   section: Section.find_by(slug: '')
 #   )
 
+
 Course.destroy_all
 Section.destroy_all
 Lesson.destroy_all
+User.destroy_all
+
+user = User.new(
+    name: 'Frey',
+    email: "frey@list.ru",
+    password: "00000000",
+    password_confirmation: "00000000"
+)
+user.save!
+
+
+# == Первый курс == #
 
 Course.create(
   title: 'Введение в веб-разработку',
@@ -68,28 +81,54 @@ Lesson.create(
   url: '/introduction_to_web_development/web_dev_communities.md'
   )
 
-# Lesson.create(
-#   title: 'Лучшие веб-разработчики',
-#   slug: 'the-best-web-developers',
-#   description: 'Несколько советов о том, что делает веб-разрабочтика великим',
-#   is_project: false,
-#   section: Section.find_by(slug: 'about-web-developers')
-#   )
+Lesson.create(
+  title: 'Лучшие веб-разработчики',
+  slug: 'the-best-web-developers',
+  description: 'Несколько советов о том, что делает веб-разрабочтика великим',
+  is_project: false,
+  section: Section.find_by(slug: 'about-web-developers'),
+  course: Course.find_by(slug: 'introduction-to-web-development'),
+  url: '/introduction_to_web_development/the_best_web_devs.md'
+  )
 
 
-# Lesson.create(
-#   title: 'Ищем работу в качестве веб-разработчика',
-#   slug: 'getting-hired-as-a-web-developer',
-#   description: 'Кратко проясняем, что на самом деле хотят получить работодатели от веб-разработчика и как может выглядеть процесс найма',
-#   is_project: false,
-#   section: Section.find_by(slug: 'about-web-developers')
-#   )
+Lesson.create(
+  title: 'Ищем работу в качестве веб-разработчика',
+  slug: 'getting-hired-as-a-web-developer',
+  description: 'Кратко проясняем, что на самом деле хотят получить работодатели от веб-разработчика и как может выглядеть процесс найма',
+  is_project: false,
+  section: Section.find_by(slug: 'about-web-developers'),
+  course: Course.find_by(slug: 'introduction-to-web-development'),
+  url: '/introduction_to_web_development/getting_hired_as_a_web_dev.md'
+  )
 
 
-# Lesson.create(
-#   title: 'Заключение',
-#   slug: 'conclusion',
-#   description: 'Общий взгляд на предстоящее путешествие вниз по кроличьей норе',
-#   is_project: false,
-#   section: Section.find_by(slug: 'about-web-developers')
-#   )
+Lesson.create(
+  title: 'Заключение',
+  slug: 'conclusion',
+  description: 'Общий взгляд на предстоящее путешествие вниз по кроличьей норе',
+  is_project: false,
+  section: Section.find_by(slug: 'about-web-developers'),
+  course: Course.find_by(slug: 'introduction-to-web-development'),
+  url: '/introduction_to_web_development/conclusion.md'
+  )
+
+# == Второй курс == #
+
+Course.create(
+  title: 'Основы веб-разработки',
+  slug: 'basics-of-web-development',
+  short_description: 'Этот курс для всех, кто начинает с нуля или не совсем комфортно чувствует себя при работе с командной строкой, HTML, CSS, Javascript, Ruby, веб-фреймворками, Git или другими базовыми технологиями веб-разработки. Мы покроем МНОЖЕСТВО тем -- к концу этого объемного курса вы будете готовы к изучению наших более углубленных курсов или продолжать исследования самостоятельно.',
+  description: 'Теперь вы знаете, чем занимаются веб-разработчики, настало время подумать о том, как они этим занимаются. В этом курсе вы изучете базовые концепции веб-программирования. К его завершению вы будете способны собрать простую веб-страницу, стилизовать её, добавить интерактивные элементы и чувствовать себя комфортно при работе с командной строкой. Вы попрактикуетесь в написании простых скриптов на Ruby и Javascript, а так же познакомитесь с такими вещами, как Git и базы данных. Вы получите множество новых знаний и будете готовы "замарать руки" в практическом применении этих знаний во всех темах, которые мы будем изучать в последующих углубленных курсах.',
+  you_learn: ['Как на самом деле работает Веб', 'Основы HTML, CSS и Javascript', 'Основы Ruby, Rails, Git и баз данных'],
+  you_build: ['Главная страница Google на HTML/CSS', 'Динамический блокнот на JS/jQuery', 'Серия испытаний на Ruby по принципу "Тесты вперед"'],
+  teaser: 'Здоровая порция всего необходимого',
+  is_active: true
+  )
+
+Section.create(
+  title: 'Основы',
+  slug: 'the-basics',
+  description: 'Этот раздел покроет базовые знания, которые вам необходимо иметь, прежде чем окунуться в более "программные" аспекты веб-разработки. Так же вы научитесь устанавливать необходимое программное обеспечение на ваш компьютер.',
+  course: Course.find_by(slug: 'basics-of-web-development')
+  )

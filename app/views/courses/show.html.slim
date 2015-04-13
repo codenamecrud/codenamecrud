@@ -15,9 +15,18 @@
           .container
             ul.lessons-list
               - section.lessons.each.with_index(1) do |lesson, index|
-                li.row= link_to [@course, lesson], class: 'link-to-lesson' do
-                  h2.text-muted
-                    ' Шаг #{index}:
-                    span.text-primary= lesson.title
-                  .col-sm-6.lesson-description
-                    = lesson.description
+                li.row
+                  .mark id=(dom_id(lesson))
+                    - if user_signed_in?
+                      - if current_user.lessons.include?(lesson)
+                        = link_to toggle_check_course_lesson_path(@course, lesson), class: 'mark-as-uncompleted', remote: true, method: :post do
+                          i.glyphicon.glyphicon-check
+                      - else
+                        = link_to toggle_check_course_lesson_path(@course, lesson), class: 'mark-as-completed', remote: true, method: :post do
+                          i.glyphicon.glyphicon-unchecked
+                  = link_to [@course, lesson], class: 'link-to-lesson' do
+                    h2.text-muted
+                      ' Шаг #{index}:
+                      span.text-primary= lesson.title
+                    .col-sm-6.lesson-description
+                      = lesson.description

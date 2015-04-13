@@ -5,10 +5,11 @@ nav.navbar.navbar-default role="navigation"
 
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
-        / - if current_user
-        /   li= link_to 'Settings', edit_user_registration_path
-        /   li= link_to 'Logout', destroy_user_session_path, data: {method: :delete}
-        / - else
-        /   li= link_to 'Login', new_user_session_path
-        /   li= link_to 'Register', new_user_registration_path
+        - if user_signed_in?
+          li= link_to "Привет, #{current_user.name}", ''
+          li= link_to 'Настройки', edit_user_registration_path
+          li= link_to 'Выход', destroy_user_session_path, data: {method: :delete}
+        - else
+          li= link_to 'Вход', new_user_session_path
+          li= link_to 'Регистрация', new_user_registration_path
 

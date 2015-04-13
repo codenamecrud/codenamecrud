@@ -5,7 +5,7 @@ namespace :curriculum do
     puts 'Getting content...'
 
     puts 'Authorizing on Github'
-    github = Github::Client::Repos.new user: 'enfield-rookies', repo: 'curriculum', oauth_token: "#{ENV['GITHUB_API_TOKEN']}"
+    github = Github::Client::Repos.new user: 'codenamecrud', repo: 'curriculum', oauth_token: "#{ENV['GITHUB_API_TOKEN']}"
 
     lessons = Lesson.all
     count = lessons.count

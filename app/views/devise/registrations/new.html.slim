@@ -1,0 +1,12 @@
+h2
+  | Регистрация
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :name, required: true, autofocus: true, label: 'Имя'
+    = f.input :email, required: true
+    = f.input :password, required: true, hint: ("Не менее #{@minimum_password_length} символов" if @validatable), label: 'Пароль'
+    = f.input :password_confirmation, required: true, label: 'Подтверждение пароля'
+  .form-actions
+    = f.button :submit, "Зарегистрироваться"
+= render "devise/shared/links"

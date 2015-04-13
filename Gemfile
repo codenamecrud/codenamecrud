@@ -19,6 +19,7 @@ gem 'friendly_id'
 gem 'github_api'
 gem 'kramdown'
 gem 'disqus_rails'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
@@ -36,4 +37,5 @@ group :test do
   gem 'database_cleaner', '~> 1.3'
   gem 'shoulda-matchers', require: false
   gem 'codeclimate-test-reporter', require: nil
+  gem 'capybara-webkit'
 end
