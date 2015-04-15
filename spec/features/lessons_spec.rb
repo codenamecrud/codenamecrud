@@ -11,7 +11,7 @@ feature 'Completing lessons' do
     sign_in_with(user.email, user.password)
 
     visit course_path(course)
-    find('.mark-as-completed').click
+    page.click_link(href: "#{current_path}/#{lesson.slug}/toggle_check") # Нужно кликать по иконке
 
     expect(page).to have_selector('.mark-as-uncompleted')
     expect(user.lessons.include? lesson).to be_truthy

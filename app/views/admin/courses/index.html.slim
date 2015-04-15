@@ -1,9 +1,0 @@
-h4 Курсы
-
-.actions
-  = link_to 'Добавить курс', new_admin_course_path, class: 'btn btn-default'
-
-.courses
-  ul.courses-list
-    - Course.find_each do |course|
-      li= link_to course.title, edit_admin_course_path(course)

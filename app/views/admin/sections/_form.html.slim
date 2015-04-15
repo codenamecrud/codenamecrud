@@ -1,7 +1,0 @@
-= simple_form_for [:admin, section] do |f|
-  = f.input :title, label: 'Название раздела'
-  = f.input :slug, label: 'Адрес раздела в URL'
-  = f.input :description, label: 'Описание раздела'
-  = f.input :course_id, collection: Course.all, label: 'Курс'
-
-  = f.button :submit, 'Сохранить раздел'

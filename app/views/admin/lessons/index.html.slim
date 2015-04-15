@@ -1,9 +1,0 @@
-h4 Уроки
-
-.actions
-  = link_to 'Добавить урок', new_admin_lesson_path, class: 'btn btn-default'
-
-.lessons
-  ul.lessons-list
-    - Lesson.find_each do |lesson|
-      li= link_to lesson.title, edit_admin_lesson_path(lesson)
