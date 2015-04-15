@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     root 'home#index'
   end
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+
   resources :courses, only: [:index, :show], path: '' do
     resources :lessons, only: :show, path: '' do
       post :toggle_check, on: :member

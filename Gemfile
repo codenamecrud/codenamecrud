@@ -20,6 +20,7 @@ gem 'github_api'
 gem 'kramdown'
 gem 'disqus_rails'
 gem 'devise'
+gem 'omniauth-github'
 
 group :development, :test do
   gem 'byebug'
