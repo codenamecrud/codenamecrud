@@ -11,10 +11,7 @@
     ul.courses-list
       - Course.find_each.with_index(1) do |course, index|
         li.row.course
-          - if course.is_active?
-            h1 = link_to "#{index}: #{course.title}", course
-          - else
-            h1 = "#{index}: #{course.title}"
+          h1 = course_link(course, index)
           .col-sm-3.teaser
             h3 = course.teaser
 
