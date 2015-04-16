@@ -124,7 +124,7 @@ Course.create(
   you_learn: ['Как на самом деле работает Веб', 'Основы HTML, CSS и Javascript', 'Основы Ruby, Rails, Git и баз данных'],
   you_build: ['Главная страница Google на HTML/CSS', 'Динамический блокнот на JS/jQuery', 'Серия испытаний на Ruby по принципу "Тесты вперед"'],
   teaser: 'Здоровая порция всего необходимого',
-  is_active: true
+  is_active: false
   )
 
 Section.create(

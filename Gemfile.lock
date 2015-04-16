@@ -183,6 +183,9 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
+    paper_trail (4.0.0.beta2)
+      activerecord (>= 3.0, < 6.0)
+      activesupport (>= 3.0, < 6.0)
     pg (0.18.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -330,6 +333,7 @@ DEPENDENCIES
   kramdown
   launchy (~> 2.4)
   omniauth-github
+  paper_trail (~> 4.0.0.beta)
   pg
   pry-rails
   rails (= 4.2.1)
