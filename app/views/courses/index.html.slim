@@ -7,6 +7,9 @@
     p Курсы разработаны с расчетом на то, что вы будете проходить их по порядку, так что начните с верхнего и постепенно двигайтесь вниз.
     p Самое лучшее, что все это бесплатно!
 
+  .row
+    = render 'email_form'
+
   .courses
     ul.courses-list
       - Course.find_each.with_index(1) do |course, index|
