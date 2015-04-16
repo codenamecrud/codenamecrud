@@ -1,5 +1,4 @@
 <!-- Button trigger modal -->
-<% unless Rails.env.test? %>
 <div class="text-center">
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
     Подписаться на обновления курсов
@@ -18,8 +17,10 @@
         <p>
           Оставьте свой почтовый адрес, чтобы получать письма, когда мы выпустим следующий курс :)
         </p>
+<% unless Rails.env.test? %>
 
         <iframe src="https://docs.google.com/forms/d/1UwkTSl0BJlHE97LcwB502CVNTsEvlhOq8B9Updgd2aM/viewform?embedded=true" width="560" height="500" frameborder="0" marginheight="0" marginwidth="0">Загрузка...</iframe>
+<% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Закрыть</button>
@@ -27,4 +28,3 @@
     </div>
   </div>
 </div>
-<% end %>

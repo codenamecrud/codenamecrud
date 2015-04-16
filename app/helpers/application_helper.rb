@@ -23,7 +23,8 @@ module ApplicationHelper
     end
     lesson = Lesson.find(activity.object.to_i)
     user = User.find(activity.whodunnit.to_i)
-    "#{user.name} выполнил #{link_to lesson.title, course_lesson_path(lesson.course, lesson)}".html_safe
+    lesson_user = LessonUser.find_by(lesson: lesson, user: user)
+    "#{user.name} выполнил #{link_to lesson.title, course_lesson_path(lesson.course, lesson)} в #{lesson_user.created_at}".html_safe
   end
 
 end
