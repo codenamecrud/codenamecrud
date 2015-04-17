@@ -37,5 +37,13 @@ module ApplicationHelper
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
   end
 
+  def title(text = nil)
+    if text
+      title = "#{text} || CodenameCRUD - бесплатное обучение веб-разработке"
+    else
+      title = 'CodenameCRUD - бесплатное обучение веб-разработке'
+    end
+    content_for :title, title
+  end
 
 end
