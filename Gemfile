@@ -21,6 +21,8 @@ gem 'kramdown'
 gem 'disqus_rails'
 gem 'devise'
 gem 'omniauth-github'
+gem 'paper_trail', '~> 4.0.0.beta'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug'

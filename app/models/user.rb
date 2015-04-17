@@ -11,9 +11,9 @@ class User < ActiveRecord::Base
   has_many :lesson_users
   has_many :lessons, through: :lesson_users
   validates :name, presence: true, uniqueness: { case_sensitive: false }
+  has_paper_trail
 
   attr_accessor :login
-
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup

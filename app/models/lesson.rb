@@ -2,6 +2,8 @@ class Lesson < ActiveRecord::Base
   include FriendlyId
   friendly_id :slug
 
+  has_paper_trail
+
   belongs_to :section
   belongs_to :course
   has_many :lesson_users
