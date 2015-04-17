@@ -18,13 +18,16 @@ module ApplicationHelper
   end
 
   def show_activity(activity)
-    if activity.event == 'create'
-      action = 'выполнил'
-    end
     lesson = Lesson.find(activity.object.to_i)
     user = User.find(activity.whodunnit.to_i)
     lesson_user = LessonUser.find_by(lesson: lesson, user: user)
-    "#{user.name} выполнил #{link_to lesson.title, course_lesson_path(lesson.course, lesson)} в #{lesson_user.created_at}".html_safe
+
+    "#{user.name} выполнил #{link_to lesson.title, course_lesson_path(lesson.course, lesson)} в #{nice_russian_date(lesson_user.created_at)}".html_safe
   end
+
+  def nice_russian_date(date)
+    "#{time_ago_in_words(date)} назад"
+  end
+
 
 end

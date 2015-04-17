@@ -1,3 +1,4 @@
 - @activity.each do |a|
-  = show_activity(a)
-  br
+  .activity = show_activity(a)
+
+= will_paginate @activity

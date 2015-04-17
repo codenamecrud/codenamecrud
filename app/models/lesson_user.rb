@@ -6,6 +6,8 @@ class LessonUser < ActiveRecord::Base
   after_create :record_object
   before_save :check_completion
 
+  scope :lesson_completions, -> { where(item_type: 'LessonUser') }
+
   private
 
   def record_object
