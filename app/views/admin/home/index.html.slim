@@ -1,7 +1,11 @@
 h1 Быстрая статистика
 
-h3= "Курсов: #{Course.all.count}"
+h3 = "Курсов: #{Course.count}/7"
 
-h3= "Разделов: #{Section.all.count}"
+h3 = "Разделов: #{Section.count}"
 
-h3= "Уроков: #{Lesson.all.count}"
+h3 = "Уроков: #{Lesson.count}/170"
+
+h3 = "Выполеннных уроков: #{LessonUser.count}"
+
+h3 = "Пользователей: #{User.count}"
