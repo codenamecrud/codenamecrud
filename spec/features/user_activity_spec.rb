@@ -13,8 +13,8 @@ feature 'Users activity' do
     # Нужно кликать по иконке, а не искать ссылку черех xpath
     find(:xpath, "//a[@href=\"#{current_path}/#{lesson.slug}/toggle_check\"]").click
 
-    visit users_activity_path
+    visit activity_users_path
 
-    expect(page).to have_content "#{user.name} выполнил #{lesson.title} в меньше 1 минуты назад"
+    expect(page).to have_content "#{user.name} выполнил #{lesson.title} меньше 1 минуты назад"
   end
 end

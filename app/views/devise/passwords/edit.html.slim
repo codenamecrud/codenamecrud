@@ -1,14 +1,14 @@
-h2
-  | Смена пароля
-= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-  = f.error_notification
-  = f.input :reset_password_token, as: :hidden
-  = f.full_error :reset_password_token
-  .form-inputs
-    = f.input :password, label: "Новый пароль", required: true, autofocus: true
-    = f.input :password_confirmation, label: "Подтвердите новый пароль", required: true
-  .form-actions
-    = f.button :submit, "Сменить пароль"
-= render "devise/shared/links"
+.col-sm-6.col-sm-offset-3
+  h2 Смена пароля
+  = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+    = f.error_notification
+    = f.input :reset_password_token, as: :hidden
+    = f.full_error :reset_password_token
+    .form-inputs
+      = f.input :password, label: "Новый пароль", required: true, autofocus: true
+      = f.input :password_confirmation, label: "Подтвердите новый пароль", required: true
+    .form-actions
+      = f.button :submit, "Сменить пароль"
+  = render "devise/shared/links"
 
-- title 'Смена пароля'
+  - title 'Смена пароля'
