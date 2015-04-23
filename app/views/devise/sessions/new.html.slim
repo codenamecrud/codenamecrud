@@ -1,13 +1,13 @@
-h2
-  | Вход
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .form-inputs
-    = f.input :login, required: false, autofocus: true, label: 'Имя пользователя или email'
-    = f.input :password, required: false, label: 'Пароль'
-    = f.input :remember_me, as: :boolean, label: 'Запомнить?' if devise_mapping.rememberable?
+.col-sm-6.col-sm-offset-3
+  h2 Вход
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-inputs
+      = f.input :login, required: false, autofocus: true, label: 'Имя пользователя или email'
+      = f.input :password, required: false, label: 'Пароль'
+      = f.input :remember_me, as: :boolean, label: 'Запомнить?' if devise_mapping.rememberable?
 
-  .form-actions
-    = f.button :submit, "Войти"
-= render "devise/shared/links"
+    .form-actions
+      = f.button :submit, "Войти"
+  = render "devise/shared/links"
 
-- title 'Вход'
+  - title 'Вход'
