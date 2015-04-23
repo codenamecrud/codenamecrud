@@ -46,3 +46,7 @@ group :test do
   gem 'codeclimate-test-reporter', require: nil
   gem 'capybara-webkit'
 end
+
+group :production do
+  gem 'unicorn'
+end
