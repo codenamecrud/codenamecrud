@@ -7,9 +7,9 @@
 #   )
 
 
-Course.destroy_all
-Section.destroy_all
-Lesson.destroy_all
+# Course.destroy_all
+# Section.destroy_all
+# Lesson.destroy_all
 
 # user = User.new(
 #     name: 'Frey',
