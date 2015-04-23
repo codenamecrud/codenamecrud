@@ -1,0 +1,13 @@
+.col-sm-8.col-sm-offset-2
+  .col-sm-3
+    .avatar = image_tag avatar_url(@user, 120)
+
+  .col-sm-9
+    - @activities.each do |activity|
+      .activity = show_activity(activity)
+
+    = will_paginate @activities
+
+
+
+- title @user.name

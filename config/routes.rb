@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'home#index'
   end
-  get '/users/activity', to: 'users#activity'
+
+  resources :users, path: 'user', only: :show do
+    get 'activity', on: :collection
+  end
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
