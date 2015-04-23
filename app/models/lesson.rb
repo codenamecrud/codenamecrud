@@ -10,4 +10,12 @@ class Lesson < ActiveRecord::Base
   has_many :users, through: :lesson_users
 
   validates :title, :slug, :description, :section_id, presence: true
+
+  def next
+    self.course.lessons.where('id > ?', id).first
+  end
+
+  def previous
+    self.course.lessons.where('id < ?', id).last
+  end
 end

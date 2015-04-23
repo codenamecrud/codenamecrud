@@ -14,5 +14,8 @@
               = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-completed', remote: true, method: :post do
                 i.glyphicon.glyphicon-unchecked
 
+      hr
+      = render 'lessons_navigation'
+
   - disqus_thread
   - title @lesson.title
