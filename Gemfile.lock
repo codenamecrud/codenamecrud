@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/capistrano/capistrano.git
+  revision: 96a16ad3cac569237215f3c06553e49173a7ee01
+  ref: 96a16
+  specs:
+    capistrano (2.12.0)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -128,6 +140,7 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     hashie (3.4.1)
+    highline (1.7.2)
     hike (1.2.3)
     hitimes (1.2.2)
     i18n (0.7.0)
@@ -160,6 +173,13 @@ GEM
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     nenv (0.2.0)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.9.2)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     notiffany (0.0.6)
@@ -316,6 +336,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.3.3)
   byebug
+  capistrano!
   capybara (~> 2.4.0)
   capybara-webkit
   codeclimate-test-reporter

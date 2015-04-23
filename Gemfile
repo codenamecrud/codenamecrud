@@ -34,6 +34,10 @@ group :development, :test do
   gem 'guard-rspec', require: false
 end
 
+group :development do
+  gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
+end
+
 group :test do
   gem 'capybara', '~> 2.4.0'
   gem 'launchy', '~> 2.4'
