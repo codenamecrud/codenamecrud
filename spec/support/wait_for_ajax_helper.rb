@@ -1,4 +1,4 @@
-module WaitForAjax
+module WaitForAjaxHelpers
   def wait_for_ajax
     counter = 0
     while page.execute_script("return $.active").to_i > 0

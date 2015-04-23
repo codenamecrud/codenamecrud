@@ -15,7 +15,8 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.include FactoryGirl::Syntax::Methods
   config.include UsersHelpers
-  config.include WaitForAjax
+  config.include WaitForAjaxHelpers
+  # config.include OmniauthHelpers
 
   config.before(:all) { FactoryGirl.reload }
 
@@ -24,4 +25,24 @@ RSpec.configure do |config|
   config.before(:each, js: true) { DatabaseCleaner.strategy = :truncation }
   config.before(:each) { DatabaseCleaner.start }
   config.after(:each) { DatabaseCleaner.clean }
+
+
 end
+
+OmniAuth.config.test_mode = true
+omniauth_hash = {
+  provider: 'github',
+  uid: '12345',
+  info: {
+    name: 'Example User',
+    email: 'example@user.com',
+    nickname: 'Example User'
+  },
+  extra: { raw_info:
+    { location: 'San Francisco',
+      gravatar_id: '123456789'
+    }
+  }
+}
+
+OmniAuth.config.add_mock(:github, omniauth_hash)

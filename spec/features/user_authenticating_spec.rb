@@ -26,4 +26,11 @@ feature 'User authenticating and unauthenticating' do
     expect(page).to have_content 'Выход из системы выполнен.'
   end
 
+  scenario 'can sign in user with Github account' do
+    visit new_user_session_path
+    click_on 'Войти через Github'
+
+    expect(page).to have_content('Example User')
+    expect(page).to have_content('Выход')
+  end
 end
