@@ -10,16 +10,15 @@
 Course.destroy_all
 Section.destroy_all
 Lesson.destroy_all
-User.destroy_all
 
-user = User.new(
-    name: 'Frey',
-    email: "frey@list.ru",
-    password: "00000000",
-    password_confirmation: "00000000",
-    role: 'admin'
-)
-user.save!
+# user = User.new(
+#     name: 'Frey',
+#     email: "frey@list.ru",
+#     password: "00000000",
+#     password_confirmation: "00000000",
+#     role: 'admin'
+# )
+# user.save!
 
 
 # == Первый курс == #
@@ -85,7 +84,7 @@ Lesson.create(
 Lesson.create(
   title: 'Лучшие веб-разработчики',
   slug: 'the-best-web-developers',
-  description: 'Несколько советов о том, что делает веб-разрабочтика великим',
+  description: 'Несколько советов о том, что делает веб-разработчика великим',
   is_project: false,
   section: Section.find_by(slug: 'about-web-developers'),
   course: Course.find_by(slug: 'introduction-to-web-development'),
@@ -123,8 +122,7 @@ Course.create(
   description: 'Теперь вы знаете, чем занимаются веб-разработчики, настало время подумать о том, как они этим занимаются. В этом курсе вы изучете базовые концепции веб-программирования. К его завершению вы будете способны собрать простую веб-страницу, стилизовать её, добавить интерактивные элементы и чувствовать себя комфортно при работе с командной строкой. Вы попрактикуетесь в написании простых скриптов на Ruby и Javascript, а так же познакомитесь с такими вещами, как Git и базы данных. Вы получите множество новых знаний и будете готовы "замарать руки" в практическом применении этих знаний во всех темах, которые мы будем изучать в последующих углубленных курсах.',
   you_learn: ['Как на самом деле работает Веб', 'Основы HTML, CSS и Javascript', 'Основы Ruby, Rails, Git и баз данных'],
   you_build: ['Главная страница Google на HTML/CSS', 'Динамический блокнот на JS/jQuery', 'Серия испытаний на Ruby по принципу "Тесты вперед"'],
-  # teaser: 'Здоровая порция всего необходимого', # uncomment when all the lessons will be ready
-  teaser: 'Скоро будет доступно!',
+  teaser: 'Здоровая порция всего необходимого', # uncomment when all the lessons will be ready
   is_active: false
   )
 
