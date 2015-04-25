@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
+  get 'pages/faq'
+  get 'pages/about'
+  get 'pages/contacts'
+
   resources :courses, only: [:index, :show], path: '' do
     resources :lessons, only: :show, path: '' do
       post :toggle_check, on: :member
