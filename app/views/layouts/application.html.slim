@@ -18,4 +18,4 @@ body
     = yield
 
   = render 'shared/footer'
-  = render 'shared/metrics'
+  = render 'shared/metrics' if Rails.env.production?
