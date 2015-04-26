@@ -14,10 +14,5 @@
       = f.input :current_password, hint: "введите текущий пароль для подтверждения изменений", required: true, label: 'Текущий пароль'
     .form-actions
       = f.button :submit, "Обновить"
-  h3
-    | Удаление аккаунта
-  p
-    ' Несчастны?
-    = link_to "Удалить мой аккаунт", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete
 
   - title 'Редактирование пользователя'
