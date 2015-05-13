@@ -1,12 +1,12 @@
 class UserMailer < ApplicationMailer
-  default from: "Codenamecrud.ru"
+  default from: "frey@list.ru"
 
   def welcome_email(user)
     @user = user
     @url  = 'http://codenamecrud.ru/'
-    mail(to: @user.email, subject: 'Добро пожаловать на Сodenamecrud.ru') do |format|
-      format.html { render layout: '../user_mailer/welcome_email' }
-    end
+    mail(to: @user.email, subject: 'Добро пожаловать на Сodenamecrud.ru',
+                          template_path: 'user_mailer',
+                          template_name: 'welcome_email')
   end
 
 end

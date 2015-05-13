@@ -1,4 +1,3 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "Codenamecrud"
-  layout 'mailer'
+  default from: "frey@list.ru"
 end

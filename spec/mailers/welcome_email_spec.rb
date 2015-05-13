@@ -37,11 +37,11 @@ describe 'Registration Email' do
   end
 
   it 'include email content' do
-    expect(mail).to have_body_text(/www.codenamecrud.ru/)
+    expect(mail).to have_body_text(/codenamecrud.ru/)
   end
 
   it 'email sender' do
-    expect(mail).to deliver_from("Codenamecrud.ru")
+    expect(mail).to deliver_from("frey@list.ru")
   end
 
 end

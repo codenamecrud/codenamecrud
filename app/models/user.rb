@@ -28,7 +28,6 @@ class User < ActiveRecord::Base
     end
   end
 
-
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -36,7 +35,6 @@ class User < ActiveRecord::Base
       user.name = auth.info.name   # assuming the user model has a name
     end
   end
-
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -46,10 +44,8 @@ class User < ActiveRecord::Base
     end
   end
 
-
   def send_welcome_email
     UserMailer.welcome_email(self).deliver_now
   end
-
 
 end
