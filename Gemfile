@@ -49,4 +49,5 @@ end
 
 group :production do
   gem 'unicorn'
+  gem 'rollbar', '~> 1.5.1'
 end
