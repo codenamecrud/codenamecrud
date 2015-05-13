@@ -4,7 +4,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'shoulda/matchers'
 
-Dir[Rails.root.join('spec/support/**/*.rb')].each {|f| require f}
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -16,6 +16,7 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include UsersHelpers
   config.include WaitForAjaxHelpers
+  config.include Capybara::DSL
   # config.include OmniauthHelpers
 
   config.before(:all) { FactoryGirl.reload }
@@ -25,7 +26,6 @@ RSpec.configure do |config|
   config.before(:each, js: true) { DatabaseCleaner.strategy = :truncation }
   config.before(:each) { DatabaseCleaner.start }
   config.after(:each) { DatabaseCleaner.clean }
-
 
 end
 
@@ -39,10 +39,10 @@ omniauth_hash = {
     nickname: 'Example User'
   },
   extra: { raw_info:
-    { location: 'San Francisco',
-      gravatar_id: '123456789'
-    }
-  }
+           { location: 'San Francisco',
+             gravatar_id: '123456789'
+             }
+           }
 }
 
 OmniAuth.config.add_mock(:github, omniauth_hash)

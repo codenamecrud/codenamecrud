@@ -1,7 +1,11 @@
-require "codeclimate-test-reporter"
+require 'codeclimate-test-reporter'
+require 'email_spec'
+
 CodeClimate::TestReporter.start
 
 RSpec.configure do |config|
+  config.include(EmailSpec::Helpers)
+  config.include(EmailSpec::Matchers)
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end

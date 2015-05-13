@@ -32,6 +32,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'guard-rspec', require: false
+  gem 'letter_opener'
 end
 
 group :development do
@@ -45,6 +46,7 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'codeclimate-test-reporter', require: nil
   gem 'capybara-webkit'
+  gem 'email_spec'
 end
 
 group :production do
