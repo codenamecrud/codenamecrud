@@ -1,5 +1,5 @@
-require "codeclimate-test-reporter"
-require "email_spec"
+require 'codeclimate-test-reporter'
+require 'email_spec'
 
 CodeClimate::TestReporter.start
 

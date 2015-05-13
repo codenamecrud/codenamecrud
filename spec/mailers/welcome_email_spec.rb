@@ -2,25 +2,25 @@ require 'rails_helper';
 
 describe 'Registration Email' do
   let(:user) { build(:user) }
-  let(:mail) { UserMailer.welcome_email(user)}
+  let(:mail) { UserMailer.welcome_email(user) }
 
   include EmailSpec::Helpers
   include EmailSpec::Matchers
   include Rails.application.routes.url_helpers
 
-  it "has valid email recipient" do
+  it 'has valid email recipient' do
     expect(user.email).to match(/\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i)
   end
 
-  it "able to send welcome email" do
+  it 'able to send welcome email' do
     expect { user.send_welcome_email }.to change { ActionMailer::Base.deliveries.count }.by(1)
   end
 
-  it "sends email after sing up" do
+  it 'sends email after sing up' do
     expect { sign_up_with(user.name, user.email, user.password) }.to change { User.count and ActionMailer::Base.deliveries.count}.by(1)
   end
 
-  it "deliver email to user" do
+  it 'deliver email to user' do
     expect(mail).to deliver_to(user.email)
   end
 
@@ -41,7 +41,7 @@ describe 'Registration Email' do
   end
 
   it 'email sender' do
-    expect(mail).to deliver_from("frey@list.ru")
+    expect(mail).to deliver_from('frey@list.ru')
   end
 
 end

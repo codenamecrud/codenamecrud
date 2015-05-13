@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
     :recoverable,
     :rememberable,
     :trackable,
-    :omniauthable, :omniauth_providers => [:github],
+    :omniauthable, omniauth_providers: [:github],
     authentication_keys: [:login]
 
   has_many :lesson_users
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
-      where(conditions).where(['lower(name) = :value OR lower(email) = :value', { :value => login.downcase }]).first
+      where(conditions).where(['lower(name) = :value OR lower(email) = :value', { value: login.downcase }]).first
     else
       if conditions[:name].nil?
         where(conditions).first
@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
+      user.password = Devise.friendly_token[0, 20]
       user.name = auth.info.name   # assuming the user model has a name
     end
   end
