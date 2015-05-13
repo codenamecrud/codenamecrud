@@ -11,7 +11,6 @@ module UsersHelpers
     click_button 'Зарегистрироваться'
   end
 
-
   def sign_in_with(email, password)
     visit new_user_session_path
 

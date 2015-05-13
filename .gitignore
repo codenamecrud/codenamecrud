@@ -16,5 +16,5 @@
 /config/application.yml
 /coverage
 
-*.lock
+
 *.DS_Store
