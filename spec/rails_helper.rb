@@ -16,6 +16,7 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include UsersHelpers
   config.include WaitForAjaxHelpers
+  config.include Capybara::DSL
   # config.include OmniauthHelpers
 
   config.before(:all) { FactoryGirl.reload }
@@ -39,10 +40,10 @@ omniauth_hash = {
     nickname: 'Example User'
   },
   extra: { raw_info:
-    { location: 'San Francisco',
-      gravatar_id: '123456789'
-    }
-  }
+           { location: 'San Francisco',
+             gravatar_id: '123456789'
+             }
+           }
 }
 
 OmniAuth.config.add_mock(:github, omniauth_hash)

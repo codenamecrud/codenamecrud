@@ -1,17 +1,17 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable,
-         :registerable,
-         :recoverable,
-         :rememberable,
-         :trackable,
-         :omniauthable, :omniauth_providers => [:github],
-         authentication_keys: [:login]
-
+    :registerable,
+    :recoverable,
+    :rememberable,
+    :trackable,
+    :omniauthable, :omniauth_providers => [:github],
+    authentication_keys: [:login]
 
   has_many :lesson_users
   has_many :lessons, through: :lesson_users
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   has_paper_trail
+  after_create :send_welcome_email
 
   attr_accessor :login
 
@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
     end
   end
 
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -36,6 +37,7 @@ class User < ActiveRecord::Base
     end
   end
 
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session['devise.github_data'] && session['devise.github_data']['extra']['raw_info']
@@ -43,5 +45,11 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver_now
+  end
+
 
 end

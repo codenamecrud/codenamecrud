@@ -98,6 +98,9 @@ GEM
     diff-lcs (1.2.5)
     disqus_rails (0.0.6)
     docile (1.1.5)
+    email_spec (1.6.0)
+      launchy (~> 2.1)
+      mail (~> 2.2)
     erubis (2.7.0)
     execjs (2.4.0)
     factory_girl (4.5.0)
@@ -350,6 +353,7 @@ DEPENDENCIES
   database_cleaner (~> 1.3)
   devise
   disqus_rails
+  email_spec
   factory_girl_rails
   figaro
   font-awesome-sass (~> 4.3.0)

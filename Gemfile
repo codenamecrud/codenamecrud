@@ -45,6 +45,7 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'codeclimate-test-reporter', require: nil
   gem 'capybara-webkit'
+  gem 'email_spec'
 end
 
 group :production do
