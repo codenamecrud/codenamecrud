@@ -119,7 +119,7 @@ Course.create(
   title: 'Основы веб-разработки',
   slug: 'basics-of-web-development',
   short_description: 'Этот курс для всех, кто начинает с нуля или не совсем комфортно чувствует себя при работе с командной строкой, HTML, CSS, Javascript, Ruby, веб-фреймворками, Git или другими базовыми технологиями веб-разработки. Мы покроем МНОЖЕСТВО тем -- к концу этого объемного курса вы будете готовы к изучению наших более углубленных курсов или продолжать исследования самостоятельно.',
-  description: 'Теперь вы знаете, чем занимаются веб-разработчики, настало время подумать о том, как они этим занимаются. В этом курсе вы изучете базовые концепции веб-программирования. К его завершению вы будете способны собрать простую веб-страницу, стилизовать её, добавить интерактивные элементы и чувствовать себя комфортно при работе с командной строкой. Вы попрактикуетесь в написании простых скриптов на Ruby и Javascript, а так же познакомитесь с такими вещами, как Git и базы данных. Вы получите множество новых знаний и будете готовы "замарать руки" в практическом применении этих знаний во всех темах, которые мы будем изучать в последующих углубленных курсах.',
+  description: 'Теперь вы знаете, чем занимаются веб-разработчики, настало время подумать о том, как они этим занимаются. В этом курсе вы изучите базовые концепции веб-программирования. К его завершению вы будете способны собрать простую веб-страницу, стилизовать её, добавить интерактивные элементы и чувствовать себя комфортно при работе с командной строкой. Вы попрактикуетесь в написании простых скриптов на Ruby и Javascript, а так же познакомитесь с такими вещами, как Git и базы данных. Вы получите множество новых знаний и будете готовы "замарать руки" в практическом применении этих знаний во всех темах, которые мы будем изучать в последующих углубленных курсах.',
   you_learn: ['Как на самом деле работает Веб', 'Основы HTML, CSS и Javascript', 'Основы Ruby, Rails, Git и баз данных'],
   you_build: ['Главная страница Google на HTML/CSS', 'Динамический блокнот на JS/jQuery', 'Серия испытаний на Ruby по принципу "Тесты вперед"'],
   teaser: 'Здоровая порция всего необходимого',
@@ -131,6 +131,56 @@ Section.create(
   slug: 'the-basics',
   description: 'Этот раздел покроет базовые знания, которые вам необходимо иметь, прежде чем окунуться в более "программные" аспекты веб-разработки. Так же вы научитесь устанавливать необходимое программное обеспечение на ваш компьютер.',
   course: Course.find_by(slug: 'basics-of-web-development')
+  )
+
+Lesson.create(
+  title: 'Как работает этот курс',
+  slug: 'how-this-course-will-work',
+  description: 'Прежде, чем окунуться в обучение, ознакомьтесь с тем, что вас ждет',
+  is_project: false,
+  section: Section.find_by(slug: 'the-basics'),
+  course: Course.find_by(slug: 'basics-of-web-development'),
+  url: '/web_development_101/how_this_course_will_work.md'
+  )
+
+Lesson.create(
+  title: 'Как работает Сеть',
+  slug: 'how-does-the-web-work',
+  description: 'Трудно будет заниматься веб-разработкой без понимания, как работает Интернет',
+  is_project: false,
+  section: Section.find_by(slug: 'the-basics'),
+  course: Course.find_by(slug: 'basics-of-web-development'),
+  url: '/web_development_101/how_does_the_web_work.md'
+  )
+
+Lesson.create(
+  title: 'Как работает ваш компьютер',
+  slug: 'how-does-your-computer-work',
+  description: 'Командная строка: любима, ненавидима, пугающа... Но это уже не про вас.',
+  is_project: false,
+  section: Section.find_by(slug: 'the-basics'),
+  course: Course.find_by(slug: 'basics-of-web-development'),
+  url: '/web_development_101/how_does_your_computer_work.md'
+  )
+
+Lesson.create(
+  title: 'Необходимые термины',
+  slug: 'terms-to-know',
+  description: 'Краткое описание терминов, которые необходимо понимать, прежде чем двигаться дальше',
+  is_project: false,
+  section: Section.find_by(slug: 'the-basics'),
+  course: Course.find_by(slug: 'basics-of-web-development'),
+  url: '/web_development_101/terms_to_know.md'
+  )
+
+Lesson.create(
+  title: 'Проект: установки',
+  slug: 'project-installations',
+  description: 'Несколько вещей, которые необходимо установить, прежде чем начать писать код',
+  is_project: false,
+  section: Section.find_by(slug: 'the-basics'),
+  course: Course.find_by(slug: 'basics-of-web-development'),
+  url: '/web_development_101/project_installations.md.md'
   )
 
 
