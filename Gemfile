@@ -23,7 +23,6 @@ gem 'devise'
 gem 'omniauth-github'
 gem 'paper_trail', '~> 4.0.0.beta'
 gem 'will_paginate'
-gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'byebug'
@@ -53,4 +52,5 @@ end
 group :production do
   gem 'unicorn'
   gem 'rollbar', '~> 1.5.1'
+  gem 'newrelic_rpm'
 end

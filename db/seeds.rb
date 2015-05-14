@@ -1,12 +1,3 @@
-# create_or_update_lesson(
-#   title: '',
-#   slug: '',
-#   description: '',
-#   is_project: false,
-#   section: Section.find_by(slug: '')
-#   )
-
-
 # Course.destroy_all
 # Section.destroy_all
 # Lesson.destroy_all
@@ -19,6 +10,12 @@
 #     role: 'admin'
 # )
 # user.save!
+
+# to avoid duplication
+incrementer = 1000
+Course.all.each { |c| c.update_attribute(:position, c.position + incrementer)}
+Section.all.each { |s| s.update_attribute(:position, s.position + incrementer)}
+Lesson.all.each { |l| l.update_attribute(:position, l.position + incrementer)}
 
 def create_or_update_course(course_attrs)
   course = Course.find_by(title: course_attrs[:title])
@@ -67,8 +64,14 @@ def create_or_update_lesson(lesson_attrs)
 end
 
 
+course_position = 0
+section_position = 0
+lesson_position = 0
+
+
 # == Первый курс == #
 
+course_position += 1
 course = create_or_update_course(
   title: 'Введение в веб-разработку',
   slug: 'introduction-to-web-development',
@@ -77,18 +80,23 @@ course = create_or_update_course(
   you_learn: ['Что на самом деле делают веб-разработчики', 'Рабочие инструменты', 'Как найти работу веб-разработчиком'],
   you_build: ['Не спешите, скоро вы приступите к практике!'],
   teaser: 'Начните отсюда!',
+  position: course_position,
   is_active: true
   )
 
+section_position += 1
 section = create_or_update_section(
   title: 'О веб-разработчиках',
   slug: 'about-web-developers',
+  position: section_position,
   description: 'Начните с начала и узнайте, чем на самом деле занимаются веб-разработчики и на что похожа сфера веб-разработки.',
   course: course
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Чем занимается веб-разработчик',
+  position: lesson_position,
   slug: 'what-a-web-developer-does',
   description: 'От того, чем на самом деле занимается разработчик к ключевым различиям вроде разделения на бэк-енд и фронт-енд, веб-разработчиков против веб-дизайнеров и веб-сайтов против веб-приложений',
   is_project: false,
@@ -97,8 +105,10 @@ create_or_update_lesson(
   url: '/introduction_to_web_development/what_does_a_web_dev_do.md'
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Работа и карьера в веб-разработке',
+  position: lesson_position,
   slug: 'web-development-jobs-and-careers',
   description: 'Несколько кратких примеров ролей веб-разработчиков в различных организациях',
   is_project: false,
@@ -107,8 +117,10 @@ create_or_update_lesson(
   url: '/introduction_to_web_development/web_dev_jobs.md'
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Рабочие инструменты',
+  position: lesson_position,
   slug: 'tools-of-trade',
   description: 'Обзор различных инструментов, испольуемых веб-разработчиками для выполнения своей работы',
   is_project: false,
@@ -117,8 +129,10 @@ create_or_update_lesson(
   url: '/introduction_to_web_development/tools_of_trade.md'
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Сообщества веб-разработчиков',
+  position: lesson_position,
   slug: 'web-development-communities',
   description: 'Разработчики - на удивление социальная группа, и здесь вы узнаете, как найти их онлайн и лично',
   is_project: false,
@@ -127,8 +141,10 @@ create_or_update_lesson(
   url: '/introduction_to_web_development/web_dev_communities.md'
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Лучшие веб-разработчики',
+  position: lesson_position,
   slug: 'the-best-web-developers',
   description: 'Несколько советов о том, что делает веб-разработчика великим',
   is_project: false,
@@ -138,8 +154,10 @@ create_or_update_lesson(
   )
 
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Ищем работу в качестве веб-разработчика',
+  position: lesson_position,
   slug: 'getting-hired-as-a-web-developer',
   description: 'Кратко проясняем, что на самом деле хотят получить работодатели от веб-разработчика и как может выглядеть процесс найма',
   is_project: false,
@@ -149,8 +167,10 @@ create_or_update_lesson(
   )
 
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Заключение',
+  position: lesson_position,
   slug: 'conclusion',
   description: 'Общий взгляд на предстоящее путешествие вниз по кроличьей норе',
   is_project: false,
@@ -161,6 +181,7 @@ create_or_update_lesson(
 
 # == Второй курс == #
 
+course_position += 1
 course = create_or_update_course(
   title: 'Основы веб-разработки',
   slug: 'basics-of-web-development',
@@ -169,20 +190,25 @@ course = create_or_update_course(
   you_learn: ['Как на самом деле работает Веб', 'Основы HTML, CSS и Javascript', 'Основы Ruby, Rails, Git и баз данных'],
   you_build: ['Главная страница Google на HTML/CSS', 'Динамический блокнот на JS/jQuery', 'Серия испытаний на Ruby по принципу "Тесты вперед"'],
   teaser: 'Здоровая порция всего необходимого',
+  position: course_position,
   is_active: true
   )
 
 # == Первый раздел == #
 
+section_position += 1
 section = create_or_update_section(
   title: 'Основы',
   slug: 'the-basics',
+  position: section_position,
   description: 'Этот раздел покроет базовые знания, которые вам необходимо иметь, прежде чем окунуться в более "программные" аспекты веб-разработки. Так же вы научитесь устанавливать необходимое программное обеспечение на ваш компьютер.',
   course: course
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Как работает этот курс',
+  position: lesson_position,
   slug: 'how-this-course-will-work',
   description: 'Прежде, чем окунуться в обучение, ознакомьтесь с тем, что вас ждет',
   is_project: false,
@@ -191,8 +217,10 @@ create_or_update_lesson(
   url: '/web_development_101/how_this_course_will_work.md'
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Как работает Сеть',
+  position: lesson_position,
   slug: 'how-does-the-web-work',
   description: 'Трудно будет заниматься веб-разработкой без понимания, как работает Интернет',
   is_project: false,
@@ -201,8 +229,10 @@ create_or_update_lesson(
   url: '/web_development_101/how_does_the_web_work.md'
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Как работает ваш компьютер',
+  position: lesson_position,
   slug: 'how-does-your-computer-work',
   description: 'Командная строка: любима, ненавидима, пугающа... Но это уже не про вас.',
   is_project: false,
@@ -211,8 +241,10 @@ create_or_update_lesson(
   url: '/web_development_101/how_does_your_computer_work.md'
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Необходимые термины',
+  position: lesson_position,
   slug: 'terms-to-know',
   description: 'Краткое описание терминов, которые необходимо понимать, прежде чем двигаться дальше',
   is_project: false,
@@ -221,8 +253,10 @@ create_or_update_lesson(
   url: '/web_development_101/terms_to_know.md'
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Проект: установки',
+  position: lesson_position,
   slug: 'project-installations',
   description: 'Несколько вещей, которые необходимо установить, прежде чем начать писать код',
   is_project: true,
@@ -233,15 +267,19 @@ create_or_update_lesson(
 
 # == Второй раздел == #
 
+section_position += 1
 section = create_or_update_section(
   title: 'Фронтенд',
   slug: 'frontend',
+  position: section_position,
   description: 'В этом разделе вы потратите изрядное количество времени, знакомясь с основными (браузерными) языками HTML, CSS и Javascript. Вы создадите веб-страницу при помощи HTML и CSS и изучите основы программирования на Javascript.',
   course: course
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Введение в фронтенд',
+  position: lesson_position,
   slug: 'introduction-to-the-frontend',
   description: 'Краткий обзор на то, чем вообще является "Фронтенд"',
   is_project: false,
@@ -250,8 +288,10 @@ create_or_update_lesson(
   url: '/web_development_101/introduction-to-the-front-end.md'
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Основы HTML и CSS',
+  position: lesson_position,
   slug: 'html-and-css-basics',
   description: 'Вы узнаете, как создают веб-страницы и настраивают их внешний вид при помощи HTML и CSS',
   is_project: false,
@@ -260,8 +300,10 @@ create_or_update_lesson(
   url: '/web_development_101/html_css_basics.md'
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Проект: HTML и CSS',
+  position: lesson_position,
   slug: 'project-html-css',
   description: 'Настало время применить полученные знания. Создавайте!',
   is_project: true,
@@ -270,8 +312,10 @@ create_or_update_lesson(
   url: '/web_development_101/project_html_css.md'
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Основы Javascript',
+  position: lesson_position,
   slug: 'javascript-basics',
   description: 'Вы изучите основы программирования, которые пригодятся вам для того, чтобы сделать страницу динамической',
   is_project: false,
@@ -280,8 +324,10 @@ create_or_update_lesson(
   url: '/web_development_101/javascript_basics.md'
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Основы jQuery',
+  position: lesson_position,
   slug: 'jquery-basics',
   description: 'Вы узнаете, как использовать ваши знания в Javascript для легкого и удобного применения их в работе над веб-страницами ',
   is_project: false,
@@ -290,8 +336,10 @@ create_or_update_lesson(
   url: '/web_development_101/jquery_basics.md'
   )
 
+lesson_position += 1
 create_or_update_lesson(
   title: 'Проект: Javascript и jQuery',
+  position: lesson_position,
   slug: 'project-javascript-and-jquery',
   description: 'Создайте собственную "рисовалку"',
   is_project: false,
@@ -300,35 +348,45 @@ create_or_update_lesson(
   url: '/web_development_101/project_js_jquery.md'
   )
 
+# section_position += 1
 # section = create_or_update_section(
 #   title: 'Бэкенд',
 #   slug: 'backend',
+#   position: section_position,
 #   description: 'Здесь вы узнаете о бэкенде, мы раскроем все, что скрывается за кулисами веб-сервера. Вы попробуете на вкус Ruby, чертовски классный язык, на котором написан фреймворк Ruby on Rails',
 #   course: course
-#   )
+# )
+
+# section_position += 1
 # section = create_or_update_section(
 #   title: 'Фреймворки для веб-разработки',
+#   position: section_position,
 #   slug: 'web-development-frameworks',
 #   description: 'Вы скорее всего слышали о "Ruby on Rails" и "Backbone.js", а так же о других приятно звучащих фреймворках для разработки. В этом разделе вы узнаете, что такое фреймворк, почему мы их используем и освоитесь с теми, знание которых нам потребуется в последующих курсах.',
 #   course: course
 #   )
 
+# section_position += 1
 # section = create_or_update_section(
 #   title: 'Дополнительные важные темы',
+#   position: section_position,
 #   slug: 'additional-important-topics',
 #   description: 'Этот раздел содержит набор коротких уроков, которые позволят вам освоиться с основами нескольких сопутствующих технологий, умение работать с которыми потребуется вам на вашем пути к карьере веб-разработчика.',
 #   course: course
 #   )
 
+# section_position += 1
 # section = create_or_update_section(
 #   title: 'Собираем все воедино',
 #   slug: 'tying-it-all-togerher',
+#   position: section_position,
 #   description: 'Теперь вы знаете о большинстве компонентов веб-приложений, стоит отступить на шаг назад и вспомнить, как они укладываются в большую картинку.',
 #   course: course
 #   )
 
 # = Третий курс = #
 
+course_position += 1
 create_or_update_course(
   title: 'Программирование на Ruby',
   slug: 'ruby-programming',
@@ -337,12 +395,14 @@ create_or_update_course(
   you_learn: ['Как писать чистый, эффективный и модульный код', 'Работа с файлами и скриптами', 'Базовые алгоритмы и структуры данных'],
   you_build: ['Тиктак, Быки и Коровы, Висельник', 'Сервер для командной строки и браузер', 'Шахматы (серьезно)'],
   teaser: 'Скоро будет доступно!',
+  position: course_position,
   is_active: false
   )
 
 
 # = Четвертый курс = #
 
+course_position += 1
 create_or_update_course(
   title: 'Ruby on Rails',
   slug: 'ruby-on-rails',
@@ -351,12 +411,14 @@ create_or_update_course(
   you_learn: ['Как создать и развернуть веб-приложение с нуля', 'MVC как свои пять пальцев', 'Разработка архитектуры для нового сайта'],
   you_build: ['Полноценный клон Twitter', 'Приложение для заказа авиабилетов', 'Куча другого, с простых приложений до API и Facebook'],
   teaser: 'Скоро будет доступно!',
+  position: course_position,
   is_active: false
   )
 
 
 # = Пятый курс = #
 
+course_position += 1
 create_or_update_course(
   title: 'HTML5 и CSS3',
   slug: 'html5-and-css3',
@@ -365,6 +427,7 @@ create_or_update_course(
   you_learn: ['Все о стилизации при помощи CSS', 'Как эффективно использовать фронтенд-фреймворк вроде Bootstrap', 'Базовые принципы разметки и дизайна сайта'],
   you_build: ['Визуальные копии нескольких популярных сайтов', 'Свой собственный фронтенд-фреймворк', 'Охапку CSS-трюков и тактик'],
   teaser: 'Скоро будет доступно!',
+  position: course_position,
   is_active: false
   )
 
@@ -372,6 +435,7 @@ create_or_update_course(
 
 # = Шестой курс = #
 
+course_position += 1
 create_or_update_course(
   title: 'Javascript и jQuery',
   slug: 'Javascript-and-jquery',
@@ -380,11 +444,13 @@ create_or_update_course(
   you_learn: ['Как создавать интерактивные игры при помощи HTML5 canvas', 'Как использовать весь набор jQuery-эффектов на DOM', 'Как организовать ваш JS-код в модульные части'],
   you_build: ['Javascript-фронтенд для вашего Rails-бэкенда', 'Собственный Javascript-фреймворк', 'Змейку, Ракеты и многое другое'],
   teaser: 'Скоро будет доступно!',
+  position: course_position,
   is_active: false
   )
 
 # = Седьмой курс = #
 
+course_position += 1
 create_or_update_course(
   title: 'Ищем работу в качестве веб-разработчика',
   slug: 'getting-hired-as-a-web-developer',
@@ -393,5 +459,6 @@ create_or_update_course(
   you_learn: ['Где найти подходящие объявления о найме', 'Как эффективно продавать себя нанимателям', 'Как проходить технические интервью'],
   you_build: ['Ваш собственный сайт-портфолио', 'Базовые знания о навыках, необходимых для решения более сложных проблем', 'Четкая стратегия, как быть нанятым'],
   teaser: 'Скоро будет доступно!',
+  position: course_position,
   is_active: false
   )
