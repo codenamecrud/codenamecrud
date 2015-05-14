@@ -300,6 +300,32 @@ create_or_update_lesson(
   url: '/web_development_101/project_js_jquery.md'
   )
 
+# section = create_or_update_section(
+#   title: 'Бэкенд',
+#   slug: 'backend',
+#   description: 'Здесь вы узнаете о бэкенде, мы раскроем все, что скрывается за кулисами веб-сервера. Вы попробуете на вкус Ruby, чертовски классный язык, на котором написан фреймворк Ruby on Rails',
+#   course: course
+#   )
+# section = create_or_update_section(
+#   title: 'Фреймворки для веб-разработки',
+#   slug: 'web-development-frameworks',
+#   description: 'Вы скорее всего слышали о "Ruby on Rails" и "Backbone.js", а так же о других приятно звучащих фреймворках для разработки. В этом разделе вы узнаете, что такое фреймворк, почему мы их используем и освоитесь с теми, знание которых нам потребуется в последующих курсах.',
+#   course: course
+#   )
+
+# section = create_or_update_section(
+#   title: 'Дополнительные важные темы',
+#   slug: 'additional-important-topics',
+#   description: 'Этот раздел содержит набор коротких уроков, которые позволят вам освоиться с основами нескольких сопутствующих технологий, умение работать с которыми потребуется вам на вашем пути к карьере веб-разработчика.',
+#   course: course
+#   )
+
+# section = create_or_update_section(
+#   title: 'Собираем все воедино',
+#   slug: 'tying-it-all-togerher',
+#   description: 'Теперь вы знаете о большинстве компонентов веб-приложений, стоит отступить на шаг назад и вспомнить, как они укладываются в большую картинку.',
+#   course: course
+#   )
 
 # = Третий курс = #
 
