@@ -11,6 +11,8 @@ class Lesson < ActiveRecord::Base
 
   validates :title, :slug, :description, :section_id, presence: true
 
+  scope :order_by_position, -> { all.order(position: :asc) }
+
   def next
     self.course.lessons.where('id > ?', id).first
   end
