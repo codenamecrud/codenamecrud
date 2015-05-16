@@ -13,7 +13,7 @@ body
     .col-sm-offset-9.col-sm-3.text-center
       = render 'shared/flash_messages', locals: { flash: flash }
     .breadcrumbs
-      = breadcrumbs
+      = render 'shared/breadcrumbs', locals: {breadcrumbs: breadcrumbs}
 
     = yield
 
