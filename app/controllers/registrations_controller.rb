@@ -7,7 +7,7 @@ class RegistrationsController < Devise::RegistrationsController
       set_flash_message :notice, :updated
       redirect_to after_update_path_for(@user)
     else
-      render "edit"
+      render 'edit'
     end
   end
 
