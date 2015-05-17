@@ -5,6 +5,7 @@
     .form-inputs
       = f.input :name, required: true, autofocus: true, label: 'Имя'
       = f.input :email, required: true
+      = f.input_field :display_email, as: :boolean, checked_value: false, unchecked_value: true, :label => "Скрыть Email", :inline_label => true
       = f.input :github_name, label: 'GitHub'
       = f.input :twitter_name, label: '@Twitter'
 
