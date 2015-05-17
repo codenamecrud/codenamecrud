@@ -8,6 +8,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @activities = PaperTrail::Version.where(item_type: 'LessonUser', whodunnit: @user.id.to_s)
-                                     .paginate(page: params[:page], per_page: 20)
+    .paginate(page: params[:page], per_page: 20)
   end
+
+
 end
