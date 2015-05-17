@@ -5,6 +5,9 @@
     .form-inputs
       = f.input :name, required: true, autofocus: true, label: 'Имя'
       = f.input :email, required: true
+      = f.input :github_name, label: 'GitHub'
+      = f.input :twitter_name, label: '@Twitter'
+
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         p
           | Ждем подтверждения от:

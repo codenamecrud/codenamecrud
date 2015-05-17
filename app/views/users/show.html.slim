@@ -3,6 +3,9 @@
     h4.text-center = @user.name
     .avatar = image_tag avatar_url(@user, 120)
   .col-sm-9
+    h4.text-center = @user.email
+    h4.text-center = @user.twitter_name
+    h4.text-center = @user.github_name
     - @activities.each do |activity|
       .activity = show_activity(activity)
 

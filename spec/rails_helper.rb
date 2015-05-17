@@ -17,8 +17,9 @@ RSpec.configure do |config|
   config.include UsersHelpers
   config.include WaitForAjaxHelpers
   config.include Capybara::DSL
+  config.include Devise::TestHelpers, :type => :controller
+  config.extend ControllerHelpers, :type => :controller
   # config.include OmniauthHelpers
-
   config.before(:all) { FactoryGirl.reload }
 
   config.before(:suite) { DatabaseCleaner.clean_with :truncation }
