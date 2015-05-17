@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+/vendor/bundle
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -14,7 +15,13 @@
 
 # Ignore application configuration
 /config/application.yml
-/coverage
+/config/initializers/secret_token.rb
+/config/secrets.yml
 
+# Ignore testing temps
+/coverage
+/spec/tmp
+capybara-*.html
+.rspec
 
 *.DS_Store

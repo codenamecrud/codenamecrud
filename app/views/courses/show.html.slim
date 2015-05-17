@@ -14,7 +14,7 @@
 
           .container
             ul.lessons-list
-              - section.lessons.order(position: :asc).each.with_index(1) do |lesson, index|
+              - section.lessons.order_by_position.each.with_index(1) do |lesson, index|
                 li.row
                   .toggle-check id=(dom_id(lesson))
                     - if user_signed_in?

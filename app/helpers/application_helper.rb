@@ -14,7 +14,7 @@ module ApplicationHelper
       end
     end
 
-    crumbs.join(' >> ').html_safe
+    crumbs
   end
 
   def activity_user(activity)
