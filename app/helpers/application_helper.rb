@@ -25,7 +25,11 @@ module ApplicationHelper
     lesson = Lesson.find(activity.object.to_i)
     lesson_user = LessonUser.find_by(lesson: lesson, user: activity_user(activity))
 
-    "#{link_to activity_user(activity).name, activity_user(activity)} выполнил #{link_to lesson.title, course_lesson_path(lesson.course, lesson)} #{nice_russian_date(lesson_user.created_at)}".html_safe
+    if lesson_user
+      "#{link_to activity_user(activity).name, activity_user(activity)} выполнил #{link_to lesson.title, course_lesson_path(lesson.course, lesson)} #{nice_russian_date(lesson_user.created_at)}".html_safe
+    else
+      "Что-то произошло"
+    end
   end
 
   def nice_russian_date(date)
