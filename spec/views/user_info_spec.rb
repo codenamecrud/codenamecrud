@@ -9,8 +9,12 @@ describe 'Edit User Info' do
     visit edit_user_registration_path
   end
 
+  # it 'as default "Скрыть Email" should be unchecked' do
+  #   find(:xpath, '//*[@id="user_display_email"]').set(false)
+  # end
+
   it 'hide email if checkbox checked' do
-    check('Скрыть Email')
+    page.check('Скрыть Email')
     fill_in 'Имя', with: new_user_info.name
     fill_in 'GitHub', with: new_user_info.github_name
     fill_in 'Twitter', with: new_user_info.twitter_name
@@ -22,7 +26,7 @@ describe 'Edit User Info' do
   end
 
   it 'displays email if checkbox unchecked' do
-    uncheck('Скрыть Email')
+    page.uncheck('Скрыть Email')
     fill_in 'Имя', with: new_user_info.name
     fill_in 'GitHub', with: new_user_info.github_name
     fill_in 'Twitter', with: new_user_info.twitter_name
