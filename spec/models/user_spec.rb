@@ -5,8 +5,8 @@ describe User do
 
   it { should have_many(:lessons).through(:lesson_users) }
 
-  it 'contains dafault value :true for :display_email column' do
-    expect(user.display_email).to eql(true)
+  it 'has dafault value :false for :display_email column' do
+    expect(user.display_email).to eql(false)
   end
 
 end

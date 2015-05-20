@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :lessons, through: :lesson_users
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   has_paper_trail
-  after_create :send_welcome_email, :assign_defaults_on_display_email
+  after_create :send_welcome_email
 
   attr_accessor :login
 
@@ -46,12 +46,6 @@ class User < ActiveRecord::Base
 
   def send_welcome_email
     UserMailer.welcome_email(self).deliver_now
-  end
-
-  private
-
-  def assign_defaults_on_display_email
-    self.display_email = true
   end
 
 end
