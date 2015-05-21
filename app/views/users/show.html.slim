@@ -10,11 +10,10 @@
       ' Github:
       = link_to @user.github_name, "https://github.com/#{@user.github_name}"
   .col-sm-9
+    h3 = "Выполненных уроков: #{@activities.count}"
     - @activities.each do |activity|
       .activity = show_activity(activity)
 
     .text-center = will_paginate @activities, previous_label: '← Туда', next_label: 'Сюда →'
-
-
 
 - title @user.name

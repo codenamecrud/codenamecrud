@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def activity
     @activities = PaperTrail::Version.where(item_type: 'LessonUser')
-                                     .order(created_at: :desc)
+                                     .order(created_at: :asc)
                                      .paginate(page: params[:page], per_page: 20)
   end
 
@@ -10,6 +10,5 @@ class UsersController < ApplicationController
     @activities = PaperTrail::Version.where(item_type: 'LessonUser', whodunnit: @user.id.to_s)
     .paginate(page: params[:page], per_page: 20)
   end
-
 
 end
