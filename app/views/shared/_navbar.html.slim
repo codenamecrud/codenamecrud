@@ -1,9 +1,14 @@
 nav.navbar.navbar-default role="navigation"
   .container
     .navbar-header
-    = link_to 'CodenameCRUD<sup>alfa</sup>'.html_safe, root_path, class: 'navbar-brand'
+      button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-navbar"
+        .sr-only Toggle navigation
+        .icon-bar
+        .icon-bar
+        .icon-bar
+      = link_to 'CodenameCRUD<sup>alfa</sup>'.html_safe, root_path, class: 'navbar-brand'
 
-    .collapse.navbar-collapse
+    .collapse.navbar-collapse#collapse-navbar
       ul.nav.navbar-nav.navbar-right
         li = link_to 'Активность', activity_users_path
         - if user_signed_in?
