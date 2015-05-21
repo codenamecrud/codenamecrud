@@ -1,15 +1,19 @@
 .col-sm-8.col-sm-offset-2
   .col-sm-3
-    h4.text-center = @user.name
     .avatar = image_tag avatar_url(@user, 120)
+    h4.text-center = @user.name
+    h5.text-center = @user.email if @user.display_email
+    h5.text-center
+      ' Twitter:
+      = link_to @user.twitter_name, "https://twitter.com/#{@user.twitter_name}"
+    h5.text-center
+      ' Github:
+      = link_to @user.github_name, "https://github.com/#{@user.github_name}"
   .col-sm-9
-    h4.text-center = @user.email if @user.display_email
-    h4.text-center = @user.twitter_name
-    h4.text-center = @user.github_name
     - @activities.each do |activity|
       .activity = show_activity(activity)
 
-    = will_paginate @activities
+    .text-center = will_paginate @activities, previous_label: '← Туда', next_label: 'Сюда →'
 
 
 
