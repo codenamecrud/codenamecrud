@@ -5,6 +5,6 @@
         .avatar.media-left = image_tag avatar_url(activity_user(activity), 40)
         .media-body = show_activity(activity)
 
-    .text-center = will_paginate @activities, next_label: '← Туда', previous_label: 'Сюда →'
+    .text-center = will_paginate @activities, previous_label: '← Туда', next_label: 'Сюда →'
 
 - title 'Пользовательская активность'
