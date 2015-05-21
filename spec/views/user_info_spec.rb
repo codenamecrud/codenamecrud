@@ -15,9 +15,9 @@ describe 'Edit User Info' do
 
   it 'hide email if checkbox checked' do
     page.check('Скрыть Email')
-    fill_in 'Имя', with: new_user_info.name
-    fill_in 'GitHub', with: new_user_info.github_name
-    fill_in 'Twitter', with: new_user_info.twitter_name
+    fill_in 'user_name', with: new_user_info.name
+    fill_in 'Имя пользователя на GitHub', with: new_user_info.github_name
+    fill_in 'Имя пользователя в Twitter', with: new_user_info.twitter_name
     fill_in 'user_current_password', with: user.password
     click_on 'Обновить'
     click_on("Привет, #{new_user_info.name}")
@@ -27,9 +27,9 @@ describe 'Edit User Info' do
 
   it 'displays email if checkbox unchecked' do
     page.uncheck('Скрыть Email')
-    fill_in 'Имя', with: new_user_info.name
-    fill_in 'GitHub', with: new_user_info.github_name
-    fill_in 'Twitter', with: new_user_info.twitter_name
+    fill_in 'user_name', with: new_user_info.name
+    fill_in 'Имя пользователя на GitHub', with: new_user_info.github_name
+    fill_in 'Имя пользователя в Twitter', with: new_user_info.twitter_name
     fill_in 'user_current_password', with: user.password
     click_on 'Обновить'
     click_on("Привет, #{new_user_info.name}")

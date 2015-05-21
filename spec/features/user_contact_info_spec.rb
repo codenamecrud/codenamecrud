@@ -1,12 +1,18 @@
 require 'rails_helper';
 
 describe 'Edit User Info' do
-  let(:user) { build(:user) }
+  let(:user) { create(:user) }
   let(:new_user_info) { build(:user) }
 
   before :each do
-    update_user_info(user, new_user_info)
-    click_on("Привет, #{new_user_info.name}")
+    sign_in_with(user.name, user.password)
+    visit edit_user_registration_path(user)
+    fill_in 'user_name', with: new_user_info.name
+    fill_in 'user_twitter_name', with: new_user_info.twitter_name
+    fill_in 'user_github_name', with: new_user_info.github_name
+    fill_in 'user_current_password', with: user.password
+    click_on 'Обновить'
+    visit user_path(user)
   end
 
   it 'display updated user name' do
