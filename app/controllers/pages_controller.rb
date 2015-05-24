@@ -9,8 +9,8 @@ class PagesController < ApplicationController
   end
 
   def contribute
-    curriculum = open 'https://api.github.com/repos/codenamecrud/curriculum/contributors'
-    codenamecrud = open 'https://api.github.com/repos/codenamecrud/codenamecrud/contributors'
+    curriculum = open "https://api.github.com/repos/codenamecrud/curriculum/contributors?client_id=#{ENV['GITHUB_KEY']}&client_secret=#{ENV['GITHUB_SECRET']}"
+    codenamecrud = open "https://api.github.com/repos/codenamecrud/codenamecrud/contributors?client_id=#{ENV['GITHUB_KEY']}&client_secret=#{ENV['GITHUB_SECRET']}"
 
     @curriculum = JSON.load(curriculum)
     @codenamecrud = JSON.load(codenamecrud)
