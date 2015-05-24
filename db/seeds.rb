@@ -102,7 +102,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/introduction_to_web_development/what_does_a_web_dev_do.md'
+  url: '/introduction_to_web_development/01_what_does_a_web_dev_do.md'
   )
 
 lesson_position += 1
@@ -114,7 +114,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/introduction_to_web_development/web_dev_jobs.md'
+  url: '/introduction_to_web_development/02_web_dev_jobs.md'
   )
 
 lesson_position += 1
@@ -126,7 +126,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/introduction_to_web_development/tools_of_trade.md'
+  url: '/introduction_to_web_development/03_tools_of_trade.md'
   )
 
 lesson_position += 1
@@ -138,7 +138,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/introduction_to_web_development/web_dev_communities.md'
+  url: '/introduction_to_web_development/04_web_dev_communities.md'
   )
 
 lesson_position += 1
@@ -150,7 +150,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/introduction_to_web_development/the_best_web_devs.md'
+  url: '/introduction_to_web_development/05_the_best_web_devs.md'
   )
 
 
@@ -163,7 +163,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/introduction_to_web_development/getting_hired_as_a_web_dev.md'
+  url: '/introduction_to_web_development/06_getting_hired_as_a_web_dev.md'
   )
 
 
@@ -176,7 +176,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/introduction_to_web_development/conclusion.md'
+  url: '/introduction_to_web_development/07_conclusion.md'
   )
 
 # == Второй курс == #
@@ -214,7 +214,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/web_development_101/how_this_course_will_work.md'
+  url: '/web_development_101/01_how_this_course_will_work.md'
   )
 
 lesson_position += 1
@@ -226,7 +226,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/web_development_101/how_does_the_web_work.md'
+  url: '/web_development_101/02_how_does_the_web_work.md'
   )
 
 lesson_position += 1
@@ -238,7 +238,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/web_development_101/how_does_your_computer_work.md'
+  url: '/web_development_101/03_how_does_your_computer_work.md'
   )
 
 lesson_position += 1
@@ -250,7 +250,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/web_development_101/terms_to_know.md'
+  url: '/web_development_101/04_terms_to_know.md'
   )
 
 lesson_position += 1
@@ -262,7 +262,7 @@ create_or_update_lesson(
   is_project: true,
   section: section,
   course: course,
-  url: '/web_development_101/project_installations.md'
+  url: '/web_development_101/05_project_installations.md'
   )
 
 # == Второй раздел == #
@@ -285,7 +285,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/web_development_101/introduction-to-the-front-end.md'
+  url: '/web_development_101/06_introduction-to-the-front-end.md'
   )
 
 lesson_position += 1
@@ -297,7 +297,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/web_development_101/html_css_basics.md'
+  url: '/web_development_101/07_html_css_basics.md'
   )
 
 lesson_position += 1
@@ -309,7 +309,7 @@ create_or_update_lesson(
   is_project: true,
   section: section,
   course: course,
-  url: '/web_development_101/project_html_css.md'
+  url: '/web_development_101/08_project_html_css.md'
   )
 
 lesson_position += 1
@@ -321,7 +321,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/web_development_101/javascript_basics.md'
+  url: '/web_development_101/09_javascript_basics.md'
   )
 
 lesson_position += 1
@@ -333,7 +333,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/web_development_101/jquery_basics.md'
+  url: '/web_development_101/10_jquery_basics.md'
   )
 
 lesson_position += 1
@@ -345,7 +345,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/web_development_101/project_js_jquery.md'
+  url: '/web_development_101/11_project_js_jquery.md'
   )
 
 # section_position += 1
