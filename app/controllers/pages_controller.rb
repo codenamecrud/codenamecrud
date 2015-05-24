@@ -7,4 +7,12 @@ class PagesController < ApplicationController
 
   def contacts
   end
+
+  def contribute
+    curriculum = open 'https://api.github.com/repos/codenamecrud/curriculum/contributors'
+    codenamecrud = open 'https://api.github.com/repos/codenamecrud/codenamecrud/contributors'
+
+    @curriculum = JSON.load(curriculum)
+    @codenamecrud = JSON.load(codenamecrud)
+  end
 end
