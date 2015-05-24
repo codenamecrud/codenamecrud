@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Concerns::Roles
+
   devise :database_authenticatable,
     :registerable,
     :recoverable,
