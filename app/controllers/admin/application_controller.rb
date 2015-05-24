@@ -8,7 +8,7 @@ module Admin
     private
 
     def redirect_users
-      redirect_to root_path, notice: 'Доступ запрещен' unless current_user && current_user.role == 'admin'
+      redirect_to root_path, notice: 'Доступ запрещен' unless current_user && current_user.admin?
     end
   end
 end
