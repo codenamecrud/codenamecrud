@@ -17,12 +17,9 @@ Course.find_each { |c| c.update_attribute(:position, c.position + incrementer)}
 Section.find_each { |s| s.update_attribute(:position, s.position + incrementer)}
 Lesson.find_each { |l| l.update_attribute(:position, l.position + incrementer)}
 
-
-
 course_position = 0
 section_position = 0
 lesson_position = 0
-
 
 def create_or_update_course(course_attrs)
   course = Course.find_by(title: course_attrs[:title])
@@ -69,8 +66,6 @@ def create_or_update_lesson(lesson_attrs)
   end
   return lesson
 end
-
-
 
 
 # == Первый курс == #
@@ -352,6 +347,8 @@ create_or_update_lesson(
   url: '/web_development_101/11_project_js_jquery.md'
   )
 
+# == Третий раздел == #
+
 section_position += 1
 section = create_or_update_section(
   title: 'Бэкенд',
@@ -421,6 +418,8 @@ create_or_update_lesson(
   url: '/web_development_101/16_database_basics.md'
   )
 
+# == Четвертый раздел == #
+
 
 section_position += 1
 section = create_or_update_section(
@@ -478,6 +477,8 @@ create_or_update_lesson(
   course: course,
   url: '/web_development_101/20_backbone_basics.md'
   )
+
+# == Пятый раздел == #
 
 
 section_position += 1

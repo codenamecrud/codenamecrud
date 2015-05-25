@@ -1,5 +1,6 @@
 class Lesson < ActiveRecord::Base
   include FriendlyId
+  include Ordering
   friendly_id :slug
 
   has_paper_trail
@@ -9,9 +10,7 @@ class Lesson < ActiveRecord::Base
   has_many :lesson_users
   has_many :users, through: :lesson_users
 
-  validates :title, :slug, :description, :section_id, presence: true
-
-  scope :order_by_position, -> { all.order(position: :asc) }
+  validates :title, :slug, :description, :section_id, :position, presence: true
 
   def next
     self.course.lessons.where('id > ?', id).first

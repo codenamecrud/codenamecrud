@@ -5,7 +5,7 @@
     p.text-muted= @course.description
 
 .col-sm-8.col-sm-offset-2
-  - @course.sections.each do |section|
+  - @course.sections.order_by_position.each do |section|
       h2 id=("section-#{section.slug}") = section.title
 
       .container.section-description
