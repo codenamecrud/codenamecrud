@@ -13,9 +13,16 @@
 
 # to avoid duplication
 incrementer = 1000
-Course.all.each { |c| c.update_attribute(:position, c.position + incrementer)}
-Section.all.each { |s| s.update_attribute(:position, s.position + incrementer)}
-Lesson.all.each { |l| l.update_attribute(:position, l.position + incrementer)}
+Course.find_each { |c| c.update_attribute(:position, c.position + incrementer)}
+Section.find_each { |s| s.update_attribute(:position, s.position + incrementer)}
+Lesson.find_each { |l| l.update_attribute(:position, l.position + incrementer)}
+
+
+
+course_position = 0
+section_position = 0
+lesson_position = 0
+
 
 def create_or_update_course(course_attrs)
   course = Course.find_by(title: course_attrs[:title])
@@ -64,9 +71,6 @@ def create_or_update_lesson(lesson_attrs)
 end
 
 
-course_position = 0
-section_position = 0
-lesson_position = 0
 
 
 # == Первый курс == #
@@ -285,7 +289,7 @@ create_or_update_lesson(
   is_project: false,
   section: section,
   course: course,
-  url: '/web_development_101/06_introduction-to-the-front-end.md'
+  url: '/web_development_101/06_introduction_to_the_front_end.md'
   )
 
 lesson_position += 1
@@ -348,41 +352,238 @@ create_or_update_lesson(
   url: '/web_development_101/11_project_js_jquery.md'
   )
 
-# section_position += 1
-# section = create_or_update_section(
-#   title: 'Бэкенд',
-#   slug: 'backend',
-#   position: section_position,
-#   description: 'Здесь вы узнаете о бэкенде, мы раскроем все, что скрывается за кулисами веб-сервера. Вы попробуете на вкус Ruby, чертовски классный язык, на котором написан фреймворк Ruby on Rails',
-#   course: course
-# )
+section_position += 1
+section = create_or_update_section(
+  title: 'Бэкенд',
+  slug: 'backend',
+  position: section_position,
+  description: 'Здесь вы узнаете о бэкенде, мы раскроем все, что скрывается за кулисами веб-сервера. Вы попробуете на вкус Ruby, чертовски классный язык, на котором написан фреймворк Ruby on Rails',
+  course: course
+)
 
-# section_position += 1
-# section = create_or_update_section(
-#   title: 'Фреймворки для веб-разработки',
-#   position: section_position,
-#   slug: 'web-development-frameworks',
-#   description: 'Вы скорее всего слышали о "Ruby on Rails" и "Backbone.js", а так же о других приятно звучащих фреймворках для разработки. В этом разделе вы узнаете, что такое фреймворк, почему мы их используем и освоитесь с теми, знание которых нам потребуется в последующих курсах.',
-#   course: course
-#   )
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Введение в бэкенд',
+  position: lesson_position,
+  slug: 'introduction-to-the-backend',
+  description: 'Краткое введение в чудесный мир серверного программирования',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/web_development_101/12_introduction_to_the_back_end.md'
+  )
 
-# section_position += 1
-# section = create_or_update_section(
-#   title: 'Дополнительные важные темы',
-#   position: section_position,
-#   slug: 'additional-important-topics',
-#   description: 'Этот раздел содержит набор коротких уроков, которые позволят вам освоиться с основами нескольких сопутствующих технологий, умение работать с которыми потребуется вам на вашем пути к карьере веб-разработчика.',
-#   course: course
-#   )
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Основы Ruby',
+  position: lesson_position,
+  slug: 'ruby-basics',
+  description: 'Добротное погружение в Ruby, вы потратите некоторое время на изучение основ этого дружественного к программисту языка',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/web_development_101/13_ruby_basics.md'
+  )
 
-# section_position += 1
-# section = create_or_update_section(
-#   title: 'Собираем все воедино',
-#   slug: 'tying-it-all-togerher',
-#   position: section_position,
-#   description: 'Теперь вы знаете о большинстве компонентов веб-приложений, стоит отступить на шаг назад и вспомнить, как они укладываются в большую картинку.',
-#   course: course
-#   )
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Основы тестирования',
+  position: lesson_position,
+  slug: 'testing-basics',
+  description: 'Краткое введение в тестирование в общем и в RSpec, "язык" для тестирования Ruby',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/web_development_101/14_testing_basics.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Ruby',
+  position: lesson_position,
+  slug: 'project-ruby',
+  description: 'Время применить то, что вы изучили о Ruby, заставив тесты проходить в нескольких уроков, от простых до сложных',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/web_development_101/15_project_ruby.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Базы данных',
+  position: lesson_position,
+  slug: 'databases',
+  description: 'Последний фундаментальный компонент - это то, как "сохранять" ваши данные, используя базы данных. Вы изучите основы SQL, языка, используемого для общения с большинством реляционных баз данных.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/web_development_101/16_database_basics.md'
+  )
+
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Фреймворки для веб-разработки',
+  position: section_position,
+  slug: 'web-development-frameworks',
+  description: 'Вы скорее всего слышали о "Ruby on Rails" и "Backbone.js", а так же о других приятно звучащих фреймворках для разработки. В этом разделе вы узнаете, что такое фреймворк, почему мы их используем и освоитесь с теми, знание которых нам потребуется в последующих курсах.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Введение в фреймворки',
+  position: lesson_position,
+  slug: 'introduction-to-frameworks',
+  description: 'Давайте узнаем, что это за штуки.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/web_development_101/17_introduction_to_frameworks.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Основы Ruby on Rails',
+  position: lesson_position,
+  slug: 'ruby-on-rails-basics',
+  description: 'Вы узнаете основы невероятно популярного фреймворка, благодаря которому тысячи программистов любят свою работу.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/web_development_101/18_rails_basics.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Ruby on Rails',
+  position: lesson_position,
+  slug: 'project-ruby-on-rails',
+  description: 'Вы изучили основы, теперь давайте применим эти знания, создав простое приложение.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/web_development_101/19_project_rails.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Backbone.js',
+  position: lesson_position,
+  slug: 'backbone-js',
+  description: 'Краткое ознакомление с Backbone.js, популярным фронтенд-фреймворком, которые будет более детально рассмотрен в одном из последующих курсов',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/web_development_101/20_backbone_basics.md'
+  )
+
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Дополнительные важные темы',
+  position: section_position,
+  slug: 'additional-important-topics',
+  description: 'Этот раздел содержит набор коротких уроков, которые позволят вам освоиться с основами нескольких сопутствующих технологий, умение работать с которыми потребуется вам на вашем пути к карьере веб-разработчика.',
+  course: course
+  )
+
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Основы Git',
+  position: lesson_position,
+  slug: 'git-basics',
+  description: 'Git является системой контроля версий, используемой разработчиками... это как "сохранение" плюс "машина времени".',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/web_development_101/21_git_basics.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Облака, хостинг и софт как услуга (SaaS)',
+  position: lesson_position,
+  slug: 'the-cloud-hosting-and-software-as-a-service-saas',
+  description: 'Настало время познакомить вас с некоторыми важными терминами, которые вы могли слышать, и рассказать, почему вам важно знать их и использовать то, что они означают.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/web_development_101/22_the_cloud_hosting_and_saas.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Безопасность, SSL и лучшие практики',
+  position: lesson_position,
+  slug: 'security-ssl-and-best-practices',
+  description: 'Краткое введение в концепцию безопасности и лучшие практики в этой области.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/web_development_101/23_security_ssl_and_best_practices.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Основы FTP',
+  position: lesson_position,
+  slug: 'ftp-basics',
+  description: 'Очень краткий обзор Протокола Передачи Файлов (FTP), который часто используется для загрузки файлов на сервер.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/web_development_101/24_ftp_basics.md'
+  )
+
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Собираем все воедино',
+  slug: 'tying-it-all-togerher',
+  position: section_position,
+  description: 'Теперь вы знаете о большинстве компонентов веб-приложений, стоит отступить на шаг назад и вспомнить, как они укладываются в большую картинку.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Как создаются сайты в реальном мире?',
+  position: lesson_position,
+  slug: 'how-are-websites-built-in-the-real-world',
+  description: 'Взгляд на более общую картину того, как выглядит процесс разработки сайта и детальный взгляд на то, что именно делает разработчик.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/web_development_101/25_how_are_websites_built.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Принципы хорошего программирования',
+  position: lesson_position,
+  slug: 'principles-of-good-programming',
+  description: 'Обзор некоторых важнейших принципов, важных к пониманию, чтобы быть хорошим программистом. Кратко: будьте ленивы.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/web_development_101/26_principles_of_good_programming.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Заключение',
+  position: lesson_position,
+  slug: 'conclusion',
+  description: 'Как далеко вы уже зашли! Но поездка только начинается...',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/web_development_101/27_conclusion.md'
+  )
+
 
 # = Третий курс = #
 
