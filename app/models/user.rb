@@ -51,4 +51,10 @@ class User < ActiveRecord::Base
     UserMailer.welcome_email(self).deliver_now
   end
 
+  def completed_lessons
+    completed = lesson_users.where(completed: true).count
+    all_lessons = lesson_users.count
+    completed.to_f * 100.0 / all_lessons.to_f
+  end
+
 end
