@@ -9,7 +9,9 @@
             <div class="progress">
               <div class="progress-bar"></div>
             </div>
-            <a href="#" class="bs-wizard-dot"></a>
+            <a>
+              <%= link_to '', course_lesson_path(@course, lesson), class: 'bs-wizard-dot' %>
+            </a>
             <div class="bs-wizard-info text-center"> <%= number_to_percentage(current_user.completed_lessons,  precision: 0) if !next_lesson %></div>
           </div>
         <% else %>
