@@ -8,4 +8,9 @@ class Section < ActiveRecord::Base
   has_many :lessons
 
   validates :title, :slug, :description, :course_id, presence: true
+
+  def next_lesson_in_the_section(section_lesson)
+    lessons.where(id: section_lesson.id+1).first
+  end
+
 end

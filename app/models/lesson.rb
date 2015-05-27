@@ -19,4 +19,11 @@ class Lesson < ActiveRecord::Base
   def previous
     self.course.lessons.where('id < ?', id).last
   end
+
+  def get_section_lessons(course)
+    section = course.lessons.find(self).section
+    section.lessons.where(course_id: course.id).order("id ASC")
+  end
+
+
 end

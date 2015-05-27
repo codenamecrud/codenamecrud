@@ -33,6 +33,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'guard-rspec', require: false
   gem 'letter_opener'
+  gem "better_errors"
 end
 
 group :development do
