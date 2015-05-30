@@ -13,7 +13,7 @@
         .container.section-description
           .col-sm-8
             p.text-muted = section.description
-
+            
             .container
               ul.lessons-list
                 - section.lessons.order_by_position.each.with_index(1) do |lesson, index|
