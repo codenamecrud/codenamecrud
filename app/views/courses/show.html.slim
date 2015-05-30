@@ -27,7 +27,7 @@
                   = link_to [@course, lesson], class: 'link-to-lesson' do
                     h2.text-muted
                       ' Шаг #{index}:
-                      span.text-primary= lesson.title
+                      span class=(lesson.is_project? ? 'text-danger' : 'text-primary') = lesson.title
                     .col-sm-6.lesson-description
                       = lesson.description
 
