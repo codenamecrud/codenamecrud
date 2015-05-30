@@ -18,7 +18,7 @@ body
     .breadcrumbs
       = render 'shared/breadcrumbs', locals: {breadcrumbs: breadcrumbs}
 
-    = yield
+  = yield
 
   = render 'shared/footer'
   = render 'shared/metrics' if Rails.env.production?

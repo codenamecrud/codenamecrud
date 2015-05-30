@@ -1,37 +1,85 @@
-.col-sm-8.col-sm-offset-2.courses-list
-  h1.text-center Это ваш путь к изучению веб-разработки
+.banner
+  = image_tag("banner.jpg", class: "img-responsive", alt: "Баннер")
+  .intro-text
+    h1 Учись веб-разработке бесплатно
+    p.now Не тяни время. Все что нужно знать здесь уже есть
+    p.link = link_to "Оцените весь фронт работ", "#", class: "btn btn-success"
+    p.next ... или листай дальше , чтобы узнать больше о проекте
+.container.about
+  .col-xs-12.about-list
+    h2 Хорошо, о чем этот сайт
+    p В основном, наш проект, учит тому, чему мы хотели бы научиться, когда учились сами.
+    p Мы сшили учебную программу из лучших ресурсов, которые смогли найти в Интернете и вот оно.
+    .col-sm-4.about-block
+      p = image_tag("about-path.png", class: "img-responsive", alt: "")
+      h3 Маршрут обучения
+      p Путь к успешной веб-разработке лежит через постоянное обучение. Но мы его вам упростили, наметив определенные маршруты.
+    .col-sm-4.about-block
+      p = image_tag("about-portfolio.png", class: "img-responsive", alt: "")
+      h3 Создание портфолио
+      p Для того, чтобы найти классную работу, необходимо иметь определенный опыт. Мы поможем его получить.
+    .col-sm-4.about-block
+      p = image_tag("about-together.png", class: "img-responsive", alt: "")
+      h3 Учимся вместе
+      p Вам не придется больше учиться в одиночку. Мы постарались создать сообщество, помогающее друг другу в обучении.
 
-  .course-description.text-muted
-    p Если вы хотите изучать веб-разработку, вы попали в нужное место. Мы отобрали лучшие бесплатные ресурсы и объединили их в курсы, перечисленные ниже, чтобы избавить вас от необходимости тратить время, делая это самим. Так же мы разработали для вас практические задания. Работая над ними, вы сами будете создавать свои проекты, изучать материал, а завершенные работы сможете добавить в портфолио.
 
-    p Курсы разработаны с расчетом на то, что вы будете проходить их по порядку, так что начните с верхнего и постепенно двигайтесь вниз.
-    p Самое лучшее, что все это бесплатно!
+.container
+  .col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3.courses-list
+    h2.text-center Чему ты научишься
+    .courses
+      ul.courses-list
+        - @courses.with_index(1) do |course, index|
+          li.row.course
+            .col-xs-3.col-sm-2
+              = image_tag(index.to_s + ".jpg", class: "img-responsive", alt: "")
+            .col-xs-9.col-sm-10
+              h3 = course_link(course, index)
+              p = course.short_description
 
-  .row
-    = render 'email_form'
+    .row
+      = render 'email_form'
 
-  .courses
-    ul.courses-list
-      - @courses.with_index(1) do |course, index|
-        li.row.course
-          h1 = course_link(course, index)
-          .col-sm-3.teaser
-            h3 = course.teaser
+.container.future
+  .col-xs-12.about-list
+    h2 Что вас ждет впереди
+    p Конечно впереди много трудностей. Но на них можно взглянуть и иначе.
+    p Думайте об этом как о путешествии и вы проведете множество приятных часов с большой пользой.
+    .col-sm-4.about-block
+      p = image_tag("future-learning.png", class: "img-responsive", alt: "")
+      h3 Обучение
+      p Ваш путь будет лежать через просмотр отборных видеороликов, а также чтение интересных книг и статей.
+    .col-sm-4.about-block
+      p = image_tag("future-coding.png", class: "img-responsive", alt: "")
+      h3 Кодинг 24/7
+      p Вы будете работать над десятком проектов по мере обучения, от простых алгоритмов до невероятных сайтов.
+    .col-sm-4.about-block
+      p = image_tag("future-work.png", class: "img-responsive", alt: "")
+      h3 Совместная работа
+      p Работа в сообществе с другими студентами очень важна для вашей будущей работы в любом крупном проекте.
 
-          .col-sm-9.description.text-muted
-            = course.short_description
+.container.fire
+  .col-xs-12.about-list
+    h2 Почему наш проект жжет
+    .col-sm-4.about-block
+      p = image_tag("benefits-flex.png", class: "img-responsive", alt: "")
+      h3 Гибкость
+      p Учебная программа действительно гибкая - это одно из ее достоинств. Используйте это в своих целях.
+    .col-sm-4.about-block
+      p = image_tag("benefits-open.png", class: "img-responsive", alt: "")
+      h3 Опен-Сурс
+      p Этот проект основан по лицензии MIT, а учебная программа используется в рамках Creative Commons.
+    .col-sm-4.about-block
+      p = image_tag("benefits-tools.png", class: "img-responsive", alt: "")
+      h3 Инструменты
+      p Мы даем возможность студентам создавать собственные инструменты и делиться ими с остальными студентами.
 
-          - if course.you_learn.present?
-            .col-sm-6.you-learn
-              h3 Теория
-              ul
-                - course.you_learn.each do |yl|
-                  li = yl
-          - if course.you_build.present?
-            .col-sm-6.you-build
-              h3 Практика
-              ul
-                - course.you_build.each do |yb|
-                  li = yb
+.container.finish
+  .col-xs-12.about-list
+    h2 Еще остались вопросы?
+    p На этой странице мы постарались ответить на все возможные вопросы.
+    p Далее вы можете начать процедуру регистрации или ознакомиться с программой обучения
+    = link_to "Начать обучение 1", "", class: "btn btn-success"
+    = link_to "Начать обучение 2", "", class: "btn btn-success"
 
-- title
+  - title
