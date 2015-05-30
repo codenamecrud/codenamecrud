@@ -1,10 +1,11 @@
-.col-sm-8.col-sm-offset-2
-  - if @activities.count > 0
-    - @activities.each do |activity|
-      .activity.media
-        .avatar.media-left = image_tag avatar_url(activity_user(activity), 40)
-        .media-body = show_activity(activity)
+.container
+  .col-sm-8.col-sm-offset-2
+    - if @activities.count > 0
+      - @activities.each do |activity|
+        .activity.media
+          .avatar.media-left = image_tag avatar_url(activity_user(activity), 40)
+          .media-body = show_activity(activity)
 
-    .text-center = will_paginate @activities, previous_label: '← Туда', next_label: 'Сюда →'
+      .text-center = will_paginate @activities, previous_label: '← Туда', next_label: 'Сюда →'
 
-- title 'Пользовательская активность'
+  - title 'Пользовательская активность'

@@ -1,4 +1,5 @@
-.col-sm-8.col-sm-offset-2
+.container
+  .col-sm-8.col-sm-offset-2
 
   .lesson
     .content
@@ -6,22 +7,22 @@
        = render partial: 'lessons/lessons_progress_bar', locals: { lesson: @lesson, course: @course }
       = markdown(@lesson.content) if @lesson.content.present?
 
-      .text-center
-        - if user_signed_in?
-          h2.toggle-check id=(dom_id @lesson)
-            - if current_user.lessons.include?(@lesson)
-              = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-uncompleted', remote: true, method: :post do
-                i.glyphicon.glyphicon-check
-            - else
-              = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-completed', remote: true, method: :post do
-                i.glyphicon.glyphicon-unchecked
+        .text-center
+          - if user_signed_in?
+            h2.toggle-check id=(dom_id @lesson)
+              - if current_user.lessons.include?(@lesson)
+                = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-uncompleted', remote: true, method: :post do
+                  i.glyphicon.glyphicon-check
+              - else
+                = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-completed', remote: true, method: :post do
+                  i.glyphicon.glyphicon-unchecked
 
-      hr
-      = render 'lessons_navigation'
+        hr
+        = render 'lessons_navigation'
 
-  - disqus_thread
+    - disqus_thread
 
-.col-sm-2
-  <!-- Чья же здесь будет реклама? -->
+  .col-sm-2
+    <!-- Чья же здесь будет реклама? -->
 
-  - title @lesson.title
+    - title @lesson.title

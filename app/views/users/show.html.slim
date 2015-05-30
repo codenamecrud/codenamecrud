@@ -1,24 +1,25 @@
-.col-sm-8.col-sm-offset-2
-  .col-sm-3
-    .avatar = image_tag avatar_url(@user, 120)
-    h4.text-center = @user.name
-    h5.text-center = @user.email if @user.display_email
+.container
+  .col-sm-8.col-sm-offset-2
+    .col-sm-3
+      .avatar = image_tag avatar_url(@user, 120)
+      h4.text-center = @user.name
+      h5.text-center = @user.email if @user.display_email
 
-    - if @user.twitter_name
-      h5.text-center
-        ' Twitter:
-        = link_to @user.twitter_name, "https://twitter.com/#{@user.twitter_name}"
+      - if @user.twitter_name
+        h5.text-center
+          ' Twitter:
+          = link_to @user.twitter_name, "https://twitter.com/#{@user.twitter_name}"
 
-    - if @user.github_name
-      h5.text-center
-        ' Github:
-        = link_to @user.github_name, "https://github.com/#{@user.github_name}"
+      - if @user.github_name
+        h5.text-center
+          ' Github:
+          = link_to @user.github_name, "https://github.com/#{@user.github_name}"
 
-  .col-sm-9
-    h3 = "Выполненных уроков: #{@activities.count}"
-    - @activities.each do |activity|
-      .activity = show_activity(activity)
+    .col-sm-9
+      h3 = "Выполненных уроков: #{@activities.count}"
+      - @activities.each do |activity|
+        .activity = show_activity(activity)
 
-    .text-center = will_paginate @activities, previous_label: '← Туда', next_label: 'Сюда →'
+      .text-center = will_paginate @activities, previous_label: '← Туда', next_label: 'Сюда →'
 
-- title @user.name
+  - title @user.name
