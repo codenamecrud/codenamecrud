@@ -1,6 +1,7 @@
 # CodenameCRUD
 [![Codeship Status for codenamecrud/codenamecrud](https://codeship.com/projects/60db15a0-dae1-0132-35e9-7e6cf4be967c/status?branch=master)](https://codeship.com/projects/79439)
 [![Code Climate](https://codeclimate.com/github/codenamecrud/codenamecrud/badges/gpa.svg)](https://codeclimate.com/github/codenamecrud/codenamecrud)
+[![Test Coverage](https://codeclimate.com/github/codenamecrud/codenamecrud/badges/coverage.svg)](https://codeclimate.com/github/codenamecrud/codenamecrud/coverage)
 ## Что это за проект?
 
 CodenameCRUD является образовательным проектом, который нацелен на то, чтобы дать каждому желающему знания, которые позволят ему после выполнения всех уроков претендовать на реальную работу в качестве веб-разработчика. Прохождение учебного плана этого проекта станет отличным стартом в изучении веб-разработки даже для тех, кто никогда ею не занимался.
