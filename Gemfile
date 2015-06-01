@@ -47,6 +47,7 @@ group :test do
   gem 'codeclimate-test-reporter', require: nil
   gem 'capybara-webkit'
   gem 'email_spec'
+  gem 'codeclimate-test-reporter', require: nil
 end
 
 group :production do

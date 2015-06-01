@@ -1,5 +1,5 @@
 # CodenameCRUD
-' [![Codeship Status for codenamecrud/codenamecrud](https://codeship.com/projects/60db15a0-dae1-0132-35e9-7e6cf4be967c/status?branch=master)](https://codeship.com/projects/79439)
+[![Codeship Status for codenamecrud/codenamecrud](https://codeship.com/projects/60db15a0-dae1-0132-35e9-7e6cf4be967c/status?branch=master)](https://codeship.com/projects/79439)
 [![Code Climate](https://codeclimate.com/github/codenamecrud/codenamecrud/badges/gpa.svg)](https://codeclimate.com/github/codenamecrud/codenamecrud)
 ## Что это за проект?
 
