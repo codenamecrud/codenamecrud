@@ -34,6 +34,7 @@ group :development, :test do
   gem 'guard-rspec', require: false
   gem 'letter_opener'
   gem "better_errors"
+  gem 'meta_request'
 end
 
 group :development do

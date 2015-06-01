@@ -21,10 +21,8 @@ class Lesson < ActiveRecord::Base
   end
 
   def get_section_lessons(course)
-    section = course.lessons.find(self).section
+    section = course.lessons.find(self.id).section
     section.lessons.where(course_id: course.id).order("id ASC")
   end
-
-
 
 end
