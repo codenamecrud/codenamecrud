@@ -43,40 +43,33 @@ feature 'Progress bar' do
       expect(page).to have_css('div.col-xs-1.bs-wizard-step.complete', count: 1)
       expect(first('div.bs-wizard-info.text-center')).to have_content('25%')
       expect(first('div.bs-wizard-info.text-center')).to have_content("#{user.completed_lessons(section1).to_i}%")
-      expect(page).to have_css('div.col-xs-1.bs-wizard-step.disabled', count: course.lessons.count-1)
+      expect(page).to have_css('div.col-xs-1.bs-wizard-step.disabled', count: course.lessons.count - 1)
     end
     expect(page).to have_css('div.progress-bar')
   end
 
-  # it 'displays 100% of progress if all lessons added' do
-  #   sign_in_with(user.name, user.password)
-  #   visit course_lesson_path(course, lesson1.id)
-  #   find('.mark-as-completed').click
-  #   visit course_lesson_path(course.id, lesson2.id)
-  #   find('.mark-as-completed').click
-  #   visit course_lesson_path(course.id, lesson3.id)
-  #   within ('div.row.bs-wizard') do
-  #     expect(page).to have_css('div.col-xs-1.bs-wizard-step.complete', count: 4)
-  #     expect(first('div.bs-wizard-info.text-center')).to have_content('100%')
-  #     expect(first('div.bs-wizard-info.text-center')).to have_content("#{user.completed_lessons(section1).to_i}%")
-  #     expect(page).to have_css('div.col-xs-1.bs-wizard-step.disabled', count: 0)
-  #   end
-  # end
+  pending it 'displays 100% of progress if all lessons added' do
+    sign_in_with(user.name, user.password)
+    visit course_lesson_path(course, lesson1.id)
+    find('.mark-as-completed').click
+    visit course_lesson_path(course.id, lesson2.id)
+    find('.mark-as-completed').click
+    visit course_lesson_path(course.id, lesson3.id)
+    within ('div.row.bs-wizard') do
+      expect(page).to have_css('div.col-xs-1.bs-wizard-step.complete', count: 4)
+      expect(first('div.bs-wizard-info.text-center')).to have_content('100%')
+      expect(first('div.bs-wizard-info.text-center')).to have_content("#{user.completed_lessons(section1).to_i}%")
+      expect(page).to have_css('div.col-xs-1.bs-wizard-step.disabled', count: 0)
+    end
+  end
 
   it 'reduces progress if user remove lesson' do
     sign_in_with(user.name, user.password)
     visit course_lesson_path(course.id, lesson1.id)
     find('.mark-as-completed').click
-    visit course_lesson_path(course.id, lesson2.id)
-    within ('div.row.bs-wizard') do
-      expect(page).to have_css('div.col-xs-1.bs-wizard-step.complete', count: 1)
-      expect(first('div.bs-wizard-info.text-center')).to have_content('25%')
-      expect(first('div.bs-wizard-info.text-center')).to have_content("#{user.completed_lessons(section1).to_i}%")
-      expect(page).to have_css('div.col-xs-1.bs-wizard-step.disabled', count: course.lessons.count-1)
-    end
     visit course_lesson_path(course.id, lesson1.id)
     find('.mark-as-uncompleted').click
-    visit course_lesson_path(course.id, lesson2.id)
+    visit course_lesson_path(course.id, lesson3.id)
     within ('div.row.bs-wizard') do
       expect(page).to have_css('div.col-xs-1.bs-wizard-step.complete', count: 0)
       expect(first('div.bs-wizard-info.text-center')).not_to have_content('25%')
@@ -104,15 +97,15 @@ feature 'Progress bar' do
     expect(page).to have_content("#{user.completed_lessons(course).to_i}%")
   end
 
-  # it 'displays lesson title when mouse over link' do
-  #   sign_in_with(user.name, user.password)
-  #   visit course_lesson_path(course.id, lesson1.id)
-  #   all_progress_dots = page.all('.bs-wizard-dot')
-  #   all_progress_dots.each do |dot|
-  #     dot_title = dot['title']
-  #     dot_link = dot['href']
-  #     dot.trigger(:mouseover).to have_content(dot_title)
-  #   end
-  # end
+  pending 'displays lesson title when mouse over link' do
+    sign_in_with(user.name, user.password)
+    visit course_lesson_path(course.id, lesson1.id)
+    all_progress_dots = page.all('.bs-wizard-dot')
+    all_progress_dots.each do |dot|
+      dot_title = dot['title']
+      dot_link = dot['href']
+      expect(dot.trigger(:mouseover)).to have_content(dot_title)
+    end
+  end
 
 end

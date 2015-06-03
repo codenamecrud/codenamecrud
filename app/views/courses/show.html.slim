@@ -1,7 +1,7 @@
 .col-sm-8.col-sm-offset-2.text-center
   - if user_signed_in?
-    h3 class="text-muted" = "Completed"
-    h3 class="text-muted" = number_to_percentage(current_user.completed_lessons(@course),  precision: 0)
+    h3 class='text-muted' = 'Completed'
+    h3 class='text-muted' = number_to_percentage(current_user.completed_lessons(@course),  precision: 0)
   h1 = @course.title
 
   .course-description

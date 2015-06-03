@@ -13,7 +13,7 @@
   .courses
     ul.courses-list
       - @courses.with_index(1) do |course, index|
-        li.row.course 
+        li.row.course
           h1 = course_link(course, index)
           .col-sm-3.teaser
             h3 = course.teaser

@@ -22,7 +22,7 @@ class Lesson < ActiveRecord::Base
 
   def get_section_lessons(course)
     section = course.lessons.find(self.id).section
-    section.lessons.where(course_id: course.id).order("id ASC")
+    section.lessons.where(course_id: course.id).order(:id)
   end
 
 end

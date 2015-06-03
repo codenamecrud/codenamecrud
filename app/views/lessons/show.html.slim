@@ -2,9 +2,10 @@
 
   .lesson
     .content
-      = render 'lessons_progress_bar'
+      - if user_signed_in?
+       = render partial: 'lessons_progress_bar', locals: { lesson: @lesson, course: @course }
       = markdown(@lesson.content) if @lesson.content.present?
-  
+
       .text-center
         - if user_signed_in?
           h2.toggle-check id=(dom_id @lesson)
