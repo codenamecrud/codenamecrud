@@ -1,5 +1,5 @@
 .container
-  .row.bs-wizard[style="border-bottom:0;"]
+  .row.text-center.bs-wizard[style="border-bottom:0;"]
     - lessons = lesson.get_section_lessons(course)
     - lessons.each do |section_lesson|
       - section = section_lesson.section

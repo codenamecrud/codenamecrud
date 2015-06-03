@@ -46,7 +46,6 @@ group :test do
   gem 'launchy', '~> 2.4'
   gem 'database_cleaner', '~> 1.3'
   gem 'shoulda-matchers', require: false
-  gem 'codeclimate-test-reporter', require: nil
   gem 'capybara-webkit'
   gem 'email_spec'
   gem 'codeclimate-test-reporter', require: nil
