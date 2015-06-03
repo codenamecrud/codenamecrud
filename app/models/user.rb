@@ -51,4 +51,31 @@ class User < ActiveRecord::Base
     UserMailer.welcome_email(self).deliver_now
   end
 
+  def completed_lesson(section_lesson_id)
+    lessons.find_by(id: section_lesson_id)
+  end
+
+  def current_lesson(section_lesson_id)
+    lessons.find_by(id: section_lesson_id)
+  end
+
+  def next_lesson(completed_by_user_lesson)
+    lessons.find_by(id: completed_by_user_lesson.id + 1)
+  end
+
+  def last_lesson(section_id)
+    lessons.where(section_id: section_id).last
+  end
+
+  def lessons_length(completed_by_user_lesson)
+    lessons.where(id: completed_by_user_lesson.id).count
+  end
+
+  def completed_lessons(course)
+    course_lessons = course.lessons.pluck(:id)
+    completed = lesson_users.where(lesson_id: course_lessons).count
+    all_lessons = course.lessons.count
+    completed.to_f * 100.0 / all_lessons.to_f
+  end
+
 end

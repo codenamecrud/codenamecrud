@@ -1,0 +1,34 @@
+.container
+  .row.bs-wizard[style="border-bottom:0;"]
+    - lessons = lesson.get_section_lessons(course)
+    - lessons.each do |section_lesson|
+      - section = section_lesson.section
+      - completed_by_user_lesson = current_user.completed_lesson(section_lesson.id)
+      - if completed_by_user_lesson
+        - next_lesson = current_user.next_lesson(completed_by_user_lesson)
+        - next_lesson_in_the_section = section.next_lesson_in_the_section(section_lesson)
+        - current_lesson = current_user.current_lesson(section_lesson.id)
+        - last_lesson = current_user.last_lesson(section.id)
+        .col-xs-1.bs-wizard-step.complete
+          .text-center.bs-wizard-stepnum
+            | Урок
+            = section_lesson.id
+          .progress
+            .progress-bar
+          a
+            = link_to course_lesson_path(course, section_lesson), class: 'bs-wizard-dot', title: section_lesson.title, data: { toggle: 'tooltip', placement: 'top' } do
+
+          .bs-wizard-info.text-center
+            = number_to_percentage(current_user.completed_lessons(section),  precision: 0) if (!next_lesson || !next_lesson_in_the_section) && current_lesson.id == last_lesson.id
+      - else
+        .col-xs-1.bs-wizard-step.disabled
+          .text-center.bs-wizard-stepnum
+            | Урок
+            = section_lesson.id
+          .progress
+            .progress-bar
+          a
+            = link_to course_lesson_path(course, section_lesson), class: 'bs-wizard-dot', title: section_lesson.title, data: { toggle: 'tooltip', placement: 'top' } do
+
+          .bs-wizard-info.text-center
+            =

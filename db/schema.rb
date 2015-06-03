@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 20150520073726) do
     t.string   "uid"
     t.string   "github_name"
     t.string   "twitter_name"
-    t.boolean  "display_email",          default: false
+    t.boolean  "display_email",          default: false,  null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

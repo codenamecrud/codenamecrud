@@ -23,13 +23,11 @@ RSpec.configure do |config|
   config.extend ControllerHelpers, :type => :controller
   # config.include OmniauthHelpers
   config.before(:all) { FactoryGirl.reload }
-
   config.before(:suite) { DatabaseCleaner.clean_with :truncation }
   config.before(:each) { DatabaseCleaner.strategy = :transaction }
   config.before(:each, js: true) { DatabaseCleaner.strategy = :truncation }
   config.before(:each) { DatabaseCleaner.start }
   config.after(:each) { DatabaseCleaner.clean }
-
 end
 
 OmniAuth.config.test_mode = true
