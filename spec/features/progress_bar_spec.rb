@@ -103,7 +103,6 @@ feature 'Progress bar' do
     all_progress_dots = page.all('.bs-wizard-dot')
     all_progress_dots.each do |dot|
       dot_title = dot['title']
-      dot_link = dot['href']
       expect(dot.trigger(:mouseover)).to have_content(dot_title)
     end
   end

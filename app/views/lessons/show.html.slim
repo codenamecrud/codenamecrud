@@ -3,7 +3,7 @@
   .lesson
     .content
       - if user_signed_in?
-       = render partial: 'lessons_progress_bar', locals: { lesson: @lesson, course: @course }
+       = render partial: 'lessons/lessons_progress_bar', locals: { lesson: @lesson, course: @course }
       = markdown(@lesson.content) if @lesson.content.present?
 
       .text-center
