@@ -1,16 +1,3 @@
-# По умолчанию для дистрибуции проектов используется Bundler.
-# Эта строка включает автоматическое обновление и установку
-# недостающих gems, указанных в вашем Gemfile.
-#
-## !!! Не забудьте добавить
-# gem 'capistrano'
-# gem 'unicorn'
-#
-# в ваш Gemfile.
-#
-# Если вы используете другую систему управления зависимостями,
-# закомментируйте эту строку.
-require 'bundler/capistrano'
 
 after 'deploy', 'refresh_sitemaps'
 
@@ -126,3 +113,7 @@ set :sitemaps_path, 'shared/'
 task :refresh_sitemaps do
   run "cd #{latest_release} && RAILS_ENV=#{rails_env} bundle exec rake sitemap:refresh"
 end
+
+set :whenever_command, 'bundle exec whenever'
+require 'bundler/capistrano'
+require 'whenever/capistrano'

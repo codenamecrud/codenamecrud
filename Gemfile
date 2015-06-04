@@ -24,6 +24,7 @@ gem 'omniauth-github'
 gem 'paper_trail', '~> 4.0.0.beta'
 gem 'will_paginate'
 gem 'sitemap_generator', '~> 5.0.5'
+gem 'whenever', '~> 0.9.4', require: false
 
 group :development, :test do
   gem 'byebug'
