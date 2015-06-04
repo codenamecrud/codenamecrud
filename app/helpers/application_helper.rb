@@ -5,16 +5,13 @@ module ApplicationHelper
 
   def breadcrumbs
     crumbs = []
-    if @course
-      crumbs << capture { link_to 'Список курсов', courses_path }
-      if @lesson
-        crumbs << capture { link_to @lesson.course.title, course_path(@lesson.course) }
-        crumbs << capture { link_to @lesson.section.title, course_path(@lesson.course, anchor: "section-#{@lesson.section.slug}") }
-        crumbs << capture { @lesson.title }
-      end
-    end
-
-    crumbs
+    return crumbs unless @course
+    crumbs << capture { link_to 'Список курсов', courses_path }
+    
+    return crumbs unless @lesson
+    crumbs << capture { link_to @lesson.course.title, course_path(@lesson.course) }
+    crumbs << capture { link_to @lesson.section.title, course_path(@lesson.course, anchor: "section-#{@lesson.section.slug}") }
+    crumbs << capture { @lesson.title }
   end
 
   def activity_user(activity)
@@ -28,7 +25,7 @@ module ApplicationHelper
     if lesson_user
       "#{link_to activity_user(activity).name, activity_user(activity)} выполнил #{link_to lesson.title, course_lesson_path(lesson.course, lesson)} #{nice_russian_date(lesson_user.created_at)}".html_safe
     else
-      "Что-то произошло"
+      'Что-то произошло'
     end
   end
 
@@ -49,5 +46,4 @@ module ApplicationHelper
     end
     content_for :title, title
   end
-
 end
