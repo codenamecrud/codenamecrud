@@ -12,6 +12,8 @@
 # закомментируйте эту строку.
 require 'bundler/capistrano'
 
+after 'deploy', 'refresh_sitemaps'
+
 ## Чтобы не хранить database.yml в системе контроля версий, поместите
 ## dayabase.yml в shared-каталог проекта на сервере и раскомментируйте
 ## следующие строки.
@@ -118,4 +120,9 @@ namespace :deploy do
   task :restart, :roles => :app do
     run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
   end
+end
+
+set :sitemaps_path, 'shared/'
+task :refresh_sitemaps do
+  run "cd #{latest_release} && RAILS_ENV=#{rails_env} bundle exec rake sitemap:refresh"
 end
