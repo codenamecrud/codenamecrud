@@ -4,6 +4,8 @@
 # User-agent: *
 # Disallow: /
 
+Sitemap: http://codenamecrud.ru/sitemap.xml.gz
+
 User-agent: *
 
 Disallow: /users/sign-up
