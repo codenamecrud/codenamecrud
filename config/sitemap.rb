@@ -24,5 +24,20 @@ SitemapGenerator::Sitemap.create do
   #   Article.find_each do |article|
   #     add article_path(article), :lastmod => article.updated_at
   #   end
-  #
+
+  [
+    courses_path,
+    pages_faq_path,
+    pages_about_path,
+    pages_contacts_path,
+    pages_contribute_path
+  ].each { |page| add page }
+
+  Course.find_each do |course|
+    add course_path(course), lastmod: course.updated_at
+  end
+
+  Lesson.find_each do |lesson|
+    add course_lesson_path(lesson.course, lesson), lastmod: lesson.updated_at
+  end
 end
