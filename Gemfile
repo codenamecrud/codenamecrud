@@ -23,6 +23,7 @@ gem 'devise', '~> 3.5.1'
 gem 'omniauth-github'
 gem 'paper_trail', '~> 4.0.0.beta'
 gem 'will_paginate'
+gem 'sitemap_generator', '~> 5.0.5'
 
 group :development, :test do
   gem 'byebug'
