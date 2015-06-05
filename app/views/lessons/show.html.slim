@@ -1,28 +1,29 @@
 .container
-  .col-sm-8.col-sm-offset-2
-
-  .lesson
-    .content
-      - if user_signed_in?
-       = render partial: 'lessons/lessons_progress_bar', locals: { lesson: @lesson, course: @course }
-      = markdown(@lesson.content) if @lesson.content.present?
-
-        .text-center
+  .row
+    .col-sm-10.col-sm-offset-1
+      .lesson
+        .content
           - if user_signed_in?
-            h2.toggle-check id=(dom_id @lesson)
-              - if current_user.lessons.include?(@lesson)
-                = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-uncompleted', remote: true, method: :post do
-                  i.glyphicon.glyphicon-check
-              - else
-                = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-completed', remote: true, method: :post do
-                  i.glyphicon.glyphicon-unchecked
+           = render partial: 'lessons/lessons_progress_bar', locals: { lesson: @lesson, course: @course }
+          = markdown(@lesson.content) if @lesson.content.present?
 
-        hr
-        = render 'lessons_navigation'
+          .text-center
+            - if user_signed_in?
+              h2.toggle-check id=(dom_id @lesson)
+                - if current_user.lessons.include?(@lesson)
+                  = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-uncompleted', remote: true, method: :post do
+                    i.glyphicon.glyphicon-check
+                - else
+                  = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-completed', remote: true, method: :post do
+                    i.glyphicon.glyphicon-unchecked
 
-    - disqus_thread
+          hr
+          = render 'lessons_navigation'
+      .row
+        .col-sm-10.col-sm-offset-1.col-lg-8.col-lg-offset-2
+          - disqus_thread
 
-  .col-sm-2
-    <!-- Чья же здесь будет реклама? -->
+    .col-sm-2
+      <!-- Чья же здесь будет реклама? -->
 
-    - title @lesson.title
+      - title @lesson.title

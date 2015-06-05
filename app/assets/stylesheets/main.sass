@@ -18,13 +18,15 @@ body
   background: #FFF
   color: #000
   font-size: 16px
+  @media (max-width: 767px)
+    margin-bottom: 150px
 
 .footer
   position: absolute
   bottom: 0
   width: 100%
   /* Set the fixed height of the footer here */
-  height: 80px
+  /*height: 80px*/
   background-color: #f5f5f5
 
 /* Custom page CSS */
@@ -49,7 +51,7 @@ footer
   bottom: 0
   width: 100%
   /* Set the fixed height of the footer here */
-  height: 60px
+  /*height: 60px*/
   padding: 10px
   background-color: #f5f5f5
 
@@ -63,6 +65,14 @@ h1, h2, h3, h4, h5, h6
     font-weight: $bold
     &:hover
       text-decoration: none
+
+h1
+  @media (max-width: 767px)
+    font-size: 30px
+
+h2
+  @media (max-width: 767px)
+    font-size: 26px
 
 a
   &:hover
@@ -111,8 +121,10 @@ ul
     color: green
 
   .lesson-description
-    margin-left: 90px
+    margin-left: 50px
     color: gray
+    @media (max-width: 767px)
+      margin-left: 5px
 
   .teaser
     color: orange
@@ -120,8 +132,14 @@ ul
   li.row.course
     margin-bottom: 30px
 
+.lessons-list
+  @media (max-width: 767px)
+    margin-top: 25px
+
 .course-description, .section-description
   font-size: 18px
+  @media (max-width: 767px)
+    font-size: 16px
 
 .you-learn, .you-build
   li
@@ -155,7 +173,6 @@ ul
 
     a
       display: inline-block
-      margin: 0 50px
       .glyphicon
         font-size: 50px
         color: gray
@@ -191,17 +208,17 @@ ul
     top: 33%
     left: 0
     font-size: 42px
-
-    @media (max-width: 1170px)
-      font-size: 36px
+    @media (max-width: 996px)
+      top: 30%
+      font-size: 30px
 
   p
     position: relative
     left: 0
     width: 100%
     font-size: 18px
-    @media (max-width: 1170px)
-      font-size: 16px
+    @media (max-width: 996px)
+      font-size: 14px
   .now
     color: #ff7f00
     top: 33%
@@ -288,10 +305,18 @@ ul
 
 footer
   &.footer
-    height: 102px
     background-color: #eeeeee
     border-top: 1px solid #dddddd
   a, .text-center
     color: #000
+  a
+    @media (max-width: 767px)
+      float: left
+      padding-left: 0
   .text-center:first-child
     margin-bottom: 20px
+    @media (max-width: 767px)
+      margin-bottom: 60px
+
+#disqus_thread
+  margin-top: 20px

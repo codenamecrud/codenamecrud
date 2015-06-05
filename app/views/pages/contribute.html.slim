@@ -1,22 +1,17 @@
 .container
-  .col-sm-8.col-sm-offset-2
-
+  .col-sm-10.col-sm-offset-1.col-lg-8.col-lg-offset-2
     h1 Как внести свой вклад?
-
     p
       ' Если вы хотите помочь проекту, внеся вклад в его код, прочтите
       a href="https://github.com/codenamecrud/codenamecrud" Readme проекта на Github
       | .
 
-
     p Если вы хотите поддержать нас финансово, воспользуйтесь формой внизу страницы.
-
 
     p
       ' Если же вы готовы поспособствовать более быстрому появлению материалов на сайте проекта, переводя их с английского на русский язык, прочтите
       a href="https://github.com/codenamecrud/curriculum" Readme учебного плана на Github
       | .
-
     p Для тех, кто желает стать членом команды проекта мы готовы предоставить доступ к организации проекта на Github, в Trello (который мы используем для менеджмента задач) и в Slack-чат, в котором можно обсудить какие-то детали со всей командой или просто немного поболтать на отвлеченные темы.
 
     h4 Перевод текстов
@@ -27,10 +22,8 @@
     - @codenamecrud.each do |contributor|
       = show_contributor(contributor)
 
-  hr
-  .text-center
-    <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/shop.xml?account=41001986924496&quickpay=shop&payment-type-choice=on&writer=seller&targets=%D0%9D%D0%B0+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5+CodenameCRUD&default-sum=100&button-text=04&successURL=http%3A%2F%2Fcodenamecrud.ru%2Fpages%2Fthanks" width="450" height="198"></iframe>
-
-
+    hr
+    .text-center
+      <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/shop.xml?account=41001986924496&quickpay=shop&payment-type-choice=on&writer=seller&targets=%D0%9D%D0%B0+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5+CodenameCRUD&default-sum=100&button-text=04&successURL=http%3A%2F%2Fcodenamecrud.ru%2Fpages%2Fthanks" width="450" height="198"></iframe>
 
 - title 'Вклад в развитие проекта'

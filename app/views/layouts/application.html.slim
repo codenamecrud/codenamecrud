@@ -9,16 +9,16 @@ html
     meta name='yandex-verification' content='6f0a7e60e510e169'
 
 
-body
-  = render 'shared/navbar'
+  body
+    = render 'shared/navbar'
 
-  .container
-    .col-sm-offset-9.col-sm-3.text-center
-      = render 'shared/flash_messages', locals: { flash: flash }
-    .breadcrumbs
-      = render 'shared/breadcrumbs', locals: {breadcrumbs: breadcrumbs}
+    .container
+      .col-sm-offset-9.col-sm-3.text-center
+        = render 'shared/flash_messages', locals: { flash: flash }
+      .breadcrumbs
+        = render 'shared/breadcrumbs', locals: {breadcrumbs: breadcrumbs}
 
-  = yield
+    = yield
 
-  = render 'shared/footer'
-  = render 'shared/metrics' if Rails.env.production?
+    = render 'shared/footer'
+    = render 'shared/metrics' if Rails.env.production?
