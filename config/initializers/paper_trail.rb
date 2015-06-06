@@ -1,4 +1,4 @@
-require 'paper_trail/frameworks/active_record/models/paper_trail/version'
+# require 'paper_trail/frameworks/active_record/models/paper_trail/version'
 if !Rails.env.development? || $0 =~ /rake$/
   PaperTrail::Rails::Engine.eager_load!
 end
