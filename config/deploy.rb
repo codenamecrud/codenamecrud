@@ -79,7 +79,7 @@ task :set_current_release, :roles => :app do
     set :current_release, latest_release
 end
 
-  set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
+set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
 
 
 # - for unicorn - #
@@ -105,6 +105,6 @@ task :refresh_sitemaps do
   run "cd #{latest_release} && RAILS_ENV=#{rails_env} bundle exec rake sitemap:refresh"
 end
 
-set :whenever_command, 'bundle exec whenever'
+set :whenever_command, "RAILS_ENV=#{rails_env} rvm use #{rvm_ruby_string} do bundle exec"
 require 'bundler/capistrano'
 require 'whenever/capistrano'
