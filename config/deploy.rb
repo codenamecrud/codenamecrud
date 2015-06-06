@@ -105,13 +105,6 @@ task :refresh_sitemaps do
   run "cd #{latest_release} && RAILS_ENV=#{rails_env} bundle exec rake sitemap:refresh"
 end
 
-set :whenever_command, "RAILS_ENV=#{rails_env} rvm use #{rvm_ruby_string} do bundle exec"
+set :whenever_command, "RAILS_ENV=#{rails_env} rvm use #{rvm_ruby_string} do bundle exec whenever"
 require 'bundler/capistrano'
-# require 'whenever/capistrano'
-
-namespace :deploy do
-  desc "Update the crontab file"
-  task :update_crontab, :roles => :app, :except => { :no_release => true } do
-    run "cd #{latest_release} && bundle exec whenever --update-crontab #{application}"
-  end
-end
+require 'whenever/capistrano'
