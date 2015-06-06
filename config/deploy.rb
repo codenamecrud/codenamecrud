@@ -1,16 +1,5 @@
-# По умолчанию для дистрибуции проектов используется Bundler.
-# Эта строка включает автоматическое обновление и установку
-# недостающих gems, указанных в вашем Gemfile.
-#
-## !!! Не забудьте добавить
-# gem 'capistrano'
-# gem 'unicorn'
-#
-# в ваш Gemfile.
-#
-# Если вы используете другую систему управления зависимостями,
-# закомментируйте эту строку.
-require 'bundler/capistrano'
+
+after 'deploy', 'refresh_sitemaps'
 
 ## Чтобы не хранить database.yml в системе контроля версий, поместите
 ## dayabase.yml в shared-каталог проекта на сервере и раскомментируйте
@@ -34,15 +23,6 @@ task :copy_application_config, roles => :app do
   run "cp #{db_config} #{release_path}/config/application.yml"
 end
 
-
-# В rails 3 по умолчанию включена функция assets pipelining,
-# которая позволяет значительно уменьшить размер статических
-# файлов css и js.
-# Эта строка автоматически запускает процесс подготовки
-# сжатых файлов статики при деплое.
-# Если вы не используете assets pipelining в своем проекте,
-# или у вас старая версия rails, закомментируйте эту строку.
-load 'deploy/assets'
 
 # Для удобства работы мы рекомендуем вам настроить авторизацию
 # SSH по ключу. При работе capistrano будет использоваться
@@ -119,3 +99,12 @@ namespace :deploy do
     run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
   end
 end
+
+set :sitemaps_path, 'shared/'
+task :refresh_sitemaps do
+  run "cd #{latest_release} && RAILS_ENV=#{rails_env} bundle exec rake sitemap:refresh"
+end
+
+set :whenever_command, 'bundle exec whenever'
+require 'bundler/capistrano'
+require 'whenever/capistrano'

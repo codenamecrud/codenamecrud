@@ -78,6 +78,7 @@ GEM
       json
     celluloid (0.16.0)
       timers (~> 4.0.0)
+    chronic (0.10.2)
     codeclimate-test-reporter (0.4.7)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
@@ -309,6 +310,8 @@ GEM
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    sitemap_generator (5.0.5)
+      builder
     slim (3.0.3)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -348,6 +351,8 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    whenever (0.9.4)
+      chronic (>= 0.6.3)
     will_paginate (3.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -392,12 +397,11 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   shoulda-matchers
   simple_form
+  sitemap_generator (~> 5.0.5)
   slim-rails
   spring
   uglifier (>= 1.3.0)
   unicorn
   web-console (~> 2.0)
+  whenever (~> 0.9.4)
   will_paginate
-
-BUNDLED WITH
-   1.10.2
