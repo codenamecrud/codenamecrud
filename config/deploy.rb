@@ -1,3 +1,5 @@
+require 'bundler/capistrano'
+require 'whenever/capistrano'
 
 after 'deploy', 'refresh_sitemaps'
 
@@ -106,5 +108,3 @@ task :refresh_sitemaps do
 end
 
 set :whenever_command, "RAILS_ENV=#{rails_env} rvm use #{rvm_ruby_string} do bundle exec whenever"
-require 'bundler/capistrano'
-require 'whenever/capistrano'
