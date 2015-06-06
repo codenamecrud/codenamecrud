@@ -109,7 +109,9 @@ set :whenever_command, "RAILS_ENV=#{rails_env} rvm use #{rvm_ruby_string} do bun
 require 'bundler/capistrano'
 # require 'whenever/capistrano'
 
-after "deploy:update_code" do
-  run "cd #{latest_release} RAILS_ENV=#{rails_env} bundle exec whenever --clear-crontab #{application} "
-  run "cd #{latest_release} RAILS_ENV=#{rails_env} bundle exec whenever --update-crontab #{application}"
+namespace :deploy do
+  desc "Update the crontab file"
+  task :update_crontab, :roles => :app, :except => { :no_release => true } do
+    run "cd #{latest_release} && bundle exec whenever --update-crontab #{application}"
+  end
 end
