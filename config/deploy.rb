@@ -1,5 +1,6 @@
 require 'bundler/capistrano'
 require 'whenever/capistrano'
+load 'deploy/assets'
 
 after 'deploy', 'refresh_sitemaps'
 
