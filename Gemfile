@@ -41,6 +41,7 @@ end
 
 group :development do
   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
+  gem 'capistrano-local-precompile', require: false
 end
 
 group :test do

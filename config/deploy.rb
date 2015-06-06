@@ -1,5 +1,6 @@
 require 'bundler/capistrano'
 require 'whenever/capistrano'
+require 'capistrano/local_precompile'
 
 after 'deploy', 'refresh_sitemaps'
 
