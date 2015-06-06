@@ -102,7 +102,7 @@ end
 
 set :sitemaps_path, 'shared/'
 task :refresh_sitemaps do
-  run "cd #{latest_release} && RAILS_ENV=#{rails_env} bundle exec rake sitemap:refresh"
+  run "cd #{latest_release} && RAILS_ENV=#{rails_env} rvm use #{rvm_ruby_string} bundle exec rake sitemap:refresh"
 end
 
 set :whenever_command, "RAILS_ENV=#{rails_env} rvm use #{rvm_ruby_string} do bundle exec whenever"
