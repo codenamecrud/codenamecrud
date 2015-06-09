@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contacts'
   get 'pages/contribute'
+  get 'pages/thanks'
 
   resources :courses, only: [:index, :show], path: '' do
     resources :lessons, only: :show, path: '' do
