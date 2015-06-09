@@ -1,0 +1,86 @@
+.home-header
+  = image_tag('home-head-background.jpg', class: 'img-responsive', alt: 'Фон-заголовок')
+  .intro-text
+    h1 Учитесь веб-разработке бесплатно!
+    p.now Не тяните время. Здесь все, что вам нужно знать.
+    p.link = link_to 'Узнайте, чем занимаются веб-разработчики', '/introduction-to-web-development/what-a-web-developer-does', class: 'btn btn-success'
+    p.link = link_to 'Оцените весь фронт работ', courses_path, class: 'btn btn-success'
+    p.next ... или листайте дальше , чтобы узнать больше о проекте
+
+.container.about
+  .col-xs-12.about-list
+    h2 Окей, о чем этот сайт
+    p Наш проект предлагает то, что нам хотелось бы знать нам, когда мы сами только начинали учиться.
+    p Мы собрали учебную программу из лучших ресурсов, которые смогли найти в Интернете, а теперь она доступна и вам.
+
+    .col-sm-4.about-block
+      p = image_tag('about-path.png', class: 'img-responsive', alt: 'Путь обучения')
+      h3 Готовый путь
+      p.small Это проверенный путь к успешному изучению веб-разработки. Это руководство поможет избежать бесполезной траты времени и посвятить его изучению действительно важных вещей.
+    .col-sm-4.about-block
+      p = image_tag('about-portfolio.png', class: 'img-responsive', alt: 'Создаем портфолио')
+      h3 Создаем портфолио
+      p.small Для того, чтобы найти классную работу, необходимо иметь определенный опыт. Мы поможем его получить.
+    .col-sm-4.about-block
+      p = image_tag('about-together.png', class: 'img-responsive', alt: '')
+      h3 Учимся вместе
+      p.small Вам не придется учиться в одиночку. Мы постарались создать сообщество, помогающее друг другу в обучении.
+
+.container.course
+  .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.courses-list
+    h2.text-center Чему вы научитесь
+    .courses
+      ul.courses-list
+        - @courses.with_index(1) do |course, index|
+          li.row.course
+            .col-xs-3.col-sm-2
+              = image_tag("#{index.to_s}.jpg", class: 'img-responsive', alt: "#{course.title}")
+            .col-xs-9.col-sm-10
+              h3 = course_link(course, index)
+              p = course.short_description
+    .row
+      = render 'courses/email_form'
+
+.container.future
+  .col-xs-12.about-list
+    h2 Что вас ждет впереди
+    p Конечно, впереди много трудностей. Но на них можно взглянуть и иначе.
+    p Думайте об этом как о путешествии и вы проведете множество приятных часов с большой пользой
+    .col-sm-4.about-block
+      p = image_tag('future-learning.png', class: 'img-responsive', alt: '')
+      h3 Обучение
+      p.small.text-muted Ваш путь будет лежать через просмотр отборных видеороликов, а также чтение интересных книг и статей
+    .col-sm-4.about-block
+      p = image_tag('future-coding.png', class: 'img-responsive', alt: '')
+      h3 Кодинг 24/7
+      p.small.text-muted Изучая материалы, вы поработаете над десятками проектов, от простых алгоритмов до невероятных сайтов
+    .col-sm-4.about-block
+      p = image_tag('future-work.png', class: 'img-responsive', alt: '')
+      h3 Совместная работа
+      p.small.text-muted Работа вместе с другими учениками очень важна для вашей будущей работы в любом крупном проекте
+
+.container.fire
+  .col-xs-12.about-list
+    h2 Почему наш проект жжет
+    .col-sm-4.about-block
+      p = image_tag('benefits-flex.png', class: 'img-responsive', alt: '')
+      h3 Гибкость
+      p Учебная программа действительно гибкая - это одно из ее достоинств. Используйте это в своих целях
+    .col-sm-4.about-block
+      p = image_tag('benefits-open.png', class: 'img-responsive', alt: '')
+      h3 Open source
+      p Этот проект доступен под лицензией MIT, а учебная программа используется в рамках Creative Commons
+    .col-sm-4.about-block
+      p = image_tag('benefits-tools.png', class: 'img-responsive', alt: '')
+      h3 Инструменты
+      p Мы даем возможность ученикам создавать собственные инструменты и делиться ими с остальными учениками
+
+.container.finish
+  .col-xs-12.about-list
+    h2 Все еще есть вопросы?
+    p На этой странице мы постарались ответить на все возможные вопросы.
+    p Далее вы можете начать процедуру регистрации или ознакомиться с программой обучения
+    = link_to 'Зарегистрироваться', new_user_registration_path, class: 'btn btn-success'
+    = link_to 'Изучить учебный плае', courses_path, class: 'btn btn-success'
+
+- title

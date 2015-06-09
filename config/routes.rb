@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'pages/contacts'
   get 'pages/contribute'
   get 'pages/thanks'
+  get 'pages/home'
 
   resources :courses, only: [:index, :show], path: '' do
     resources :lessons, only: :show, path: '' do
@@ -22,7 +23,6 @@ Rails.application.routes.draw do
     end
   end
 
-
-  root 'courses#index'
+  root 'pages#home'
 
 end

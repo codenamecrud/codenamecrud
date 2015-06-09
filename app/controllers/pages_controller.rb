@@ -8,6 +8,10 @@ class PagesController < ApplicationController
   def contacts
   end
 
+  def home
+    @courses = Course.find_each
+  end
+
   def contribute
     curriculum = open "https://api.github.com/repos/codenamecrud/curriculum/contributors?client_id=#{ENV['GITHUB_KEY']}&client_secret=#{ENV['GITHUB_SECRET']}"
     codenamecrud = open "https://api.github.com/repos/codenamecrud/codenamecrud/contributors?client_id=#{ENV['GITHUB_KEY']}&client_secret=#{ENV['GITHUB_SECRET']}"
