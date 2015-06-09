@@ -6,8 +6,8 @@ module ApplicationHelper
   def breadcrumbs
     crumbs = []
     return crumbs unless @course
-    crumbs << capture { link_to 'Список курсов', courses_path }
-    
+    crumbs << capture { link_to 'Список курсов', pages_curriculum_path }
+
     return crumbs unless @lesson
     crumbs << capture { link_to @lesson.course.title, course_path(@lesson.course) }
     crumbs << capture { link_to @lesson.section.title, course_path(@lesson.course, anchor: "section-#{@lesson.section.slug}") }

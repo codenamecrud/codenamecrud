@@ -4,12 +4,13 @@
     h1 Учитесь веб-разработке бесплатно!
     p.now Не тяните время. Здесь все, что вам нужно знать.
     p.link = link_to 'Узнайте, чем занимаются веб-разработчики', '/introduction-to-web-development/what-a-web-developer-does', class: 'btn btn-success'
-    p.link = link_to 'Оцените весь фронт работ', courses_path, class: 'btn btn-success'
-    p.next ... или листайте дальше , чтобы узнать больше о проекте
+    p.link = link_to 'Оцените весь фронт работ', pages_curriculum_path, class: 'btn btn-success'
+    p.next
+      small ...или листайте дальше , чтобы узнать больше о проекте
 
 .container.about
   .col-xs-12.about-list
-    h2 Окей, о чем этот сайт
+    h2 Окей, о чем этот сайт?
     p Наш проект предлагает то, что нам хотелось бы знать нам, когда мы сами только начинали учиться.
     p Мы собрали учебную программу из лучших ресурсов, которые смогли найти в Интернете, а теперь она доступна и вам.
 
@@ -81,6 +82,6 @@
     p На этой странице мы постарались ответить на все возможные вопросы.
     p Далее вы можете начать процедуру регистрации или ознакомиться с программой обучения
     = link_to 'Зарегистрироваться', new_user_registration_path, class: 'btn btn-success'
-    = link_to 'Изучить учебный плае', courses_path, class: 'btn btn-success'
+    = link_to 'Изучить учебный план', pages_curriculum_path, class: 'btn btn-success'
 
 - title

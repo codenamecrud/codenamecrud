@@ -10,19 +10,21 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: :registrations }
 
+  root 'pages#home'
+
   get 'pages/faq'
   get 'pages/about'
   get 'pages/contacts'
   get 'pages/contribute'
   get 'pages/thanks'
   get 'pages/home'
+  get 'pages/curriculum'
 
-  resources :courses, only: [:index, :show], path: '' do
+  resources :courses, only: :show, path: '' do
     resources :lessons, only: :show, path: '' do
       post :toggle_check, on: :member
     end
   end
 
-  root 'pages#home'
 
 end
