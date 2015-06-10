@@ -1,8 +1,8 @@
 p
-  | Welcome 
+  | Добро пожаловать,
   = @email
   | !
 p
-  | You can confirm your account email through the link below:
+  | Ты можешь подтвердить свой аккаунт, перейдя по ссылке ниже:
 p
-  = link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)
+  = link_to 'Подтвердить аккаунт', confirmation_url(@resource, confirmation_token: @token)
