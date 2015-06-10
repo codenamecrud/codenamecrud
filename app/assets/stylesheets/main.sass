@@ -1,5 +1,9 @@
 // Variables
-$bold: 700
+$bold: 400
+
+@font-face
+  font-family: 'HelveticaNeueCyr'
+  src: font-url('HelveticaNeueCyr-Roman.otf')
 
 /* Sticky footer styles */
 html
@@ -8,15 +12,21 @@ html
 
 body
   /* Margin bottom by footer height */
-  margin-bottom: 80px
+  margin-bottom: 108px
   overflow-x: hidden
+  font-family: 'HelveticaNeueCyr'
+  background: #FFF
+  color: #000
+  font-size: 16px
+  @media (max-width: 767px)
+    margin-bottom: 150px
 
 .footer
   position: absolute
   bottom: 0
   width: 100%
   /* Set the fixed height of the footer here */
-  height: 80px
+  /*height: 80px*/
   background-color: #f5f5f5
 
 /* Custom page CSS */
@@ -31,11 +41,9 @@ body > .container
 .container .text-muted
   margin: 20px 0
 
-
 .footer > .container
   padding-right: 15px
   padding-left: 15px
-
 
 /* Common */
 footer
@@ -43,7 +51,7 @@ footer
   bottom: 0
   width: 100%
   /* Set the fixed height of the footer here */
-  height: 60px
+  /*height: 60px*/
   padding: 10px
   background-color: #f5f5f5
 
@@ -58,6 +66,14 @@ h1, h2, h3, h4, h5, h6
     &:hover
       text-decoration: none
 
+h1
+  @media (max-width: 767px)
+    font-size: 30px
+
+h2
+  @media (max-width: 767px)
+    font-size: 26px
+
 a
   &:hover
     text-decoration: none
@@ -66,16 +82,24 @@ a
   z-index: 999
   position: absolute
 
-
 /* Courses */
+.courses
+  margin-top: 25px
+  h3
+    margin-top: 0
+  img
+    margin-top: 10px
+
 ul
   padding: 0
 
 .courses-list, .lessons-list
+  margin-top: 50px
+  margin-bottom: 50px
   list-style-type: none
 
   .link-to-lesson
-    h2
+    h3
       transition: all 0.4s ease-in-out
       &:hover
         transform:         translate(10px,0)
@@ -96,10 +120,11 @@ ul
   a.mark-as-uncompleted
     color: green
 
-
   .lesson-description
-    margin-left: 90px
+    margin-left: 50px
     color: gray
+    @media (max-width: 767px)
+      margin-left: 5px
 
   .teaser
     color: orange
@@ -107,8 +132,14 @@ ul
   li.row.course
     margin-bottom: 30px
 
+.lessons-list
+  @media (max-width: 767px)
+    margin-top: 25px
+
 .course-description, .section-description
   font-size: 18px
+  @media (max-width: 767px)
+    font-size: 16px
 
 .you-learn, .you-build
   li
@@ -142,12 +173,150 @@ ul
 
     a
       display: inline-block
-      margin: 0 50px
       .glyphicon
         font-size: 50px
         color: gray
 
 /* Activities */
-
 .activity
   font-size: 16px
+
+/* Home Header */
+.home-header
+  box-shadow: 0 0 20px #888
+  position: relative
+  overflow: hidden
+
+  img
+    position: relative
+    min-width: 960px
+    min-height: 300px
+    width: 100%
+
+.intro-text
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  color: #FFF
+  background: rgba(0,0,0,0.5)
+  text-align: center
+
+  h1
+    position: relative
+    top: 33%
+    left: 0
+    font-size: 42px
+    @media (max-width: 996px)
+      top: 30%
+      font-size: 30px
+
+  p
+    position: relative
+    left: 0
+    width: 100%
+    font-size: 18px
+    @media (max-width: 996px)
+      font-size: 14px
+  .now
+    color: #ff7f00
+    top: 33%
+  .link
+    top: 45%
+    @media (max-width: 767px)
+      top: 35%
+    a
+      background: #00b285
+      padding: 10px 25px
+      font-size: 18px
+      border: none
+  .next
+    position: absolute
+    bottom: 0
+
+/* Blocks */
+.container.about, .container.future, .container.fire, .container.course
+  width: 100%
+  padding: 0 20%
+  border-bottom: 1px solid #dddddd
+  @media (max-width: 995px)
+    padding: 0
+  @media (min-width: 996px) and (max-width: 1170px)
+    padding: 0 10%
+  h2
+    margin: 20px 0 25px
+    font-size: 42px
+
+.about-list
+  margin: 30px 0 50px
+  text-align: center
+  h3
+    color: #ff7f00
+  .about-block
+    margin: 50px 0 0
+  img
+    margin: 0 auto
+
+.container.fire
+  background: #333333
+  h2, p
+    color: #FFF
+
+.container.course
+  background: #eeeeee
+
+.finish
+  width: 100%
+  padding: 0 20%
+  background: #FFF
+  @media (max-width: 995px)
+    padding: 0
+  @media (min-width: 996px) and (max-width: 1170px)
+    padding: 0 10%
+  h2
+    margin: 20px 0 25px
+    font-size: 42px
+    color: #666666
+  p:last-child
+    margin-bottom: 50px
+  .btn
+    margin: 20px 10px
+    background: #00b285
+    padding: 10px 25px
+    font-size: 18px
+    border: none
+    @media (max-width: 767px)
+      margin: 20px 2px
+      padding: 10px
+
+.navbar-default
+  .navbar-nav > li > a, .navbar-brand
+    color: #000
+.navbar
+  margin-bottom: 0
+  color: #000
+  .navbar-brand
+    background-image: image-url('logo.png')
+    background-repeat: no-repeat
+    background-size: 39px 39px
+    background-position: 10px 5px
+    padding-left: 60px
+
+footer
+  &.footer
+    background-color: #eeeeee
+    border-top: 1px solid #dddddd
+  a, .text-center
+    color: #000
+  a
+    @media (max-width: 767px)
+      float: left
+      padding-left: 0
+  .text-center:first-child
+    margin-bottom: 20px
+    @media (max-width: 767px)
+      margin-bottom: 60px
+
+#disqus_thread
+  margin-top: 20px
