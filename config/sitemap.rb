@@ -30,7 +30,6 @@ SitemapGenerator::Sitemap.create do
     pages_about_path,
     pages_contacts_path,
     pages_contribute_path,
-    pages_donate_path,
     pages_curriculum_path
   ].each { |page| add page }
 
