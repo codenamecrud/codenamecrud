@@ -34,7 +34,7 @@ feature 'Progress bar' do
     expect(page).to have_css('div.progress-bar')
   end
 
-  it 'increases progress if user adds lesson', js: true do
+  it 'increases progress if user adds lesson' do
     sign_in_with(user.name, user.password)
     visit course_lesson_path(course.id, lesson1.id)
     find('.mark-as-completed').click
@@ -48,7 +48,7 @@ feature 'Progress bar' do
     expect(page).to have_css('div.progress-bar')
   end
 
-  pending it 'displays 100% of progress if all lessons added', js: true do
+  pending it 'displays 100% of progress if all lessons added' do
     sign_in_with(user.name, user.password)
     visit course_lesson_path(course, lesson1.id)
     find('.mark-as-completed').click
@@ -63,7 +63,7 @@ feature 'Progress bar' do
     end
   end
 
-  it 'reduces progress if user remove lesson', js: true do
+  it 'reduces progress if user remove lesson' do
     sign_in_with(user.name, user.password)
     visit course_lesson_path(course.id, lesson1.id)
     find('.mark-as-completed').click
@@ -89,7 +89,7 @@ feature 'Progress bar' do
     end
   end
 
-  it 'Calculates and displays progress of course', js: true do
+  it 'Calculates and displays progress of course' do
     sign_in_with(user.name, user.password)
     visit course_lesson_path(course, lesson1.id)
     find('.mark-as-completed').click
