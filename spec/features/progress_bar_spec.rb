@@ -68,7 +68,7 @@ feature 'Progress bar' do
     visit course_lesson_path(course.id, lesson1.id)
     page.execute_script('$("a.mark-as-completed").click()')
     visit course_lesson_path(course.id, lesson1.id)
-    find('.mark-as-uncompleted').click
+    page.execute_script('$("a.mark-as-uncompleted").click()')
     visit course_lesson_path(course.id, lesson3.id)
     within ('div.row.bs-wizard') do
       expect(page).to have_css('div.col-xs-1.bs-wizard-step.complete', count: 0)
