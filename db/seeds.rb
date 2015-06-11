@@ -612,6 +612,78 @@ section = create_or_update_section(
   course: course
   )
 
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Как будет работать этот курс',
+  position: lesson_position,
+  slug: 'ruby-how-this-course-will-work',
+  description: 'Настало время познакомиться с тем, как все выглядит изнутри.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/01_how_this_course_will_work.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Как будет работать этот курс',
+  position: lesson_position,
+  slug: 'ruby-how-this-course-will-work',
+  description: 'Настало время познакомиться с тем, как все выглядит изнутри.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/01_how_this_course_will_work.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Строительные блоки Ruby',
+  position: lesson_position,
+  slug: 'ruby-building-blocks',
+  description: 'Более глубокий взгляд на основы Ruby: переменные, типы данных, строки и методы',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/02_building_blocks.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: строительные блоки',
+  position: lesson_position,
+  slug: 'project-building-blocks',
+  description: 'Настало время привыкать писать скрипты без подстраховки.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/ruby/03_project_building_blocks.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Продвинутые строительные блоки Ruby',
+  position: lesson_position,
+  slug: 'advanced-ruby-building-blocks',
+  description: 'Мы продолжаем путешествие в основы, в этот раз это управление потоком, циклы, массивы, хэши, блоки и сортировка',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/04_advanced_building_blocks.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: продвинутые строительные блоки',
+  position: lesson_position,
+  slug: 'project-advanced-building-blocks',
+  description: 'Вы можете применить изученное на практике, создав простой шифр и воссоздав методы Enumerable, которые постоянно будут использоваться позднее.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/ruby/05_project_advanced_building_blocks.md'
+  )
+
 # = Второй раздел = #
 
 section_position += 1
