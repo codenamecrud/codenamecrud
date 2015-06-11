@@ -589,18 +589,371 @@ create_or_update_lesson(
 # = Третий курс = #
 
 course_position += 1
-create_or_update_course(
+course = create_or_update_course(
   title: 'Программирование на Ruby',
   slug: 'ruby-programming',
   short_description: 'Когда вы завершили курс "Основы веб-разработки", этот курс погрузит вас в чудесный мир Ruby. Вы изучите комбинацию из основ программирования и лучших практик, а так же получите возможность создать несколько разных проектов по мере прохождения курса.',
   description: 'В этом курсе вы изучите Ruby, язык, специально разработанный так, чтобы на нем было приятно писать. К его завершению вы создадите несколько довольно интересных проектов, включая Тик Так, Висельника, реальный веб-сервер и Шахматы. Вы научитесь собирать спамбота для Twitter (он реально спамит!), сохранять и открывать файлы, тестировать код, разделите ваш спагетти-код на отдельные классы и даже воспроизведете некоторые базовые алгоритмы и структуры данных для решения сложных проблем. В общем, начнете чувствовать себя намного более "программистом", и это будет справедливое чувство.',
   you_learn: ['Как писать чистый, эффективный и модульный код', 'Работа с файлами и скриптами', 'Базовые алгоритмы и структуры данных'],
   you_build: ['Тиктак, Быки и Коровы, Висельник', 'Сервер для командной строки и браузер', 'Шахматы (серьезно)'],
-  teaser: 'Скоро будет доступно!',
+  teaser: 'Станьте настоящим рубистом!',
   position: course_position,
-  is_active: false
+  is_active: true
   )
 
+# = Первый раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Основы Ruby',
+  position: section_position,
+  slug: 'basic-ruby',
+  description: 'В этом разделе мы изучим основные темы в Ruby и немного попрактикуемся. Все остальное, что вы изучите в программировании, основывается на эти концепциях, так что вы получите полезнейший опыт, который пригодится вам при работе с другими проектами и языками в будущем.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Как будет работать этот курс',
+  position: lesson_position,
+  slug: 'ruby-how-this-course-will-work',
+  description: 'Настало время познакомиться с тем, как все выглядит изнутри.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/01_how_this_course_will_work.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Как будет работать этот курс',
+  position: lesson_position,
+  slug: 'ruby-how-this-course-will-work',
+  description: 'Настало время познакомиться с тем, как все выглядит изнутри.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/01_how_this_course_will_work.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Строительные блоки Ruby',
+  position: lesson_position,
+  slug: 'ruby-building-blocks',
+  description: 'Более глубокий взгляд на основы Ruby: переменные, типы данных, строки и методы',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/02_building_blocks.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: строительные блоки',
+  position: lesson_position,
+  slug: 'project-building-blocks',
+  description: 'Настало время привыкать писать скрипты без подстраховки.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/ruby/03_project_building_blocks.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Продвинутые строительные блоки Ruby',
+  position: lesson_position,
+  slug: 'advanced-ruby-building-blocks',
+  description: 'Мы продолжаем путешествие в основы, в этот раз это управление потоком, циклы, массивы, хэши, блоки и сортировка',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/04_advanced_building_blocks.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: продвинутые строительные блоки',
+  position: lesson_position,
+  slug: 'project-advanced-building-blocks',
+  description: 'Вы можете применить изученное на практике, создав простой шифр и воссоздав методы Enumerable, которые постоянно будут использоваться позднее.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/ruby/05_project_advanced_building_blocks.md'
+  )
+
+# = Второй раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Средний уровень Ruby',
+  position: section_position,
+  slug: 'intermediate-ruby',
+  description: 'Теперь в вашем ящике инструментов на Ruby уже что-то есть и сейчас самое время создать с их помощью что-то полезное. В этом разделе вы узнаете, как рассортировать ваш спагетти-код в разумно организованные методы и классы. Так же вы научитесь сериализовать код и сохранять его в файлах.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Объектно-ориентированное программирование',
+  position: lesson_position,
+  slug: 'object-oriented-programming',
+  description: 'Фундаментальные концепции объектно-ориентированного программирования, которые пригодятся вам в любом языке программирования.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/06_oop.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: ООП',
+  position: lesson_position,
+  slug: 'project-oop',
+  description: 'Разомнем мышцы, создав "Крестики-нолики" и "Mastermind" для командной строки',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/ruby/07_project_oop.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Файлы и сериализация',
+  position: lesson_position,
+  slug: 'files-and-serialization',
+  description: 'Что, если вы захотите сохранить состояние вашей программы? Как насчет загрузки её в файл? Здесь вы узнаете о некоторых базовых операциях вроде этой.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/08_serialization.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: File I/O и сериализация',
+  position: lesson_position,
+  slug: 'project-file-i-o-and-serialization',
+  description: 'Вы сможете поработать с существующими данными а затем со словарями, написав "Висельника"',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/ruby/09_project_file_io.md'
+  )
+
+# = Третий раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Ruby в Сети',
+  position: section_position,
+  slug: 'ruby-on-the-web',
+  description: 'Этот короткий раздел заполнит пустоту между тем, что вы делали в командной строке и диким миром Интернета... Как автоматизировать отправку твитов? Как насчет создания собственного веб-сервера?',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Выводим Ruby в Сеть',
+  position: lesson_position,
+  slug: 'bringing-ruby-online',
+  description: 'Пересечение Ruby и HTTP... суперсилы продаются отдельно.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/10_bringing_ruby_online.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Ruby в Сети',
+  position: lesson_position,
+  slug: 'project-ruby-on-the-web',
+  description: 'Хотели когда-нибудь заспамить своих читателей в Twitter? Как насчет того, чтобы создать собственный простой веб-сервер? Когда, если не сейчас...',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/ruby/11_project_web.md'
+  )
+
+# = Четвертый раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Немного Компьютерных Наук',
+  position: section_position,
+  slug: 'ruby-on-the-web',
+  description: 'В этом разделе вы узнаете некоторые фундаментальные концепты в информатике, которые помогут вам, когда настанет время решать проблемы чуть более сложные, чем просто обслуживание веба. Вы примерите на себя роль инженера и решите некоторые интересные задачи.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Очень краткое введение в информатику',
+  position: lesson_position,
+  slug: 'a-very-brief-intro-to-cs',
+  description: 'Попробуйте на вкус то, что последует далее и поймите, насколько велик мир компьютерных наук за пределами этого курса.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/12_a_very_brief_intro_to_cs.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Рекурсивные методы',
+  position: lesson_position,
+  slug: 'recursive-methods',
+  description: 'Узнайте, как вызов маленькой функции может быть полезен при разбиении большой задачи на несколько маленьких.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/13_recursion.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Рекурсия',
+  position: lesson_position,
+  slug: 'project-recursion',
+  description: 'Возьмите свежеобретенные знания и примените их в решении пары классических рекурсивных проблем.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/ruby/14_project_recursion.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Основные структуры данных и алгоритмы',
+  position: lesson_position,
+  slug: 'common-data-structures-and-algorithms',
+  description: 'Узнайте, почему мы используем разные структуры данных для хранения наших данных и прочтите о некоторых классических алгоритмах поиска по структурам данных, полезных для решения задач.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/15_data_structures_algorithms.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Структуры данных и алгоритмы',
+  position: lesson_position,
+  slug: 'project-data-structures-and-algorithms',
+  description: 'Если вы не уверены в том, что способны мыслить алгоритмически, здесь пара уроков, которые позволят вам использовать инструменты, разработанные вами ранее. Это так же может быть полезно, если подумать о Финальном проекте... подсказка-подсказка...',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/ruby/16_project_data_structures_algorithms.md'
+  )
+
+
+# = Пятый раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Тестирование Ruby с помощью RSpec',
+  position: section_position,
+  slug: 'testing-ruby-with-rspec',
+  description: 'Вам было дано краткое введение в тестирование на Ruby некоторое время назад в курс "Основы веб-разработки", а сейчас вы узнаете, почему тестирование может быть невероятно полезным и как использовать его в собственных проектах.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Введение в RSpec',
+  position: lesson_position,
+  slug: 'introduction-to-rspec',
+  description: 'Многие современные технологические компании полагаются на методы разработки с использованием множества автоматических тестов, так что неплохо было бы с ними ознакомиться.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/17_introduction_to_rspec.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Тестирование Ruby',
+  position: lesson_position,
+  slug: 'project-testing-ruby',
+  description: 'По-настоящему можно научиться лишь практикуясь, так что прыгнем в машину времени и напишем несколько тестов к нашим прежним наработкам.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/ruby/18_project_testing.md'
+  )
+
+# = Шестой раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Git',
+  position: section_position,
+  slug: 'git',
+  description: 'Вы уже должны иметь представление о стандартном рабочем процессе с использованием Git, поскольку вы применяли его для сохранения ваших проектов (верно?!). Этот раздел научит вас несколько более продвинутому использованию Git в работе.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Более глубокий взгляд на Git',
+  position: lesson_position,
+  slug: 'a-deeper-look-at-git',
+  description: 'Немного дальше, чем `git add` и `git commit`.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/19_a_deeper_look_at_git.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Использование Git в реальном мире',
+  position: lesson_position,
+  slug: 'using-git-in-the-real-world',
+  description: 'Мы увидели лишь макушку айсберга, но здесь вы сможете узнать о вещах, которые пригодятся вам, когда вы станете использовать Git все чаще и чаще.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/20_using_git_in_the_real_world.md'
+  )
+
+# = Седьмой раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Заключение',
+  position: section_position,
+  slug: 'ruby-conclusion',
+  description: 'Вы уже прошли невероятно длинный путь, теперь необходимо объединить все изученное в один прочный пласт знаний и создать нечто реальное. Это ваш финальный экзамен и большое перо для вашей шляпы. Завершив этот раздел, вы будете знать достаточно много, чтобы взяться практически за что угодно.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Финальный проект на Ruby',
+  position: lesson_position,
+  slug: 'project-ruby-final-project',
+  description: 'Теперь было бы здорово вспомнить, как играть в шахматы. Или создать их самим, это еще интереснее (и приносит кучу удовольствия)!',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/ruby/21_project_final.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Заключение',
+  position: lesson_position,
+  slug: 'conclusion-ruby',
+  description: 'Вау! Вы сделали это! Давайте на минутку обернемся назад и рассмотрим изученное в контексте последующих шагов.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/22_conclusion.md'
+  )
 
 # = Четвертый курс = #
 
