@@ -1,10 +1,11 @@
 .container
   .row
-    .col-sm-10.col-sm-offset-1
+    .col-sm-8.col-sm-offset-2.col-lg-8.col-lg-offset-2
       .lesson
         .content
           - if user_signed_in?
            = render partial: 'lessons/lessons_progress_bar', locals: { lesson: @lesson, course: @course }
+
           = markdown(@lesson.content) if @lesson.content.present?
 
           .text-center
@@ -19,11 +20,12 @@
 
           hr
           = render 'lessons_navigation'
+
       .row
-        .col-sm-10.col-sm-offset-1.col-lg-8.col-lg-offset-2
+        .col-sm-8.col-sm-offset-2.col-lg-8.col-lg-offset-2
           - disqus_thread
 
-    .col-sm-2
+    .col-sm-2.col-lg-2
       <!-- Чья же здесь будет реклама? -->
 
       - title @lesson.title

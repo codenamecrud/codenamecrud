@@ -1,5 +1,5 @@
 .container
-  .col-sm-10.col-sm-offset-1.col-lg-8.col-lg-offset-2.text-center
+  .col-sm-8.col-sm-offset-2.col-lg-8.col-lg-offset-2.text-center
     h1 = @course.title
     - if user_signed_in?
       h3.text-muted = "Завершено #{number_to_percentage(current_user.completed_lessons(@course),  precision: 0)}"
@@ -7,7 +7,7 @@
     .course-description
       p.text-muted= @course.description
 
-  .col-sm-10.col-sm-offset-1.col-lg-8.col-lg-offset-2
+  .col-sm-8.col-sm-offset-2.col-lg-8.col-lg-offset-2
     - @course.sections.order_by_position.each do |section|
         h2 id=("section-#{section.slug}") = section.title
         .section-description
