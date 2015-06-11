@@ -223,9 +223,11 @@ ul
     color: #ff7f00
     top: 33%
   .link
-    top: 45%
-    @media (max-width: 767px)
+    top: 40%
+    @media (min-width: 768px) and (max-width: 1170px)
       top: 35%
+    @media (max-width: 767px)
+      top: 32%
     a
       background: #00b285
       padding: 10px 25px
@@ -233,6 +235,8 @@ ul
       border: none
       &:hover
         background: #008d69
+      @media (max-width: 767px)
+        font-size: 14px
 
   .next
     position: absolute
