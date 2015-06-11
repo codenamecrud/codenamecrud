@@ -1,22 +1,23 @@
-.col-sm-6.col-sm-offset-3
-  h2 Редактирование пользователя
-  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-    = f.error_notification
-    .form-inputs
-      = f.input :name, required: true, autofocus: true, label: 'Имя'
-      = f.input :email, required: true
-      = f.input_field :display_email, as: :boolean, checked_value: false, unchecked_value: true, label: 'Скрыть Email', inline_label: true
-      = f.input :github_name, label: 'Имя пользователя на GitHub'
-      = f.input :twitter_name, label: 'Имя пользователя в Twitter'
-
-      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-        p
-          | Ждем подтверждения от:
-          = resource.unconfirmed_email
-      = f.input :password, autocomplete: "off", hint: "оставьте пустым, если не хотите менять", required: false, label: 'Пароль'
-      = f.input :password_confirmation, required: false, label: 'Подтверждение пароля'
-      = f.input :current_password, hint: "введите текущий пароль для подтверждения изменений", required: true, label: 'Текущий пароль'
-    .form-actions
-      = f.button :submit, "Обновить"
+.row
+  .col-sm-6.col-sm-offset-3
+    h2 Редактирование пользователя
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :name, required: true, autofocus: true, label: 'Имя'
+        = f.input :email, required: true
+        = f.input_field :display_email, as: :boolean, checked_value: false, unchecked_value: true, label: 'Скрыть Email', inline_label: true
+        = f.input :github_name, label: 'Имя пользователя на GitHub'
+        = f.input :twitter_name, label: 'Имя пользователя в Twitter'
+  
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          p
+            | Ждем подтверждения от:
+            = resource.unconfirmed_email
+        = f.input :password, autocomplete: "off", hint: "оставьте пустым, если не хотите менять", required: false, label: 'Пароль'
+        = f.input :password_confirmation, required: false, label: 'Подтверждение пароля'
+        = f.input :current_password, hint: "введите текущий пароль для подтверждения изменений", required: true, label: 'Текущий пароль'
+      .form-actions
+        = f.button :submit, "Обновить"
 
   - title 'Редактирование пользователя'
