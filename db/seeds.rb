@@ -598,7 +598,7 @@ course = create_or_update_course(
   you_build: ['Тиктак, Быки и Коровы, Висельник', 'Сервер для командной строки и браузер', 'Шахматы (серьезно)'],
   teaser: 'Станьте настоящим рубистом!',
   position: course_position,
-  is_active: false
+  is_active: true
   )
 
 # = Первый раздел = #

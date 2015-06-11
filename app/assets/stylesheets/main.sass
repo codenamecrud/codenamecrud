@@ -1,5 +1,5 @@
 // Variables
-$bold: 400
+$bold: 700
 
 @font-face
   font-family: 'HelveticaNeueCyr'
@@ -60,11 +60,14 @@ footer
 
 h1, h2, h3, h4, h5, h6
   font-weight: $bold
+  &:hover
+    opacity: 0.8
 
   a
     font-weight: $bold
     &:hover
       text-decoration: none
+      opacity: 0.8
 
 h1
   @media (max-width: 767px)
@@ -77,6 +80,7 @@ h2
 a
   &:hover
     text-decoration: none
+    opacity: 0.8
 
 .alert
   z-index: 999
