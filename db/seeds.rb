@@ -695,6 +695,54 @@ section = create_or_update_section(
   course: course
   )
 
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Объектно-ориентированное программирование',
+  position: lesson_position,
+  slug: 'object-oriented-programming',
+  description: 'Фундаментальные концепции объектно-ориентированного программирования, которые пригодятся вам в любом языке программирования.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/06_oop.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: ООП',
+  position: lesson_position,
+  slug: 'project-oop',
+  description: 'Разомнем мышцы, создав "Крестики-нолики" и "Mastermind" для командной строки',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/ruby/07_project_oop.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Файлы и сериализация',
+  position: lesson_position,
+  slug: 'files-and-serialization',
+  description: 'Что, если вы захотите сохранить состояние вашей программы? Как насчет загрузки её в файл? Здесь вы узнаете о некоторых базовых операциях вроде этой.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/08_serialization.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: File I/O и сериализация',
+  position: lesson_position,
+  slug: 'project-file-i-o-and-serialization',
+  description: 'Вы сможете поработать с существующими данными а затем со словарями, написав "Висельника"',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/ruby/09_project_file_io.md'
+  )
+
 # = Третий раздел = #
 
 section_position += 1
@@ -704,6 +752,30 @@ section = create_or_update_section(
   slug: 'ruby-on-the-web',
   description: 'Этот короткий раздел заполнит пустоту между тем, что вы делали в командной строке и диким миром Интернета... Как автоматизировать отправку твитов? Как насчет создания собственного веб-сервера?',
   course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Выводим Ruby в Сеть',
+  position: lesson_position,
+  slug: 'bringing-ruby-online',
+  description: 'Пересечение Ruby и HTTP... суперсилы продаются отдельно.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/ruby/10_bringing_ruby_online.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Ruby в Сети',
+  position: lesson_position,
+  slug: 'project-ruby-on-the-web',
+  description: 'Хотели когда-нибудь заспамить своих читателей в Twitter? Как насчет того, чтобы создать собственный простой веб-сервер? Когда, если не сейчас...',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/ruby/11_project_web.md'
   )
 
 # = Четвертый раздел = #
