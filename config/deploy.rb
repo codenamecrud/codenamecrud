@@ -9,19 +9,19 @@ after 'deploy', 'refresh_sitemaps'
 ## следующие строки.
 
 after "deploy:update_code", :copy_database_config
-task :copy_database_config,roles: :app do
+task :copy_database_config, roles: :app do
   db_config = "#{shared_path}/database.yml"
   run "cp #{db_config} #{release_path}/config/database.yml"
 end
 
 after "deploy:update_code", :copy_secrets_config
-task :copy_secrets_config,roles: :app do
+task :copy_secrets_config, roles: :app do
   db_config = "#{shared_path}/secrets.yml"
   run "cp #{db_config} #{release_path}/config/secrets.yml"
 end
 
 after "deploy:update_code", :copy_application_config
-task :copy_application_config,roles: :app do
+task :copy_application_config, roles: :app do
   db_config = "#{shared_path}/application.yml"
   run "cp #{db_config} #{release_path}/config/application.yml"
 end

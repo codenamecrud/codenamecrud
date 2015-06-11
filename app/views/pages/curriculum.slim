@@ -22,13 +22,13 @@
             .col-sm-9.description.text-muted
               = course.short_description
 
-            - if course.you_learn.present?
+            - if course.you_learn?
               .col-sm-6.you-learn
                 h3 Теория
                 ul
                   - course.you_learn.each do |yl|
                     li = yl
-            - if course.you_build.present?
+            - if course.you_build?
               .col-sm-6.you-build
                 h3 Практика
                 ul

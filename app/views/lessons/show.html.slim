@@ -6,7 +6,7 @@
           - if user_signed_in?
            = render partial: 'lessons/lessons_progress_bar', locals: { lesson: @lesson, course: @course }
 
-          = markdown(@lesson.content) if @lesson.content.present?
+          = markdown(@lesson.content) if @lesson.content?
 
           .text-center
             - if user_signed_in?
@@ -19,7 +19,7 @@
                     i.glyphicon.glyphicon-unchecked
 
           hr
-          = render 'lessons_navigation'
+          = render 'lessons_navigation', lesson: @lesson
 
       .row
         .col-sm-8.col-sm-offset-2.col-lg-8.col-lg-offset-2
