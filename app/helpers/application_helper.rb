@@ -1,8 +1,5 @@
 require 'redcarpet'
 module ApplicationHelper
-  # def markdown(text)
-  #   Kramdown::Document.new(text, coderay_line_numbers: nil).to_html.html_safe
-  # end
 
   def markdown(text)
     renderer = Redcarpet::Render::HTML.new(hard_wrap: true, filter_html: true)
