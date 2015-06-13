@@ -1,5 +1,6 @@
 // Variables
 $bold: 700
+$visited-links-color: #0B3F79
 
 @font-face
   font-family: 'HelveticaNeueCyr'
@@ -78,6 +79,10 @@ h2
 a
   &:hover
     text-decoration: none
+  &:visited
+    color: $visited-links-color
+    .text-primary
+      color: $visited-links-color
 
 .alert
   z-index: 999
