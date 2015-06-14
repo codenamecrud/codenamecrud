@@ -1,0 +1,4 @@
+= favicon_link_tag 'favicon.ico'
+= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png'
+- %w(57 72 76 114 120 144 152).each do |size|
+  = favicon_link_tag "apple-touch-icon-#{size}x#{size}.png", rel: 'apple-touch-icon', type: 'image/png', size: "#{size}x#{size}"
