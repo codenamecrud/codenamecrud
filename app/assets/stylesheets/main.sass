@@ -1,6 +1,6 @@
 // Variables
 $bold: 700
-$visited-links-color: #0B3F79
+$visited-links-color: #5E48B0
 
 @font-face
   font-family: 'HelveticaNeueCyr'
@@ -76,6 +76,11 @@ h2
   @media (max-width: 767px)
     font-size: 26px
 
+h3
+  a
+    &:visited
+      color: #337ab7
+
 a
   &:hover
     text-decoration: none
@@ -83,6 +88,8 @@ a
     color: $visited-links-color
     .text-primary
       color: $visited-links-color
+    &.btn
+      color: #fff
 
 .alert
   z-index: 999
