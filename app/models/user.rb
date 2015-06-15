@@ -79,4 +79,9 @@ class User < ActiveRecord::Base
     completed.to_f * 100.0 / all_lessons.to_f
   end
 
+  def update_omniauth_data(auth)
+    update_attributes provider: auth.provider,
+                      uid: auth.uid,
+                      github_name: auth.info.nickname
+  end
 end

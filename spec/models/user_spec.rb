@@ -52,4 +52,25 @@ describe User do
       end
     end
   end
+
+  describe '#update_omniauth_data' do
+    subject { user.update_omniauth_data github_auth }
+
+    let!(:user) { create :user }
+    let(:github_auth) { create :github_auth }
+
+    it 'updates provider' do
+      expect { subject }.to change { user.provider }.to 'github'
+    end
+
+    it 'updates uid' do
+      expect { subject }.to change { user.uid }.to github_auth.uid
+    end
+
+    it 'updates github_name' do
+      expect { subject }
+        .to change { user.github_name }
+        .to github_auth.info.nickname
+    end
+  end
 end
