@@ -1,7 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def update
-    @user = User.find(current_user.id)
+    @user = current_user
 
     if @user.update_with_password(devise_parameter_sanitizer.sanitize(:account_update))
       set_flash_message :notice, :updated
