@@ -17,4 +17,39 @@ describe User do
   it 'admin? should return true if user is admin' do
     expect(admin.admin?).to be true
   end
+
+  describe '.from_omniauth' do
+    subject { User.from_omniauth github_auth }
+
+    let(:github_auth) { create :github_auth }
+
+    context 'when user is not exists' do
+      it 'creates new user' do
+        expect { subject }.to change(User, :count).by 1
+      end
+
+      it "properly sets user's email" do
+        user = subject
+        expect(user.email).to eq github_auth.info.email
+      end
+
+      it "properly sets user's name" do
+        user = subject
+        expect(user.name).to eq github_auth.info.name
+      end
+
+      it "properly sets user's github_name" do
+        user = subject
+        expect(user.github_name).to eq github_auth.info.nickname
+      end
+    end
+
+    context 'when user already exists' do
+      let!(:user) { create :user, provider: 'github', uid: github_auth.uid }
+
+      it 'does not create new user' do
+        expect { subject }.not_to change(User, :count)
+      end
+    end
+  end
 end
