@@ -10,7 +10,15 @@
         - if devise_mapping.omniauthable?
           .form-group
             - resource_class.omniauth_providers.each do |provider|
-              = link_to "Связать профиль с учетной записью #{provider.to_s.titleize}", user_omniauth_authorize_path(provider)
+              - provider_titleize = provider.to_s.titleize
+              - if resource.provider == provider.to_s
+                = link_to "Удалить связь с учетной записью #{provider_titleize}",
+                  cancel_oauth_registration_path,
+                  method: :delete,
+                  data: { confirm: "Вы действительно хотите удалить связь с учетной записью #{provider_titleize}?" }
+              - else
+                = link_to "Связать профиль с учетной записью #{provider_titleize}",
+                  user_omniauth_authorize_path(provider)
         = f.input :github_name, label: 'Имя пользователя на GitHub'
         = f.input :twitter_name, label: 'Имя пользователя в Twitter'
 

@@ -48,6 +48,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def clear_provider!
+    update_attributes provider: nil, uid: nil
+  end
+
   def send_welcome_email
     UserMailer.welcome_email(self).deliver_now
   end

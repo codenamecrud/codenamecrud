@@ -53,6 +53,20 @@ describe User do
     end
   end
 
+  describe '#clear_provider!' do
+    subject { user.clear_provider! }
+
+    let!(:user) { create :user, provider: 'github', uid: '12345' }
+
+    it 'clears provider' do
+      expect { subject }.to change { user.provider }.to nil
+    end
+
+    it 'clears uid' do
+      expect { subject }.to change { user.uid }.to nil
+    end
+  end
+
   describe '#update_omniauth_data' do
     subject { user.update_omniauth_data github_auth }
 
