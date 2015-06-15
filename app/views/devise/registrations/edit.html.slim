@@ -7,9 +7,21 @@
         = f.input :name, required: true, autofocus: true, label: 'Имя'
         = f.input :email, required: true
         = f.input_field :display_email, as: :boolean, checked_value: false, unchecked_value: true, label: 'Скрыть Email', inline_label: true
+        - if devise_mapping.omniauthable?
+          .form-group
+            - resource_class.omniauth_providers.each do |provider|
+              - provider_titleize = provider.to_s.titleize
+              - if resource.provider == provider.to_s
+                = link_to "Удалить связь с учетной записью #{provider_titleize}",
+                  cancel_oauth_registration_path,
+                  method: :delete,
+                  data: { confirm: "Вы действительно хотите удалить связь с учетной записью #{provider_titleize}?" }
+              - else
+                = link_to "Связать профиль с учетной записью #{provider_titleize}",
+                  user_omniauth_authorize_path(provider)
         = f.input :github_name, label: 'Имя пользователя на GitHub'
         = f.input :twitter_name, label: 'Имя пользователя в Twitter'
-  
+
         - if devise_mapping.confirmable? && resource.pending_reconfirmation?
           p
             | Ждем подтверждения от:

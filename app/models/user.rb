@@ -36,6 +36,7 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.name = auth.info.name   # assuming the user model has a name
+      user.github_name = auth.info.nickname
     end
   end
 
@@ -45,6 +46,10 @@ class User < ActiveRecord::Base
         user.email = data['email'] unless user.email?
       end
     end
+  end
+
+  def clear_provider!
+    update_attributes provider: nil, uid: nil
   end
 
   def send_welcome_email
@@ -78,4 +83,9 @@ class User < ActiveRecord::Base
     completed.to_f * 100.0 / all_lessons.to_f
   end
 
+  def update_omniauth_data(auth)
+    update_attributes provider: auth.provider,
+                      uid: auth.uid,
+                      github_name: auth.info.nickname
+  end
 end

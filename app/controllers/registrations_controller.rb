@@ -11,4 +11,8 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def cancel_oauth
+    current_user.clear_provider!
+    redirect_to :back
+  end
 end
