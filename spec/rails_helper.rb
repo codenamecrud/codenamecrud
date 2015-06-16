@@ -25,7 +25,10 @@ RSpec.configure do |config|
   config.before(:all) { FactoryGirl.reload }
   config.before(:suite) { DatabaseCleaner.clean_with :truncation }
   config.before(:each) { DatabaseCleaner.strategy = :transaction }
-  config.before(:each, js: true) { DatabaseCleaner.strategy = :truncation }
+  config.before(:each, js: true) do
+    DatabaseCleaner.strategy = :truncation
+    page.driver.block_unknown_urls
+  end
   config.before(:each) { DatabaseCleaner.start }
   config.after(:each) { DatabaseCleaner.clean }
 end
