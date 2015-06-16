@@ -51,11 +51,10 @@ module ApplicationHelper
   end
 
   def title(text = nil)
-    if text
-      title = "#{text} || CodenameCRUD - бесплатное обучение веб-разработке"
-    else
-      title = 'CodenameCRUD - бесплатное обучение веб-разработке'
-    end
-    content_for :title, title
+    content_for :title, [text, slogan].compact.join(' || ')
+  end
+
+  def slogan
+    'CodenameCRUD - бесплатное обучение веб-разработке'
   end
 end
