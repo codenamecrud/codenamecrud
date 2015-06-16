@@ -20,6 +20,6 @@
       - @activities.each do |activity|
         .activity = show_activity(activity)
 
-      .text-center = will_paginate @activities, previous_label: '← Туда', next_label: 'Сюда →'
+      .text-center = will_paginate @activities
 
   - title @user.name
