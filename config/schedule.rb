@@ -20,5 +20,5 @@
 # Learn more: http://github.com/javan/whenever
 
 every 1.day, at: '1:00am' do
-  rake '-s sitemap:refresh'
+  rake '-s sitemap:custom_refresh'
 end
