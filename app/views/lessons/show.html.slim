@@ -17,6 +17,9 @@
                 - else
                   = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-completed', remote: true, method: :post do
                     i.glyphicon.glyphicon-unchecked
+          .text-center
+            hr
+            .hidden-xs = render 'shared/horizontal_bottom'
 
           hr
           = render 'lessons_navigation', lesson: @lesson
@@ -26,6 +29,6 @@
           - disqus_thread
 
     .col-sm-2.col-lg-2
-      <!-- Чья же здесь будет реклама? -->
+      .hidden-xs = render 'shared/vertical_right'
 
       - title @lesson.title
