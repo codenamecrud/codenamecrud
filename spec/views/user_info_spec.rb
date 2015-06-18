@@ -18,7 +18,6 @@ describe 'Edit User Info' do
     fill_in 'user_name', with: new_user_info.name
     fill_in 'Имя пользователя на GitHub', with: new_user_info.github_name
     fill_in 'Имя пользователя в Twitter', with: new_user_info.twitter_name
-    fill_in 'user_current_password', with: user.password
     click_on 'Обновить'
     click_on("Привет, #{new_user_info.name}")
     expect(page).not_to have_content(user.email)
@@ -30,7 +29,6 @@ describe 'Edit User Info' do
     fill_in 'user_name', with: new_user_info.name
     fill_in 'Имя пользователя на GitHub', with: new_user_info.github_name
     fill_in 'Имя пользователя в Twitter', with: new_user_info.twitter_name
-    fill_in 'user_current_password', with: user.password
     click_on 'Обновить'
     click_on("Привет, #{new_user_info.name}")
     expect(page).to have_content(user.email)

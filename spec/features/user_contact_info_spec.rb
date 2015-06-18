@@ -10,7 +10,6 @@ feature 'Edit User Info' do
     fill_in 'user_name', with: new_user_info.name
     fill_in 'user_twitter_name', with: new_user_info.twitter_name
     fill_in 'user_github_name', with: new_user_info.github_name
-    fill_in 'user_current_password', with: user.password
     click_on 'Обновить'
     visit user_path(user)
 
