@@ -12,11 +12,4 @@ describe RegistrationsController do
     get :edit
     expect(response).to render_template(:edit)
   end
-
-  it "allows user data updates" do
-    patch :update
-    expect(response).to be_success
-  end
-
-
 end
