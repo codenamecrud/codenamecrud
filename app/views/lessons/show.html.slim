@@ -6,7 +6,7 @@
           - if user_signed_in?
            = render partial: 'lessons/lessons_progress_bar', locals: { lesson: @lesson, course: @course }
 
-          = markdown(@lesson.content) if @lesson.content?
+          = MarkdownPresenter.call @lesson.content
 
           .text-center
             - if user_signed_in?
