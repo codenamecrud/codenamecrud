@@ -3,3 +3,4 @@ ru:
   will_paginate:
     previous_label: '← Туда'
     next_label: 'Сюда →'
+    page_gap: '...'
