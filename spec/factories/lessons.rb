@@ -3,8 +3,8 @@ FactoryGirl.define do
     sequence(:title) { |n| "lesson_title#{n}" }
     slug 'lesson_slug'
     description 'lesson description'
-    section { create(:section) }
+    section
+    course
     is_project false
   end
-
 end
