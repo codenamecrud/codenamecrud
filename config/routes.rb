@@ -4,9 +4,8 @@ Rails.application.routes.draw do
     root 'home#index'
   end
 
-  resources :users, path: 'user', only: :show do
-    get 'activity', on: :collection
-  end
+  get '/user/activity' => 'activity#show', as: :activity_users
+  resources :users, path: 'user', only: :show
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: :registrations }
   devise_scope :user do
