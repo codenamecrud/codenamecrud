@@ -12,6 +12,10 @@ class Lesson < ActiveRecord::Base
 
   validates :title, :slug, :description, :section_id, :position, presence: true
 
+  def self.find_by_activity!(activity)
+    find activity.object.to_i
+  end
+
   def next
     self.course.lessons.where('id > ?', id).first
   end

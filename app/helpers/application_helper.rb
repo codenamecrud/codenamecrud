@@ -10,16 +10,12 @@ module ApplicationHelper
     crumbs << capture { @lesson.title }
   end
 
-  def activity_user(activity)
-    User.find(activity.whodunnit.to_i)
-  end
-
   def show_activity(activity)
-    lesson = Lesson.find(activity.object.to_i)
-    lesson_user = LessonUser.find_by(lesson: lesson, user: activity_user(activity))
+    user = User.find_by_activity(activity)
+    lesson = Lesson.find_by_activity!(activity)
 
-    if lesson_user
-      "#{link_to activity_user(activity).name, activity_user(activity)} выполнил #{link_to lesson.title, course_lesson_path(lesson.course, lesson)} #{nice_russian_date(lesson_user.created_at)}".html_safe
+    if lesson_user = LessonUser.find_by(lesson: lesson, user: user)
+      "#{link_to user.name, user} выполнил #{link_to lesson.title, course_lesson_path(lesson.course, lesson)} #{nice_russian_date(lesson_user.created_at)}".html_safe
     else
       'Что-то произошло'
     end

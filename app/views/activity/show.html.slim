@@ -3,7 +3,7 @@
     - if @activities.count > 0
       - @activities.each do |activity|
         .activity.media
-          .avatar.media-left = image_tag avatar_url(activity_user(activity), 40)
+          .avatar.media-left = image_tag avatar_url(User.find_by_activity(activity), 40)
           .media-body = show_activity(activity)
 
       .text-center = will_paginate @activities
