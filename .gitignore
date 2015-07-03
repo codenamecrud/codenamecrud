@@ -25,3 +25,4 @@ capybara-*.html
 .rspec
 
 *.DS_Store
+config/database.yml
