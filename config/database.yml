@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: enfield_development
+
+test:
+  <<: *default
+  database: enfield_test
+
+production:
+  <<: *default
+  database: enfield_production
+  username: enfield
+  password: <%= ENV['ENFIELD_DATABASE_PASSWORD'] %>
