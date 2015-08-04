@@ -1,5 +1,5 @@
-.row
-  .text-center.lessons-bottom-navigation
+.row.lessons-bottom-navigation
+  .text-center
     .col-xs-4
       - if lesson.previous
         = link_to course_lesson_path(@course, lesson.previous), data: { toggle: 'tooltip', title: lesson.previous.title } do
