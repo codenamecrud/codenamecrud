@@ -53,7 +53,7 @@ class User < ActiveRecord::Base
   end
 
   def send_welcome_email
-    UserMailer.welcome_email(self).deliver_later
+    # UserMailer.welcome_email(self).deliver_later
   end
 
   def completed_lesson(section_lesson_id)
