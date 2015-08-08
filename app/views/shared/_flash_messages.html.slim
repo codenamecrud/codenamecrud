@@ -1,10 +1,22 @@
 - if locals[:flash]
   - flash = locals[:flash]
   - if flash[:warn] || flash[:alert]
-    .alert.flash #{flash[:warn]} #{flash[:alert]}
+    .alert.flash
+      button.close type='button' class='close' data-dismiss='alert' aria-label='Закрыть'
+        span aria-hidden='true' &times;
+      => "#{flash[:warn]} #{flash[:alert]}"
   - if flash[:notice] || flash[:success]
-    .alert.flash.alert-success #{flash[:notice]} #{flash[:success]}
+    .alert.flash.alert-success
+      button.close type='button' class='close' data-dismiss='alert' aria-label='Закрыть'
+        span aria-hidden='true' &times;
+      => "#{flash[:notice]} #{flash[:success]}"
   - if flash[:info]
-    .alert.flash.alert-info #{flash[:info]}
+    .alert.flash.alert-info
+      button.close type='button' class='close' data-dismiss='alert' aria-label='Закрыть'
+        span aria-hidden='true' &times;
+      => flash[:info]
   - if flash[:error]
-    .alert.flash.alert-error #{flash[:error]}
+    .alert.flash.alert-error
+      button.close type='button' class='close' data-dismiss='alert' aria-label='Закрыть'
+          span aria-hidden='true' &times;
+      => flash[:error]
