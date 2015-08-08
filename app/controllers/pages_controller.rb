@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   end
 
   def curriculum
-    @courses = Course.find_each    
+    @courses = Course.find_each
   end
 
   def contribute

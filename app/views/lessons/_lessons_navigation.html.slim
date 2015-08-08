@@ -2,18 +2,18 @@
   .text-center
     .col-xs-4
       - if lesson.previous
-        = link_to course_lesson_path(@course, lesson.previous), data: { toggle: 'tooltip', title: lesson.previous.title } do
+        = link_to course_lesson_path(course, lesson.previous), data: { toggle: 'tooltip', title: lesson.previous.title } do
           .glyphicon.glyphicon-chevron-left
           br
           ' Предыдущий урок
     .col-xs-4
-      = link_to @course do
+      = link_to course do
         .glyphicon.glyphicon-list-alt
         br
         ' Просмотр курса
     .col-xs-4
       - if lesson.next
-        = link_to course_lesson_path(@course, lesson.next), data: { toggle: 'tooltip', title: lesson.next.title } do
+        = link_to course_lesson_path(course, lesson.next), data: { toggle: 'tooltip', title: lesson.next.title } do
           .glyphicon.glyphicon-chevron-right
           br
           ' Следующий урок

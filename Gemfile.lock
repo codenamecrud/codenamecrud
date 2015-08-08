@@ -265,8 +265,7 @@ GEM
     request_store (1.1.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
-    rollbar (1.5.3)
-      multi_json (~> 1.3)
+    rollbar (2.1.1)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
       rspec-expectations (~> 3.3.0)
@@ -387,7 +386,7 @@ DEPENDENCIES
   rails (= 4.2.2)
   rails-i18n
   redcarpet
-  rollbar (~> 1.5.1)
+  rollbar (~> 2.1.1)
   rspec-rails
   sass-rails (~> 5.0)
   shoulda-matchers
@@ -402,4 +401,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.10.3
+   1.10.5

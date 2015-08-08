@@ -54,6 +54,6 @@ end
 
 group :production do
   gem 'unicorn'
-  gem 'rollbar', '~> 1.5.1'
+  gem 'rollbar', '~> 2.1.1'
   gem 'newrelic_rpm'
 end
