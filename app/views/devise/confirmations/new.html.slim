@@ -1,7 +1,6 @@
 .col-sm-6.col-sm-offset-3
   h2 Переотправка инструкций по подтверждению
   = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
-    = f.error_notification
     = f.full_error :confirmation_token
     .form-inputs
       = f.input :name, required: true, autofocus: true
