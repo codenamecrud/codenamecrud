@@ -26,7 +26,6 @@ task :copy_application_config, roles: :app do
   run "cp #{db_config} #{release_path}/config/application.yml"
 end
 
-
 # Для удобства работы мы рекомендуем вам настроить авторизацию
 # SSH по ключу. При работе capistrano будет использоваться
 # ssh-agent, который предоставляет возможность пробрасывать
@@ -83,7 +82,6 @@ task :set_current_release, roles: :app do
 end
 
 set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
-
 
 # - for unicorn - #
 namespace :deploy do
