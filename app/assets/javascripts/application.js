@@ -14,4 +14,28 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require disqus_rails
+//= require highcharts
 //= require_tree .
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'User registrations'
+        },
+        xAxis: {
+            categories: gon.dates
+        },
+        yAxis: {
+            title: {
+                text: 'Users'
+            }
+        },
+        series: [{
+            name: 'Dates',
+            data: gon.users
+        }]
+    });
+});

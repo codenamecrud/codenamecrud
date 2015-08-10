@@ -25,6 +25,8 @@ gem 'paper_trail', '~> 4.0.0.beta'
 gem 'will_paginate'
 gem 'sitemap_generator', '~> 5.0.5'
 gem 'whenever', '~> 0.9.4', require: false
+gem "highcharts-rails", "~> 3.0.0"
+gem 'gon'
 
 group :development, :test do
   gem 'byebug'

@@ -131,6 +131,11 @@ GEM
       oauth2
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    gon (5.2.3)
+      actionpack (>= 2.3.0)
+      json
+      multi_json
+      request_store (>= 1.0.5)
     guard (2.12.6)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -146,6 +151,8 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     hashie (3.4.2)
+    highcharts-rails (3.0.10)
+      railties (>= 3.1)
     highline (1.7.2)
     hitimes (1.2.2)
     i18n (0.7.0)
@@ -372,7 +379,9 @@ DEPENDENCIES
   font-awesome-sass (~> 4.3.0)
   friendly_id
   github_api
+  gon
   guard-rspec
+  highcharts-rails (~> 3.0.0)
   jbuilder (~> 2.0)
   jquery-rails
   launchy (~> 2.4)
