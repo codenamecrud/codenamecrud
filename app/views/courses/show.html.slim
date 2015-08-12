@@ -1,7 +1,7 @@
 .container
   .col-sm-8.col-sm-offset-2.col-lg-8.col-lg-offset-2.text-center
     h1 = @course.title
-    - if user_signed_in?
+    - if user_signed_in? && @course.is_active?
       h3.text-muted = "Завершено #{number_to_percentage(current_user.completed_lessons(@course).to_i,  precision: 0)}"
 
     .course-description
