@@ -18,7 +18,10 @@ nav.navbar.navbar-default role="navigation"
             li = link_to 'Slack-чат', 'https://codenamecrud.herokuapp.com'
             li = link_to 'Форум', 'http://onrails.club/c/learning/codenamecrud'
             li = link_to 'Группа Vkontakte', 'http://vk.com/codenamecrud'
-            
+
+        li = link_to 'Почему все на английском?', pages_english_path
+
+
         - if user_signed_in?
           li = link_to "Привет, #{current_user.name}", current_user
           li = link_to 'Настройки', edit_user_registration_path

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Progress bar' do
   given(:user) { create(:user) }
-  given(:course) { create(:course) }
+  given(:course) { create(:course, is_active: true) }
   given(:section1) { create(:section, course: course) }
   given!(:lesson1) { create(:lesson, course: course, section: section1) }
   given!(:lesson2) { create(:lesson, course: course, section: section1) }

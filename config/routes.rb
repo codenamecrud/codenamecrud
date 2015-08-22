@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'pages/thanks'
   get 'pages/home'
   get 'pages/curriculum'
+  get 'pages/english'
 
   resources :courses, only: :show, path: '' do
     resources :lessons, only: :show, path: '' do
