@@ -27,7 +27,7 @@
             = resource.unconfirmed_email
         = f.input :password, autocomplete: 'off', hint: 'оставьте пустым, если не хотите менять', required: false, label: 'Новый пароль'
         = f.input :password_confirmation, required: false, label: 'Подтверждение нового пароля'
-		= f.input :current_password, autocomplete: 'off', required: false, label: 'Старый пароль'
+        = f.input :current_password, autocomplete: 'off', required: false, label: 'Старый пароль'
 		
       .form-actions
         = f.button :submit, 'Обновить'
