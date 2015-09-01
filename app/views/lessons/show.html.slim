@@ -14,7 +14,7 @@
                 - if current_user.lessons.include?(@lesson)
                   .lesson_completed
                     i.fa.fa-fw.fa-check-square.lesson_completed__icon
-                    .lesson_completed__text Lesson Completed
+                    .lesson_completed__text Урок Завершен
                     .clear_b
                   = link_to "Change lesson to not completed".html_safe, toggle_check_course_lesson_path(@course, @lesson), class: "mark-as-uncompleted", remote: true, method: :post
                 - else
