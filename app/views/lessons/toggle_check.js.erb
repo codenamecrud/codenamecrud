@@ -1,7 +1,12 @@
 <% if current_user.lessons.include?(@lesson) %>
   $(<%= dom_id @lesson %>).html(
-    '<%= j link_to "<i class=\"glyphicon glyphicon-check\"></i>".html_safe, toggle_check_course_lesson_path(@course, @lesson), class: "mark-as-uncompleted", remote: true, method: :post %>'
+    '<%= j link_to "Изменить статус на: \"Урок не завершен\"".html_safe, toggle_check_course_lesson_path(@course, @lesson), class: "mark-as-uncompleted", remote: true, method: :post %>'
     );
+  $('#<%= dom_id @lesson %>').prepend("<div class=\"lesson_completed\"> \
+                                        <i class=\"fa fa-fw fa-check-square lesson_completed__icon\"></i> \
+                                        <div class=\"lesson_completed__text\">Урок Завершен</div> \
+                                        <div class=\"clear_b\"></div> \
+                                       </div>");
 <% else %>
   $(<%= dom_id @lesson %>).html(
       '<%= j link_to "<i class=\"glyphicon glyphicon-unchecked\"></i>".html_safe, toggle_check_course_lesson_path(@course, @lesson), class: "mark-as-completed", remote: true, method: :post %>'
