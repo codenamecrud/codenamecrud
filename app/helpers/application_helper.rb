@@ -42,7 +42,7 @@ module ApplicationHelper
     'CodenameCRUD - бесплатное обучение веб-разработке'
   end
 
-  def link_to_lesson_after_completed
+  def next_lesson_path
     begin
       last_lesson_id = LessonUser.maximum(:lesson_id, user_id: current_user.id) + 1
       lesson = Lesson.find_by(id: last_lesson_id)
