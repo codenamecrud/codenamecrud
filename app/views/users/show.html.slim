@@ -17,6 +17,8 @@
 
     .col-sm-9
       h3 = "Выполненных уроков: #{@activities.count}"
+      - unless next_lesson_path.blank?
+        .last_lesson_to = link_to "К последнему уроку", "/#{next_lesson_path}", class: "btn btn-success", type: "button"
       - @activities.each do |activity|
         .activity = show_activity(activity)
 
