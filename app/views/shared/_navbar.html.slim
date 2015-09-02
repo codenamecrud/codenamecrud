@@ -24,7 +24,8 @@ nav.navbar.navbar-default role="navigation"
 
         - if user_signed_in?
           li = link_to "Привет, #{current_user.name}", current_user
-          li.last_lesson_to = link_to "К последнему уроку", '#', class: "btn btn-primary", type: "button"
+          - if link_to_lesson_after_completed != ""
+            li.last_lesson_to = link_to "К последнему уроку", "/#{link_to_lesson_after_completed}", class: "btn btn-success", type: "button"
           li = link_to 'Настройки', edit_user_registration_path
           li = link_to 'Выход', destroy_user_session_path, data: {method: :delete}
         - else
