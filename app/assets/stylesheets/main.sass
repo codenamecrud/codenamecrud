@@ -355,12 +355,6 @@ ul
   .navbar-nav > li > a, .navbar-brand
     color: #000
 
-  li.last_lesson_to > a
-    background:  #00B285
-    color: #fff
-    border: none
-    border-radius: 0
-
 .navbar
   margin-bottom: 0
   color: #000
@@ -370,6 +364,17 @@ ul
     background-size: 39px 39px
     background-position: 10px 5px
     padding-left: 60px
+
+/* start User page */
+.last_lesson_to
+  margin-bottom: 5px
+
+.last_lesson_to > a
+  background:  #00B285
+  color: #fff
+  &:hover, &:active, &:focus
+    background: #008D69
+/* end User page */
 
 footer
   &.footer
