@@ -44,12 +44,25 @@ module ApplicationHelper
 
   def next_lesson_path
     begin
-      last_lesson_id = LessonUser.maximum(:lesson_id, user_id: current_user.id) + 1
+      id_to_lesson = LessonUser.find_by_sql(["SELECT user_id, lesson_id FROM lesson_users WHERE user_id = ?", current_user.id])
+      ids_lesson = []
+      id_to_lesson.each do |item|
+        ids_lesson.push(item[:lesson_id])
+      end
+      last_lesson_id = ids_lesson.max + 1
       lesson = Lesson.find_by(id: last_lesson_id)
       course = lesson.course
       link_to_last_lesson =  "#{course.slug}/#{lesson.slug}"
     rescue
       ""
+    end
+  end
+
+  def current_lesson_now
+    begin
+      id_lesson = LessonUser.last(:lesson_id, user_id: current_user.id)
+    rescue
+      id_lesson = 0
     end
   end
 end
