@@ -67,12 +67,16 @@ module ApplicationHelper
         id_section = lesson.section_id + 1
         { id_lesson_lock: id_lock[0][:lesson_id], id_course_lock: id_course, id_section_lock: id_section }
       else
-         id_course = lesson.course_id
-         id_section = lesson.section_id
-         { id_lesson_lock: id_lock[0][:lesson_id], id_course_lock: id_course, id_section_lock: id_section }
+        id_course = lesson.course_id
+        if [12, 18, 23, 27, 31, 34, 39, 43, 45, 50, 52, 54, 56].include?(id_lock[0][:lesson_id])
+          id_section = lesson.section_id + 1
+        else
+          id_section = lesson.section_id
+        end
+        { id_lesson_lock: id_lock[0][:lesson_id], id_course_lock: id_course, id_section_lock: id_section }
       end
     rescue
-      { id_lesson_lock: 1, id_course_lock: 1, id_section_lock: 1 }
+      { id_lesson_lock: 0, id_course_lock: 0, id_section_lock: 0 }
     end
   end
 end
