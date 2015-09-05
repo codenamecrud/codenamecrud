@@ -52,7 +52,7 @@ module ApplicationHelper
       last_lesson_id = ids_lesson.max + 1
       lesson = Lesson.find_by(id: last_lesson_id)
       course = lesson.course
-      link_to_last_lesson =  "#{course.slug}/#{lesson.slug}/#{get_id_to_lock_lesson}"
+      link_to_last_lesson =  "#{course.slug}/#{lesson.slug}"
     rescue
       ""
     end
