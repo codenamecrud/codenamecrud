@@ -8,6 +8,7 @@
       p.text-muted= @course.description
 
   .col-sm-8.col-sm-offset-2.col-lg-8.col-lg-offset-2
+    - id_lock = get_id_to_lock_lesson
     - @course.sections.order_by_position.each do |section|
         h2 id=("section-#{section.slug}") = section.title
         .section-description
@@ -36,10 +37,12 @@
                 li.row
                   .toggle-check id=(dom_id(lesson))
                     - if user_signed_in?
-                      - if current_user.lessons.include?(lesson)
-                        = link_to toggle_check_course_lesson_path(@course, lesson), class: 'mark-as-uncompleted', remote: true, method: :post do
+                      - if index < id_lock
                           i.glyphicon.glyphicon-check
-                      - else
+                      - if lesson.id == id_lock
+                        = link_to toggle_check_course_lesson_path(@course, lesson), class: 'mark-as-uncompleted', remote: true, method: :post do
+                            i.glyphicon.glyphicon-check
+                      - if lesson.id == (id_lock + 1)
                         = link_to toggle_check_course_lesson_path(@course, lesson), class: 'mark-as-completed', remote: true, method: :post do
                           i.glyphicon.glyphicon-unchecked
                   = link_to [@course, lesson], class: 'link-to-lesson' do
