@@ -57,12 +57,4 @@ module ApplicationHelper
       ""
     end
   end
-
-  def current_lesson_now
-    begin
-      id_lesson = LessonUser.last(:lesson_id, user_id: current_user.id)
-    rescue
-      id_lesson = 0
-    end
-  end
 end
