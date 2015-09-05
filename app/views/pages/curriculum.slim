@@ -1,5 +1,5 @@
 .container
-  .col-sm-8.col-sm-offset-2.col-lg-8.col-lg-offset-2.courses-list
+  .col-sm-10.col-sm-offset-1.col-lg-8.col-lg-offset-2.courses-list
     h1.text-center Это ваш путь к изучению веб-разработки
 
     .course-description.text-muted
@@ -16,10 +16,10 @@
         - @courses.with_index(1) do |course, index|
           li.row.course
             h1 = course_link(course, index)
-            .col-sm-3.teaser
+            .col-sm-4.col-md-3.teaser
               h3 = course.teaser
 
-            .col-sm-9.description.text-muted
+            .col-sm-8.col-md-9.description.text-muted
               = course.short_description
 
             - if course.you_learn?
