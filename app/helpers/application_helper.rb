@@ -52,7 +52,7 @@ module ApplicationHelper
       last_lesson_id = ids_lesson.max + 1
       lesson = Lesson.find_by(id: last_lesson_id)
       course = lesson.course
-      link_to_last_lesson =  "#{course.slug}/#{lesson.slug}"
+      link_to_last_lesson =  "#{course.slug}/#{lesson.slug}/#{get_id_to_lock_lesson}"
     rescue
       ""
     end
@@ -61,9 +61,11 @@ module ApplicationHelper
   def get_id_to_lock_lesson
     begin
       id_lock = LessonUser.find_by_sql(["SELECT lesson_id FROM lesson_users WHERE user_id = ? ORDER BY lesson_id DESC", current_user.id])
-      id_lock = id_lock[0][:lesson_id]
+      lesson = Lesson.find_by(id: id_lock[0][:lesson_id])
+      id_course = lesson.course_id
+      { id_lesson_lock: id_lock[0][:lesson_id], id_course_lock: id_course }
     rescue
-      1
+      { id_lesson_lock: 1, id_course_lock: 1 }
     end
   end
 end
