@@ -4,3 +4,7 @@ ru:
     previous_label: '← Туда'
     next_label: 'Сюда →'
     page_gap: '...'
+  activerecord:
+    errors:
+      messages:
+        confirmation: "не совпадает с полем Новый пароль"
