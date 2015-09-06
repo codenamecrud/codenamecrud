@@ -15,7 +15,7 @@ class RegistrationsController < Devise::RegistrationsController
     current_user.clear_provider!
     redirect_to :back
   end
-  
+
   private
   
   def needs_password?
