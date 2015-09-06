@@ -1,29 +1,31 @@
 require 'rails_helper';
 
-feature 'User authenticating and unauthenticating' do
-  given(:user) { build(:user) }
-  given(:saved_user) { create(:user) }
+feature 'Check if change password function works properly' do
+  given(:user) { create(:user) }
+  NEW_PASSWORD = '12345678'
 
-  scenario 'Registration and try to change password in a bad way' do
-    visit root_path
-
-    click_on 'Регистрация'
-    fill_in 'Имя', with: user.name
-    fill_in 'Email', with: user.email
-    fill_in 'user_password', with: user.password
-    fill_in 'user_password_confirmation', with: user.password
-    click_on 'Зарегистрироваться'
-
-    expect(page).to have_content "Привет, #{user.name}"
-
+  scenario 'Change password in a bad way, check error message' do
+    sign_in_with(user.email, user.password)    
     click_on 'Настройки'
-
-    expect(page).to have_content 'Редактирование пользователя'
-
-    fill_in 'user_password', :with => '12345678'
-    fill_in 'user_password_confirmation', :with => '87654321'
+    
+    fill_in 'user_password', :with => NEW_PASSWORD
+    fill_in 'user_password_confirmation', :with => "#{NEW_PASSWORD}2"
     click_on 'Обновить'
     
     expect(page).to have_content 'не совпадает с полем Новый пароль'
+  end
+
+  scenario 'Change password properly, check results' do
+    sign_in_with(user.email, user.password)
+    click_on 'Настройки'
+
+    fill_in 'user_password', :with => NEW_PASSWORD
+    fill_in 'user_password_confirmation', :with => NEW_PASSWORD
+    fill_in 'user_current_password', :with => user.password
+    click_on 'Обновить'
+
+    sign_in_with(user.email, NEW_PASSWORD)
+    
+    expect(page).to have_content "Привет, #{user.name}"
   end
 end
