@@ -1,4 +1,4 @@
-require 'rails_helper';
+require 'rails_helper'
 
 feature 'Check if change password function works properly' do
   given(:user) { create(:user) }
