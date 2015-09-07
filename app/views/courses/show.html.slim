@@ -8,6 +8,7 @@
       p.text-muted= @course.description
 
   .col-sm-8.col-sm-offset-2.col-lg-8.col-lg-offset-2
+    - checked_lock = get_id_to_lock_lesson
     - @course.sections.order_by_position.each do |section|
         h2 id=("section-#{section.slug}") = section.title
         .section-description
@@ -36,12 +37,20 @@
                 li.row
                   .toggle-check id=(dom_id(lesson))
                     - if user_signed_in?
-                      - if current_user.lessons.include?(lesson)
-                        = link_to toggle_check_course_lesson_path(@course, lesson), class: 'mark-as-uncompleted', remote: true, method: :post do
-                          i.glyphicon.glyphicon-check
-                      - else
-                        = link_to toggle_check_course_lesson_path(@course, lesson), class: 'mark-as-completed', remote: true, method: :post do
-                          i.glyphicon.glyphicon-unchecked
+                      - if checked_lock[:id_course_lock] == 0 && checked_lock[:id_section_lock] == 0 && checked_lock[:id_lesson_lock] == 0 && lesson.id == 1
+                          = link_to toggle_check_course_lesson_path(@course, lesson), class: 'mark-as-completed', remote: true, method: :post do
+                            i.glyphicon.glyphicon-unchecked
+
+                      - if lesson.course_id == checked_lock[:id_course_lock] && lesson.section_id == checked_lock[:id_section_lock] && lesson.id == checked_lock[:id_lesson_lock]
+                        i.glyphicon.glyphicon-check
+
+                      - if lesson.course_id == checked_lock[:id_course_lock] && lesson.section_id == checked_lock[:id_section_lock] && lesson.id == checked_lock[:id_lesson_lock].next
+                          = link_to toggle_check_course_lesson_path(@course, lesson), class: 'mark-as-completed', remote: true, method: :post do
+                            i.glyphicon.glyphicon-unchecked
+
+                      - if lesson.id < checked_lock[:id_lesson_lock]
+                        i.glyphicon.glyphicon-check
+
                   = link_to [@course, lesson], class: 'link-to-lesson' do
                     h2.text-muted
                       ' Шаг #{index}:

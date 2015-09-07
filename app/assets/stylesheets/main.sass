@@ -115,7 +115,7 @@ ul
   z-index: 33
 
 .courses-list, .lessons-list
-  margin-top: 50px
+  margin-top: 30px
   margin-bottom: 50px
   list-style-type: none
 
@@ -152,6 +152,8 @@ ul
 
   .teaser
     color: orange
+    h3
+      margin-top: 20px
 
   li.row.course
     margin-bottom: 30px
@@ -171,6 +173,10 @@ ul
 
   h3
     text-decoration: underline
+
+.you-build
+  @media (max-width: 767px)
+    margin-top: 20px
 
 /* Lessons */
 
@@ -200,6 +206,33 @@ ul
       .glyphicon
         font-size: 50px
         color: gray
+
+  .lesson_completed
+    box-sizing: border-box
+    width: 320px
+    margin: 0 auto 10px auto
+    padding: 10px
+    border: 1px dashed #ccc
+    border-radius: 10px
+    clear: both
+
+  .lesson_completed + .mark-as-uncompleted
+    font-size: 12px
+
+  .lesson_completed__icon
+    color: #31AD44
+    border-radius: 10px
+    float: left
+    font-size: 2.5em
+
+  .lesson_completed__text
+    width: 80px
+    float: left
+    font-weight: 600
+    padding: 5px
+
+  .clear_b
+    clear: both
 
 /* Activities */
 .activity
@@ -337,6 +370,17 @@ ul
     background-size: 39px 39px
     background-position: 10px 5px
     padding-left: 60px
+
+/* start User page */
+.last_lesson_to
+  margin-bottom: 5px
+
+.last_lesson_to > a
+  background:  #00B285
+  color: #fff
+  &:hover, &:active, &:focus
+    background: #008D69
+/* end User page */
 
 footer
   &.footer
