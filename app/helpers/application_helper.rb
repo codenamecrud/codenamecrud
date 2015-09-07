@@ -62,21 +62,9 @@ module ApplicationHelper
     begin
       id_lock = LessonUser.find_by_sql(["SELECT lesson_id FROM lesson_users WHERE user_id = ? ORDER BY lesson_id DESC", current_user.id])
       lesson = Lesson.find_by(id: id_lock[0][:lesson_id])
-      if [7, 34, 57].include?(id_lock[0][:lesson_id])
-        id_course = lesson.course_id + 1
-        id_section = lesson.section_id + 1
-        { id_lesson_lock: id_lock[0][:lesson_id], id_course_lock: id_course, id_section_lock: id_section }
-      else
-        id_course = lesson.course_id
-        if [12, 18, 23, 27, 31, 34, 39, 43, 45, 50, 52, 54, 56].include?(id_lock[0][:lesson_id])
-          id_section = lesson.section_id + 1
-        else
-          id_section = lesson.section_id
-        end
-        { id_lesson_lock: id_lock[0][:lesson_id], id_course_lock: id_course, id_section_lock: id_section }
-      end
+      { id_lesson_lock: id_lock[0][:lesson_id] }
     rescue
-      { id_lesson_lock: 0, id_course_lock: 0, id_section_lock: 0 }
+      { id_lesson_lock: 0 }
     end
   end
 end
