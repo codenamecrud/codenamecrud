@@ -28,7 +28,7 @@
                   - if checked_lock[:id_lesson_lock] == 0 && @lesson.id == 1
                     = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-completed', remote: true, method: :post do
                       i.glyphicon.glyphicon-unchecked
-                  - elsif @lesson.id == checked_lock[:id_lesson_lock] + 1 && @lesson.id != 1
+                  - elsif @lesson.id == checked_lock[:id_lesson_lock] + 1
                     = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-completed', remote: true, method: :post do
                       i.glyphicon.glyphicon-unchecked
           .text-center.charity
