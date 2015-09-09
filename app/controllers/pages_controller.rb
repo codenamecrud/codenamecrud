@@ -25,8 +25,8 @@ class PagesController < ApplicationController
 
     @developers = []
     git_comments = ["https://api.github.com/repos/codenamecrud/codenamecrud/issues/comments",
-                     "https://api.github.com/repos/codenamecrud/codenamecrud/pulls/comments",
-                     "https://api.github.com/repos/codenamecrud/codenamecrud/comments"]
+                    "https://api.github.com/repos/codenamecrud/codenamecrud/pulls/comments",
+                    "https://api.github.com/repos/codenamecrud/codenamecrud/comments"]
 
     git_comments.each do |source|
       comments = open "#{source}?client_id=#{ENV['GITHUB_KEY']}&client_secret=#{ENV['GITHUB_SECRET']}&page=1&per_page=1000"
