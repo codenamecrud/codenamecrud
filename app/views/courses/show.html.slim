@@ -33,8 +33,6 @@
                       - if lesson.id <= checked_lock[:id_lesson_lock]
                         i.glyphicon.glyphicon-check
 
-                      - if lesson.id == checked_lock[:id_lesson_lock].next
-                        i.glyphicon.glyphicon-unchecked
                   = link_to [@course, lesson], class: 'link-to-lesson' do
                     h2.text-muted
                       ' Шаг #{index}:
