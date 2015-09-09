@@ -34,17 +34,11 @@ feature 'Progress bar' do
     expect(page).to have_css('div.progress-bar')
   end
 
-  it 'increases progress if user adds lesson', js: true do
+  it 'shouldnt have check link, if lesson_id != id_lock_lesson + 1', js: true do
     sign_in_with(user.name, user.password)
     visit course_lesson_path(course.id, lesson1.id)
-    page.execute_script('$("a.mark-as-completed").click()')
-    visit course_lesson_path(course.id, lesson2.id)
-    within ('div.row.bs-wizard') do
-      expect(page).to have_css('div.col-xs-1.bs-wizard-step.complete', count: 1)
-      expect(first('div.bs-wizard-info.text-center')).to have_content('25%')
-      expect(first('div.bs-wizard-info.text-center')).to have_content("#{user.completed_lessons(section1).to_i}%")
-      expect(page).to have_css('div.col-xs-1.bs-wizard-step.disabled', count: course.lessons.count - 1)
-    end
+    expect(page).to have_css('div.col-xs-1.bs-wizard-step.complete', count: 0)
+    expect(page).to have_css("a.mark-as-completed", count: 0)
     expect(page).to have_css('div.progress-bar')
   end
 
