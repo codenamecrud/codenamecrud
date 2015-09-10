@@ -8,20 +8,20 @@ describe Section do
   it { should validate_presence_of(:description) }
 
   it "#next_lesson_in_the_section should have next lesson" do
-    course = FactoryGirl.create(:course, id: 1)
-    section = FactoryGirl.create(:section, id: 1, course: course)
-    lesson1 = FactoryGirl.create(:lesson, id: 1, course: course, section: section)
-    lesson2 = FactoryGirl.create(:lesson, id: 2, course: course, section: section)
+    course = FactoryGirl.create(:course)
+    section = FactoryGirl.create(:section, course: course)
+    lesson1 = FactoryGirl.create(:lesson, course: course, section: section)
+    lesson2 = FactoryGirl.create(:lesson, course: course, section: section)
 
     expect(section.next_lesson_in_the_section(lesson1)).to eq(lesson2)
   end
 
   it "#next_lesson_in_the_section should not have next lesson" do
-    course = FactoryGirl.create(:course, id: 1)
-    section = FactoryGirl.create(:section, id: 1, course: course)
-    section1 = FactoryGirl.create(:section, id: 2, course: course)
-    lesson1 = FactoryGirl.create(:lesson, id: 1, course: course, section: section)
-    lesson2 = FactoryGirl.create(:lesson, id: 2, course: course, section: section1)
+    course = FactoryGirl.create(:course)
+    section = FactoryGirl.create(:section, course: course)
+    section1 = FactoryGirl.create(:section, course: course)
+    lesson1 = FactoryGirl.create(:lesson, course: course, section: section)
+    lesson2 = FactoryGirl.create(:lesson, course: course, section: section1)
 
     expect(section.next_lesson_in_the_section(lesson1)).to eq(nil)
   end
