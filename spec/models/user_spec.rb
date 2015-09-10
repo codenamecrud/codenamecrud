@@ -87,4 +87,99 @@ describe User do
         .to github_auth.info.nickname
     end
   end
+
+  describe '#next_lesson' do
+    it 'should have next lesson' do
+      user = FactoryGirl.create(:user)
+      course = FactoryGirl.create(:course)
+      section = FactoryGirl.create(:section, course: course)
+      lesson1 = FactoryGirl.create(:lesson, course: course, section: section)
+      lesson2 = FactoryGirl.create(:lesson, course:course, section: section)
+      lesson_user1 = FactoryGirl.create(:lesson_user, lesson_id: lesson1.id, user_id: user.id, completed: true, lesson: lesson1)
+      lesson_user2 = FactoryGirl.create(:lesson_user, lesson_id: lesson2.id, user_id: user.id, completed: true, lesson: lesson2)
+
+      expect(user.next_lesson(lesson1)).to  eq(lesson2)
+    end
+
+    it 'shouldn\'t have next lesson' do
+      user = FactoryGirl.create(:user)
+      course = FactoryGirl.create(:course)
+      section = FactoryGirl.create(:section, course: course)
+      lesson1 = FactoryGirl.create(:lesson, course: course, section: section)
+      lesson2 = FactoryGirl.create(:lesson, course:course, section: section)
+      lesson_user1 = FactoryGirl.create(:lesson_user, lesson_id: lesson1.id, user_id: user.id, completed: true, lesson: lesson1)
+
+      expect(user.next_lesson(lesson1)).to  eq(nil)
+    end
+  end
+
+  describe '#last_lesson' do
+    it 'last leseon should be equal lesson 5' do
+      user = FactoryGirl.create(:user)
+      course = FactoryGirl.create(:course)
+      section = FactoryGirl.create(:section, course: course)
+      lesson1 = FactoryGirl.create(:lesson, course: course, section: section)
+      lesson2 = FactoryGirl.create(:lesson, course:course, section: section)
+      lesson3 = FactoryGirl.create(:lesson, course:course, section: section)
+      lesson4 = FactoryGirl.create(:lesson, course:course, section: section)
+      lesson5 = FactoryGirl.create(:lesson, course:course, section: section)
+      lesson_user1 = FactoryGirl.create(:lesson_user, lesson_id: lesson1.id, user_id: user.id, completed: true, lesson: lesson1)
+      lesson_user2 = FactoryGirl.create(:lesson_user, lesson_id: lesson2.id, user_id: user.id, completed: true, lesson: lesson2)
+      lesson_user3 = FactoryGirl.create(:lesson_user, lesson_id: lesson3.id, user_id: user.id, completed: true, lesson: lesson3)
+      lesson_user4 = FactoryGirl.create(:lesson_user, lesson_id: lesson4.id, user_id: user.id, completed: true, lesson: lesson4)
+      lesson_user5 = FactoryGirl.create(:lesson_user, lesson_id: lesson5.id, user_id: user.id, completed: true, lesson: lesson5)
+
+      expect(user.last_lesson(section.id)).to eq(lesson5)
+    end
+
+    it 'last leseon shouldn\'t be equal lesson 3' do
+      user = FactoryGirl.create(:user)
+      course = FactoryGirl.create(:course)
+      section = FactoryGirl.create(:section, course: course)
+      lesson1 = FactoryGirl.create(:lesson, course: course, section: section)
+      lesson2 = FactoryGirl.create(:lesson, course:course, section: section)
+      lesson3 = FactoryGirl.create(:lesson, course:course, section: section)
+      lesson4 = FactoryGirl.create(:lesson, course:course, section: section)
+      lesson5 = FactoryGirl.create(:lesson, course:course, section: section)
+      lesson_user1 = FactoryGirl.create(:lesson_user, lesson_id: lesson1.id, user_id: user.id, completed: true, lesson: lesson1)
+      lesson_user2 = FactoryGirl.create(:lesson_user, lesson_id: lesson2.id, user_id: user.id, completed: true, lesson: lesson2)
+      lesson_user3 = FactoryGirl.create(:lesson_user, lesson_id: lesson3.id, user_id: user.id, completed: true, lesson: lesson3)
+      lesson_user4 = FactoryGirl.create(:lesson_user, lesson_id: lesson4.id, user_id: user.id, completed: true, lesson: lesson4)
+      lesson_user5 = FactoryGirl.create(:lesson_user, lesson_id: lesson5.id, user_id: user.id, completed: true, lesson: lesson5)
+
+      expect(user.last_lesson(section.id)).should_not eq(lesson3)
+    end
+  end
+
+  describe '#lessons_length' do
+    it 'should length == 1' do
+      user = FactoryGirl.create(:user)
+      user2 = FactoryGirl.create(:user)
+      course = FactoryGirl.create(:course)
+      section = FactoryGirl.create(:section, course: course)
+      lesson1 = FactoryGirl.create(:lesson, course: course, section: section)
+      lesson2 = FactoryGirl.create(:lesson, course:course, section: section)
+      lesson_user1 = FactoryGirl.create(:lesson_user, lesson_id: lesson1.id, user_id: user.id, completed: true, lesson: lesson1)
+      lesson_user2 = FactoryGirl.create(:lesson_user, lesson_id: lesson2.id, user_id: user.id, completed: true, lesson: lesson2)
+      lesson_user3 = FactoryGirl.create(:lesson_user, lesson_id: lesson2.id, user_id: user2.id, completed: true, lesson: lesson2)
+
+      expect(user.lessons_length(lesson1)).to  eq(1)
+      expect(user.lessons_length(lesson2)).to  eq(1)
+      expect(user2.lessons_length(lesson2)).to  eq(1)
+    end
+
+    it 'should length == 0' do
+      user = FactoryGirl.create(:user)
+      user2 = FactoryGirl.create(:user)
+      course = FactoryGirl.create(:course)
+      section = FactoryGirl.create(:section, course: course)
+      lesson1 = FactoryGirl.create(:lesson, course: course, section: section)
+      lesson2 = FactoryGirl.create(:lesson, course:course, section: section)
+      lesson_user1 = FactoryGirl.create(:lesson_user, lesson_id: lesson1.id, user_id: user.id, completed: true, lesson: lesson1)
+      lesson_user2 = FactoryGirl.create(:lesson_user, lesson_id: lesson2.id, user_id: user2.id, completed: true, lesson: lesson2)
+
+      expect(user.lessons_length(lesson2)).to  eq(0)
+      expect(user2.lessons_length(lesson1)).to  eq(0)
+    end
+  end
 end
