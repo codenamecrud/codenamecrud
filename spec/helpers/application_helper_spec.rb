@@ -11,7 +11,6 @@ describe ApplicationHelper do
     end
   end
 
-
   describe '#next_lesson_path' do
     it 'returns blank' do
       expect(helper.next_lesson_path).to be_blank
