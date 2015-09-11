@@ -109,7 +109,7 @@ describe User do
         expect(user.current_lesson(lesson5.id)).to eq(lesson5)
       end
 
-      it 'shouldn\'t equal lesson in section for id other lesson' do
+      it "shouldn't equal lesson in section for id other lesson" do
         expect(user.current_lesson(lesson4.id)).should_not eq(lesson5)
       end
     end
@@ -119,7 +119,7 @@ describe User do
         expect(user.next_lesson(lesson1)).to  eq(lesson2)
       end
 
-      it 'shouldn\'t have next lesson' do
+      it "shouldn't have next lesson" do
         expect(user.next_lesson(lesson5)).to  eq(nil)
       end
     end
@@ -129,7 +129,7 @@ describe User do
         expect(user.last_lesson(section.id)).to eq(lesson5)
       end
 
-      it 'last leseon shouldn\'t be equal lesson 3' do
+      it "last leseon shouldn't be equal lesson 3" do
         expect(user.last_lesson(section.id)).should_not eq(lesson3)
       end
     end
