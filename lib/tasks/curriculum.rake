@@ -43,6 +43,7 @@ namespace :curriculum do
     puts '...so we\'re ALL DONE! Updated the curriculum.'
   end
 
+  # Only for tests
   desc "DB populate"
   task :db_populate do
     Rails.env = ENV['RAILS_ENV'] = 'test'
