@@ -91,7 +91,7 @@ describe ApplicationHelper do
     end
     let(:git) { Github::Client::Repos.new user: 'codenamecrud', repo: 'curriculum', oauth_token: "#{ENV['GITHUB_API_TOKEN']}" }
 
-    it 'all lessons should be valid', :skip => true do
+    skip 'all lessons should be valid' do
       links_course.each.with_index(1) do |item, index|
         res = git.contents.get path: item
         article = Base64.decode64(res['content']).force_encoding('UTF-8')
