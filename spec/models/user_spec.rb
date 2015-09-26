@@ -110,7 +110,7 @@ describe User do
       end
 
       it "shouldn't equal lesson in section for id other lesson" do
-        expect(user.current_lesson(lesson4.id)).should_not eq(lesson5)
+        expect(user.current_lesson(lesson4.id)).to_not eq(lesson5)
       end
     end
 
@@ -130,7 +130,7 @@ describe User do
       end
 
       it "last leseon shouldn't be equal lesson 3" do
-        expect(user.last_lesson(section.id)).should_not eq(lesson3)
+        expect(user.last_lesson(section.id)).to_not eq(lesson3)
       end
     end
 
