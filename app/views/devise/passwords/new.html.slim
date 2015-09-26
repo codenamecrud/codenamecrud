@@ -2,7 +2,7 @@
   h2 Забыли пароль?
   = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
     .form-inputs
-      = f.input :name, required: true, autofocus: true, label: 'Имя или email'
+      = f.input :name, required: true, autofocus: true, label: 'Имя пользователя'
     .form-actions
       = f.button :submit, "Отправить мне инструкции по сбросу пароля"
   = render "devise/shared/links"
