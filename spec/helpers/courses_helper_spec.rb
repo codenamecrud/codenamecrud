@@ -1,16 +1,25 @@
 require 'rails_helper'
 
 describe CoursesHelper do
-  it "if course is unactive" do
-    course = FactoryGirl.create(:course)
-    index = 0
-    expect(helper.course_link(course, index)).to eq(content_tag(:span, "#{index}: #{course.title}", data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Этот курс еще не готов, но если вы оставите нам ваш email, мы пришлем вам письмо, когда он станет доступен!'))
+  let!(:index) { 0 }
+  describe 'Inactive courses' do
+    it "if course is unactive" do
+      course = create(:course)
+      expect(helper.course_link(course, index)).to eq(content_tag(:span, "#{index}: #{course.title}", data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Этот курс еще не готов, но если вы оставите нам ваш email, мы пришлем вам письмо, когда он станет доступен!'))
+    end
   end
 
-  it "if course is active" do
-    course = FactoryGirl.create(:course, is_active: true)
-    index = 0
-    expect(helper.course_link(course, index)).to eq(link_to "#{index}: #{course.title}", course)
+  describe 'Active courses' do
+    let(:course) { create(:course, is_active: true) }
+
+    it "if course is active" do
+      expect(helper.course_link(course, index, false)).to eq(link_to "#{index}: #{course.title} ", course)
+    end
+
+    it "shows NEW COURSE remark if it is new" do
+      expect(helper.course_link(course, index, true)).to eq(link_to "#{index}: #{course.title} <span class=\"text-success\">(Новый курс!)</span>".html_safe, course)
+
+    end
   end
 
 end
