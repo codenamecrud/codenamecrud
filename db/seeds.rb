@@ -1325,6 +1325,114 @@ create_or_update_lesson(
   url: '/rails/25_project_forms_advanced.md'
   )
 
+# = Шестой раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'API, мейлеры и продвинутые темы',
+  position: section_position,
+  slug: 'apis-mailers-and-advanced-topics',
+  description: 'Этот финальный раздел посвятит вас в некоторые из наиболее интересных сторон экосистемы Rails, которые помогут вам продвинуть ваши приложения еще дальше и научить их отправлять почту своим пользователям или использовать возможности других приложений через их API.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Чужие API и создание своего собственного',
+  position: lesson_position,
+  slug: 'apis-and-building-your-own',
+  description: 'Rails - это на самом деле API. Узнайте об API и о том, как превратить ваше приложение в одно из них.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/26_api_basics.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Работаем с внешними API',
+  position: lesson_position,
+  slug: 'working-with-external-apis',
+  description: 'Получите множество новых возможностей, используя внешние API других сервисов.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/27_api_interfacing.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: API',
+  position: lesson_position,
+  slug: 'project-apis',
+  description: 'В этом проекте вы создадите собственный API и поработаете с внешним API.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/rails/28_project_apis.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Мейлеры',
+  position: lesson_position,
+  slug: 'mailers',
+  description: 'Вряд ли вы часто задумываетесь, откуда получаете все эти сервисные электронные письма. Теперь вы научитесь отправлять их сами.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/29_mailers.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Отправка подтверждающих писем',
+  position: lesson_position,
+  slug: 'project-sending-confirmation-emails',
+  description: 'Добавьте функционал отправки писем в ваш проект. Только не спамьте, это не очень одобряется.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/rails/30_project_mailers.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Продвинутые темы',
+  position: lesson_position,
+  slug: 'advanced-topics',
+  description: 'Обзор нескольких тем, которые мы еще не успели затронуть: продвинутые роуты, метапрограммирование и паттерны проектирования.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/31_advanced_topics.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Финальный проект',
+  position: lesson_position,
+  slug: 'project-final-project',
+  description: 'Вы должны были создать довольно популярное приложение-социальную сеть. Об этом когда-нибудь могут снять фильм.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/rails/32_project_final.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Заключение',
+  position: lesson_position,
+  slug: 'rails-conclusion',
+  description: 'Святая корова, вы достигли конца пути!.. Ну или вроде того.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/33_conclusion.md'
+  )
+
+
 # = Пятый курс = #
 
 course_position += 1
