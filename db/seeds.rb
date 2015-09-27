@@ -958,7 +958,7 @@ create_or_update_lesson(
 # = Четвертый курс = #
 
 course_position += 1
-create_or_update_course(
+course = create_or_update_course(
   title: 'Ruby on Rails',
   slug: 'ruby-on-rails',
   short_description: 'Теперь, когда вы освоились с Ruby, настало время применить эти знания и узнать, как быстро создавать веб-сайты, используя Ruby on Rails. К концу этого курса вы сможете уверенно создать и развернуть реальный веб-сайт. Собственно, вы проделаете это множество раз.',
@@ -967,9 +967,363 @@ create_or_update_course(
   you_build: ['Полноценный клон Twitter', 'Приложение для заказа авиабилетов', 'Куча другого, с простых приложений до API и Facebook'],
   teaser: 'Скоро будет доступно!',
   position: course_position,
-  is_active: false
+  is_active: true
   )
 
+# = Первый раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Введение в Rails',
+  position: section_position,
+  slug: 'introduction-to-rails',
+  description: 'В этом разделе мы познакомимся с Rails и начнем с самого начала, чтобы у вас сложилось представление о том, что (и как) вы будете изучать, продвигаясь вперед. Мы зададим начальное направление.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Как будет работать этот курс',
+  position: lesson_position,
+  slug: 'rails-how-this-course-will-work',
+  description: 'Давайте посмотрим, что мы будем изучать.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/01_how_this_course_will_work.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: первые шаги',
+  position: lesson_position,
+  slug: 'getting-your-feet-wet',
+  description: 'Здесь мы создадим первое приложение на Rails, используя некоторые из предоставляемых нам фреймворком инструменты.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/rails/02_project_feet_wet.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Памятка по Rails',
+  position: lesson_position,
+  slug: 'a-railsy-web-refresher',
+  description: 'Мы не просто используем Сеть, мы живем в ней. Этот урок поможет вам освоиться с терминами.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/03_web_refresher.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Деплой',
+  position: lesson_position,
+  slug: 'deployment',
+  description: 'Мало что сравниться с ощущением, которые испытываешь, видя свое приложение доступным в Сети. Мы покажем, как это можно осуществить.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/04_deployment.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Начнем создавать',
+  position: lesson_position,
+  slug: 'lets-get-building',
+  description: 'В этом проекте вы начнете изучать руководство, которому мы будем следовать на протяжении всего курса.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/rails/05_project_lets_build.md'
+  )
+
+# = Второй раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Маршрутизация, вьюхи, контроллеры и ассеты',
+  position: section_position,
+  slug: 'routes-views-conrollers-and-assets',
+  description: 'Теперь, когда вы поняли, чем нам предстоит заниматься, настало время детально рассмотреть фундаментальные понятия фреймворка Ruby on Rails. Мы пройдем путь от HTTP-запроса до получения результата в виде HTML-страницы в браузере.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Маршрутизация (роутинг)',
+  position: lesson_position,
+  slug: 'routing',
+  description: 'Роутер - это распределительный щит вашего приложения, направляющий запросы в соответствующие контроллеры.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/06_routing.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Контроллеры',
+  position: lesson_position,
+  slug: 'controllers',
+  description: 'Контроллеры являются посредниками в процессе обработки запроса. Они говорят всем остальным, что делать и собирают полученный результат воедино.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/07_controller_basics.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Вьюхи (представления)',
+  position: lesson_position,
+  slug: 'views',
+  description: 'Когда контроллер определяет, какие данные нужно отобразить, настает время для работы Представлений (или вьюх). Они отвечают за отображение обработанных данных в браузере пользователя.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/08_views.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'The Asset Pipeline',
+  position: lesson_position,
+  slug: 'the-asset-pipeline',
+  description: 'Этот урок объясняет, как Rails управляет вещами незримо для пользователя, чтобы вернуть в его браузер CSS, Javascript и изображения быстро и эффективно. Так же мы расскажем, как вам работать с этим процессом.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/09_asset_pipeline.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Основы маршрутизации, контроллеров и вьюх',
+  position: lesson_position,
+  slug: 'basic-routes-views-and-controllers',
+  description: 'Вы поиграетесь с роутингом и на практике опробуете все, что успели изучить.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/rails/10_project_basic_rvc.md'
+  )
+
+# = Третий раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Базы данных и Active Record',
+  position: section_position,
+  slug: 'databases-and-active-record',
+  description: 'Этот раздел расскажет о серверной части Rails, которая является самой важной во всем фреймворке. Вы узнаете о базах данных и глубже погрузитесь в SQL, прежде чем применять знания к восхитительному гему Rails, который называется Active Record.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Базы данных и SQL',
+  position: lesson_position,
+  slug: 'databases-and-sql',
+  description: 'Данные - это ядро любого крупного веб-приложения и в этом уроке вы научитесь говорить на SQL.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/11_databases.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: SQL',
+  position: lesson_position,
+  slug: 'project-sql',
+  description: 'Лучший способ обучения - практика, и этот проект даст вам отличную возможность применить ваше знание SQL (во имя добра).',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/rails/12_project_databases.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Основы ActiveRecord',
+  position: lesson_position,
+  slug: 'active-record-basics',
+  description: 'Active Record - жемчужина в короне Rails, поскольку обращает голые и некрасивые запросы на SQL в удобные и читабельные методы на Ruby.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/13_active_record_basics.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Практика с Active Record',
+  position: lesson_position,
+  slug: 'project-building-with-active-record',
+  description: 'Лучший способ обучения - практика, и этот проект даст вам отличную возможность применить ваше знание SQL (во имя добра).',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/rails/14_project_active_record.md'
+  )
+
+# = Четвертый раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Формы и аутентификация',
+  position: section_position,
+  slug: 'forms-and-authentification',
+  description: 'Этот раздел расскажет о некоторых частях веб-приложений, которые являются гораздо более важными, чем может показаться на первый взгляд. Формы - это способ пользователя взаимодействовать с приложением. Аутентификация критична для множества приложений, и вы создадите пару систем аутентификации с нуля.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Основы форм',
+  position: lesson_position,
+  slug: 'form-basics',
+  description: 'Отчасти памятка, отчасти источник новых знаний, этот урок заполнит пробел в знаниях о взаимодействии форм и бэкенда.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/15_form_basics.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: формы',
+  position: lesson_position,
+  slug: 'project-forms',
+  description: 'Чтобы получить понимание форм, нужно начать с самого начала. Мы начнем с HTML и затем посмотрим, как нам пригодится Rails.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/rails/16_project_forms.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Сессии, cookies и аутентификация',
+  position: lesson_position,
+  slug: 'sessions-cookies-and-authentication',
+  description: 'Узнайте, как хранить данные в браузере пользователя и как они используются при регистрации и входе пользователя между запросами.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/17_sessions_cookies_authentication.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: аутентификация',
+  position: lesson_position,
+  slug: 'project-authentification',
+  description: 'Вы создадите закрытое сообщество, позволяющее анонимно делиться сплетнями с миром.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/rails/18_project_auth.md'
+  )
+
+# = Пятый раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Продвинутые формы и Active Record',
+  position: section_position,
+  slug: 'advanced-forms-and-active-record',
+  description: 'Становится интереснее! Узнайте, как делать что-то большее, чем просто находить и показывать пользователей... вы узнаете о том, как использовать отношения между моделями, чтобы значительно расширить свои возможности и о том, как создавать формы, позволяющие достигнуть ваших целей.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Запросы Active Record',
+  position: lesson_position,
+  slug: 'active-record-queries',
+  description: 'Узнайте, как воспользоваться некоторыми продвинутыми подходами к выполнению запросов, которые вы использовали в SQL и заставить Rails выполнять их автомагически.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/19_active_record_queries.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Ассоциации Active Record',
+  position: lesson_position,
+  slug: 'active-record-associations',
+  description: 'Погрузитесь в некоторые из самых интересных возможностей ассоциаций, такие как специальные методы и полиморфизм.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/20_active_record_associations.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Ассоциации',
+  position: lesson_position,
+  slug: 'project-associations',
+  description: 'Постройте систему управления подписками на специальные события для себя и своих друзей.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/rails/21_project_associations.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Коллбеки Active Record',
+  position: lesson_position,
+  slug: 'active-record-callbacks',
+  description: 'Краткий взгляд на жизненный цикл объекта Active Record с рождения до уничтожения и на то, как вы можете использовать этот процесс в своих целях.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/22_active_record_callbacks.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Продвинутые ассоациации',
+  position: lesson_position,
+  slug: 'project-advanced-associations',
+  description: 'Поупражняйтесь в создании ассоциаций, чтобы закончить руководство как профи.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/rails/23_project_advanced_associations.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Продвинутые формы',
+  position: lesson_position,
+  slug: 'advanced-forms',
+  description: 'Расширьте свои познания о формах. Не бойтесь создавать формы для чего угодно.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/rails/24_advanced_forms.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Создаем продвинутые формы',
+  position: lesson_position,
+  slug: 'project-building-advanced-forms',
+  description: 'Создайте систему покупки авиабилетов, включающую интересные и сложные решения.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/rails/25_project_forms_advanced.md'
+  )
 
 # = Пятый курс = #
 
