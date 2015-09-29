@@ -5,7 +5,7 @@ Devise.setup do |config|
   config.strip_whitespace_keys = [:email]
   config.authentication_keys   = [:login]
   config.skip_session_storage  = [:http_auth]
-  config.reset_password_keys   = [:name]
+  config.reset_password_keys   = [:login]
   config.confirmation_keys     = [:name]
 
   config.stretches = Rails.env.test? ? 1 : 10
