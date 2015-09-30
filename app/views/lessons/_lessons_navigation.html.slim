@@ -1,5 +1,8 @@
 .row.lessons-bottom-navigation
   .text-center
+    .well
+      h4 Поделиться уроком:
+      <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus" data-yashareTheme="counter"></div>
     .col-xs-4
       - if lesson.previous
         = link_to course_lesson_path(course, lesson.previous), data: { toggle: 'tooltip', title: lesson.previous.title } do
