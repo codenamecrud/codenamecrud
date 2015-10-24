@@ -1287,7 +1287,7 @@ create_or_update_lesson(
 
 lesson_position += 1
 create_or_update_lesson(
-  title: 'Проект: Продвинутые ассоациации',
+  title: 'Проект: Продвинутые ассоциации',
   position: lesson_position,
   slug: 'project-advanced-associations',
   description: 'Поупражняйтесь в создании ассоциаций, чтобы закончить руководство как профи.',
