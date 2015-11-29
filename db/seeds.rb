@@ -1432,18 +1432,431 @@ create_or_update_lesson(
 # = Пятый курс = #
 
 course_position += 1
-create_or_update_course(
+course = create_or_update_course(
   title: 'HTML5 и CSS3',
   slug: 'html5-and-css3',
   short_description: 'Теперь вы профессионал в создании бэкенда для сайта, настало время как следует вникнуть в фронтенд, чтобы ваши сайты перестали быть уродливыми и вы начали понимать DOM. Этот короткий курс даст вам инструменты для прекращения борьбы с вашим CSS и начала создания более логично выглядящих сайтов.',
   description: 'В этом курсе вы преодолеете свой страх перед CSS и начнете понимать некоторые из фундаментальных принципов хорошего дизайна сайтов. Это не полный курс по фронтенд-дизайну, но он должен дать вам инструменты, которые понадобятся для глубокого понимания CSS-фреймворков и для создания приятно выглядящего фасада к вашему гениальному бэкенду.',
   you_learn: ['Все о стилизации при помощи CSS', 'Как эффективно использовать фронтенд-фреймворк вроде Bootstrap', 'Базовые принципы разметки и дизайна сайта'],
   you_build: ['Визуальные копии нескольких популярных сайтов', 'Свой собственный фронтенд-фреймворк', 'Охапку CSS-трюков и тактик'],
-  teaser: 'Скоро будет доступно!',
+  teaser: 'Более глубокое погружение и понимание того, как делать сайты по-настоящему красивыми.',
   position: course_position,
-  is_active: false
+  is_active: true
   )
 
+# = Первый раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Базовая HTML-структура страницы',
+  position: section_position,
+  slug: 'basic-html-page-structure',
+  description: 'В этом разделе мы узнаем практически все об HTMK, чтобы вы не испытывали дискомфорт при редактировании и добавлении новых элементов в нужные места страницы.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Как будет работать этот курс',
+  position: lesson_position,
+  slug: 'html-css-how-this-course-will-work',
+  description: 'Давайте узнаем, с чего мы начнем и чем закончим.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/01_how-this-course-will-work.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Основы HTML5',
+  position: lesson_position,
+  slug: 'html5-basics',
+  description: 'Освежим память, вспомнив самые основы HTML',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/02_html5_basics.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Ссылки на внешние и внутренние страницы',
+  position: lesson_position,
+  slug: 'linking-internal-and-external-pages',
+  description: 'Когда делать ссылки локальными, а когда - внешними? Как создать ссылку на локальную страницу?',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/03_linking-internal-and-external-pages.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Работаем с видео, изображениями и прочим медиа',
+  position: lesson_position,
+  slug: 'working-with-images-videos-and-other-media',
+  description: 'Медиа-объекты делают вашу страницу более оживленной, но есть несколько нюансов, избегание которых позволит ускорить загрузку страницы.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/04_working_with_media.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: вставлем изображения и видео',
+  position: lesson_position,
+  slug: 'project-embedding-images-and-video',
+  description: 'Чтобы попрактиковать свежеобретенные навыки, вы воспроизведете главную страницу YouTube.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/05_project_media.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Что нового в HTML5',
+  position: lesson_position,
+  slug: 'what-s-new-in-html5',
+  description: 'Введение HTML5 в использование добавило несколько новых элементов и нюансов, которые сделают вашу жизнь легче.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/06_new_html5.md'
+  )
+
+# = Второй раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Отображение и ввод данных',
+  position: section_position,
+  slug: 'section-displaying-and-inputting-data',
+  description: 'Отображение и ввод данных - это две самых важных обязанности веб-разработчика. Мы рассмотрим доступные инструменты, включая таблицы и списки для отображения и формы для ввода.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Таблицы в HTML',
+  position: lesson_position,
+  slug: 'tables-in-html',
+  description: 'Таблицы теперь используются не так часто, как прежде, но они по-прежнему прекрасно подходят для отображения структурированной информации.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/07_tables.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Упорядоченные и неупорядоченные списки',
+  position: lesson_position,
+  slug: 'ordered-and-unordered-lists',
+  description: 'Списки используются повсеместно, даже в столь неожиданных местах, как навигационные меню.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/08_lists.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Формы для получения данных',
+  position: lesson_position,
+  slug: 'forms-for-collecting-data',
+  description: 'Формы позволяют пользователю отправлять данные в ваше приложение и представляют собою одну из самых непростых частей в HTML-структуре страницы.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/09_html_forms.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: HTML-формы',
+  position: lesson_position,
+  slug: 'project-html-forms',
+  description: 'Попрактикуйтесь, создайте несколько разных форм, воспроизводя элементы регистрации с Mint.com',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/10_project_html_forms.md'
+  )
+
+# = Третий раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'CSS3',
+  position: section_position,
+  slug: 'css3',
+  description: 'Здесь мы рассмотрим все фундаментальные аспекты CSS гораздо глубже, чем вы, вероятно, изучали их ранее.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Основы CSS3',
+  position: lesson_position,
+  slug: 'css3-basics',
+  description: 'Даже если вы знакомы с CSS, не помешает вспомнить основы.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/11_css3_basics.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: '"Коробочная" модель',
+  position: lesson_position,
+  slug: 'the-box-model',
+  description: 'Даже опытные разработчики нередко имеют сложности с пониманием "коробочной" модели, которая описывает то, как должны располагаться элементы страницы.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/12_the_box_model.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Выравнивание и позиционирование',
+  position: lesson_position,
+  slug: 'floating-and-positioning',
+  description: 'Позиционирование элементов на странице позволит вам аккуратно их расположить, так что изучение того, как элементы взаимодействуют друг с другом определенно стоит вашего времени.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/13_floats_and_positioning.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Выравнивание и позиционирование элементов',
+  position: lesson_position,
+  slug: 'project-floating-and-positioning-of-elements',
+  description: 'Длинные "куски" контента устарели и были заменены краткими блоками со вставками медиа-элементов. Попробуйте на практике то, что узнали ранее о позиционировании.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/14_project_positioning_and_floating_elements.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Лучшие практики',
+  position: lesson_position,
+  slug: 'html-css-best-practices',
+  description: 'Одно дело - иметь набор инструментов, и совсем другое - понимать, как лучше всего использовать их. В этом уроке мы изучим некоторые из лучших практик.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/15_best_practices.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Фоны и градиенты',
+  position: lesson_position,
+  slug: 'backgrounds-and-gradients',
+  description: 'Здесь вы узнаете о размещении и позиционировании фоновых изображений и поработаете с градиентами.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/16_backgrounds_and_gradients.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Работаем с фонами и градиентами',
+  position: lesson_position,
+  slug: 'project-building-with-backgrounds-and-gradients',
+  description: 'Apple - лидер в оформлении продукта, и главная страница их сайта научит вас многому в работе с фонами и градиентами.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/17_building_with_backgrounds_and_gradients.md'
+  )
+
+# = Третий раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Дизайн и юзабилити',
+  position: section_position,
+  slug: 'design-and-ux',
+  description: 'Если вы не хотите, чтобы ваши сайты выглядели приветом из 90-х, вам необходимо будет получить понимание как минимум лучших практик дизайна и юзабилити. Не знание этих вещей равносильно тому, чтобы прыгнуть в реку, не зная, не водятся ли в ней пираньи.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Введение в дизайн и юзабилити',
+  position: lesson_position,
+  slug: 'introduction-to-design-and-ux',
+  description: 'Некоторые фундаментальные понятия дизайна, которые мы будем использовать.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/18_design_ux.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Шрифты и типографика',
+  position: lesson_position,
+  slug: 'fonts-and-typography',
+  description: 'Понимание шрифтов и типографики - не самая близкая область для гика, но оно даст вам огромное преимущество при оформлении ваших страниц.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/19_typography.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'CSS-сетки',
+  position: lesson_position,
+  slug: 'css-grids',
+  description: 'Контент нельзя просто взять и беззаботно швырнуть на страницу - применение сетки позволяет визуально упорядочить преподносимую информацию.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/20_css_grids.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Дизайн',
+  position: lesson_position,
+  slug: 'project-teardown-in-design',
+  description: 'Первый шаг в понимании дизайна заключается в том, чтобы научить себя *видеть* дизайн, сделав его, вы получите шанс удостоиться одной из громких наград, таких, как признание Smashing Magazine.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/21_project_design.md'
+  )
+
+# = Четвертый раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Адаптивный дизайн и CSS-фреймворки',
+  position: section_position,
+  slug: 'responsive-design-and-css-frameworks',
+  description: 'В наши дни вы должны быть уверены, что ваш сайт одинаково хорошо выглядит на экранах с разным разрешением. Этого можно достичь, используя медиа-запросы и резиновые макеты. К счастью, существуют фреймворки, такие, как Bootstrap, которые могут сэкономить вам огромное количество времени при разработке стандартных страниц и которые предоставляют все необходимое для создания адаптивного дизайна.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Адаптивный дизайн',
+  position: lesson_position,
+  slug: 'responsive-design',
+  description: 'Ваши сайты должны хорошо выглядеть как на экране компьютера, так и на экране планшета и смартфона, и мы здесь расскажем вам, как этого достичь.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/22_responsive_design.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Создаем адаптивный дизайн',
+  position: lesson_position,
+  slug: 'project-responsive-design',
+  description: 'Настало время на практике применить навыки построения адаптивного дизайна.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/23_project_responsive.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'CSS-фреймворки: Bootstrap и Foundation',
+  position: lesson_position,
+  slug: 'css-frameworks-bootstrap-foundation',
+  description: 'Теперь, когда вы освоились с основами CSS и HTML, пора значительно упростить ваш рабочий процесс, применив CSS-фреймворк',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/24_css_frameworks.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Используем Bootstrap',
+  position: lesson_position,
+  slug: 'project-using-bootstrap',
+  description: 'Попробуйте Bootstrap в деле. Поначалу работа с ним может показаться слегка странной, но все станет ЗНАЧИТЕЛЬНО проще, когда вы поймете, в чем суть.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/25_project_bootstrap.md'
+  )
+
+# = Пятый раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Продвинутый CSS3',
+  position: section_position,
+  slug: 'advanced-css3',
+  description: 'Мы продвинемся дальше основ CSS и получим представление о некоторых более продвинутых возможностях, начиная с того, как сделать ваши элементы более стильными и заканчивая инструментами вроде препроцессоров, которые позволят экономить ваше время и избегать дублирования кода.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Анимация, визуальные эффекты и совместимость',
+  position: lesson_position,
+  slug: 'animations-subtle-effects-and-compatibility',
+  description: 'Затронем одну из самых интересных вещей, которая предоставит в ваше распоряжение анимации и переходы, доступные только в CSS3',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/26_stylings.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Использование CSS-препроцессоров для экономии времени',
+  position: lesson_position,
+  slug: 'using-css-preprocessors-to-save-time',
+  description: 'Узнайте о препроцессорах, таких, как SASS, который заставит ваш CSS-код быть более похожим на... код. Это хорошо, потому что экономит вам время и седину в волосах.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/27_preprocessors.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Разрабатываем собственный фреймворк, основанный на сетке',
+  position: lesson_position,
+  slug: 'project-design-your-own-framework',
+  description: 'Финальный проект потребует от вас применения почти всего, что вы изучили в этом разделе. Вы создадите собственный CSS-фреймворк! И сможете использовать его в своих последующих проектах.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/28_project_css_frameworks.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Заключение',
+  position: lesson_position,
+  slug: 'html-css-conclusion',
+  description: 'Вы видите свет в конце тоннеля.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/html5_and_css3/29_conclusion.md'
+  )
 
 
 # = Шестой курс = #
