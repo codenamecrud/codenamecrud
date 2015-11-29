@@ -1611,10 +1611,10 @@ create_or_update_lesson(
 
 lesson_position += 1
 create_or_update_lesson(
-  title: '"Коробочная" модель',
+  title: 'Блочная модель',
   position: lesson_position,
   slug: 'the-box-model',
-  description: 'Даже опытные разработчики нередко имеют сложности с пониманием "коробочной" модели, которая описывает то, как должны располагаться элементы страницы.',
+  description: 'Даже опытные разработчики нередко имеют сложности с пониманием блочная модели, которая описывает то, как должны располагаться элементы страницы.',
   is_project: false,
   section: section,
   course: course,
