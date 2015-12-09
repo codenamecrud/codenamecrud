@@ -29,4 +29,13 @@ feature 'Completing lessons' do
     expect(another_user.lessons.include? lesson).to be_truthy
   end
 
+  scenario 'after toggle click lesson marks as done', js: true do
+    sign_in_with(user.email, user.password)
+    visit course_lesson_path(course, lesson)
+
+    find(:xpath, "//a[@href=\"#{current_path}/toggle_check\"]").click
+    expect(page).to have_selector('.mark-as-uncompleted')
+    expect(user.lessons.include? lesson).to be_truthy
+  end
+
 end
