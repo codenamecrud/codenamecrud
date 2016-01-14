@@ -1862,7 +1862,7 @@ create_or_update_lesson(
 # = Шестой курс = #
 
 course_position += 1
-create_or_update_course(
+course = create_or_update_course(
   title: 'Javascript и jQuery',
   slug: 'Javascript-and-jquery',
   short_description: 'Последний компонент в вашем арсенале веб-разработчика -- это умение научить ваш фронтенд динамически реагировать на действия пользователя. В этом курсе вы узнаете, как использовать Javascript и jQuery для взаимодействия с DOM и как делать вещи вроде выпадающих меню, параллакс-эффекта при прокрутке, одностраничных приложений и даже игр. Это свяжет все изученное ранее воедино в один прекрасный комплект.',
@@ -2278,10 +2278,10 @@ create_or_update_lesson(
 
 lesson_position += 1
 create_or_update_lesson(
-  title: 'Проект: Найдите Уолдо',
+  title: 'Проект: Где Уолли',
   position: lesson_position,
-  slug: 'projet-where-is-waldo',
-  description: 'Используйте все, что вы изучили, чтобы создать игру "Найдите Уолдо".',
+  slug: 'project-where-is-waldo',
+  description: 'Используйте все, что вы изучили, чтобы создать игру "Где Уолли".',
   is_project: false,
   section: section,
   course: course,
@@ -2384,9 +2384,6 @@ create_or_update_lesson(
   )
 
 # = Седьмой раздел = #
-
-You've learned everything you need and all that remains to do is apply that knowledge to a worthy task. In this section, we'll briefly cover how to test Javascript using Jasmine and then get you started with your capstone project so you can show off your range of skills.
-
 
 section_position += 1
 section = create_or_update_section(

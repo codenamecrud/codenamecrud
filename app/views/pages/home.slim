@@ -33,11 +33,11 @@
     .courses
       ul.courses-list
         - @courses.with_index(1) do |course, index|
-          li.row.course class=('well text-success' if new_one(course, 'HTML5 и CSS3'))
+          li.row.course class=('well text-success' if new_one(course, 'Javascript и jQuery'))
             .col-xs-3.col-sm-2
               = image_tag("#{index.to_s}.jpg", class: 'img-responsive', alt: "#{course.title}")
             .col-xs-9.col-sm-10
-              h3 = course_link(course, index, new_one(course, 'HTML5 и CSS3'))
+              h3 = course_link(course, index, new_one(course, 'Javascript и jQuery'))
               p = course.short_description
     .row
       = render 'shared/email_form'
