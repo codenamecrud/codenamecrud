@@ -1451,7 +1451,7 @@ section = create_or_update_section(
   title: 'Базовая HTML-структура страницы',
   position: section_position,
   slug: 'basic-html-page-structure',
-  description: 'В этом разделе мы узнаем практически все об HTMK, чтобы вы не испытывали дискомфорт при редактировании и добавлении новых элементов в нужные места страницы.',
+  description: 'В этом разделе мы узнаем практически все об HTML, чтобы вы не испытывали дискомфорт при редактировании и добавлении новых элементов в нужные места страницы.',
   course: course
   )
 
@@ -1871,7 +1871,365 @@ create_or_update_course(
   you_build: ['Javascript-фронтенд для вашего Rails-бэкенда', 'Собственный Javascript-фреймворк', 'Змейку, Ракеты и многое другое'],
   teaser: 'Скоро будет доступно!',
   position: course_position,
-  is_active: false
+  is_active: true
+  )
+
+# = Первый раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Основы и браузер',
+  position: section_position,
+  slug: 'the-basics-and-the-browser',
+  description: 'Мы пройдемся по основам Javascript и узнаем, как он используется в браузере. Вы неплохо повеселитесь, поскольку сможете увидеть результат ваших усилий прямо в браузере. К концу раздела вы будете знать все, что необходимо для создания интересного фронтенда, но мы, конечно же, только начинаем.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Как будет работать этот курс',
+  position: lesson_position,
+  slug: 'javascript-how-this-course-will-work',
+  description: 'Мы начнем наш путь с правильной ноги.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/01_introduction.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Основы Javascript',
+  position: lesson_position,
+  slug: 'javascript-basics',
+  description: 'Вернемся к самым основам, чтобы убедиться, что вы ничего не забыли.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/02_js_basics.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: калькулятор',
+  position: lesson_position,
+  slug: 'project-calculator',
+  description: 'На практике попробуем написание JS-кода, создав калькулятор.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/javascript/03_project_js_basics.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Основы jQuery',
+  position: lesson_position,
+  slug: 'jquery-basics',
+  description: 'Еще раз вернемся к основам, но в этот раз сфокусируемся на jQuery и манипулировании объектами на странице.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/04_jq_basics.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: редактируем DOM при помощи jQuery',
+  position: lesson_position,
+  slug: 'manipulating-dom-with-jquery',
+  description: 'Создадим одностраничное приложение для ресторана, используя только JS и jQuery.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/javascript/05_project_jq_basics.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Упорядочиваем свой код',
+  position: lesson_position,
+  slug: 'organizing-your-code',
+  description: 'Здесь мы поговорим обо всем, что касается организации кода, начиная с лучших практик и заканчивая полезными библиотеками.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/06_organizing_code.md'
+  )
+
+# = Второй раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'События, эффекты и виджеты',
+  position: section_position,
+  slug: 'events-effects-and-widgets',
+  description: 'События управляют всем, что вы делаете при помощи Javascript в браузере. Мы ознакомимся с ними поближе, узнаем, как они работают и что с их помощью можно сделать.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Работаем с событиями и эффектами',
+  position: lesson_position,
+  slug: 'working-with-events-and-effects',
+  description: 'Узнайте, как использовать события, чтобы улучшить UX.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/07_events_effects.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: jQuery и DOM',
+  position: lesson_position,
+  slug: 'project-jquery-and-the-dom',
+  description: 'Создайте игру "Змейка", в которую вы почти наверняка играли на своем первом мобильном телефоне.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/javascript/08_project_events_effects.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Используем jQuery UI для создания виджетов',
+  position: lesson_position,
+  slug: 'using-jquery-ui-to-build-widgets',
+  description: 'Взгляните на jQuery UI и на то, какие виджеты вы можете создавать с его помощью.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/09_widgets.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Создаем карусель/слайдер изображений',
+  position: lesson_position,
+  slug: 'project-creating-image-slider-carousel',
+  description: 'Попрактикуйтесь в создании виджетов, создав слайдер изображений, подобный тем, что вы видите на множестве сайтов.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/javascript/10_project_widgets.md'
+  )
+
+# = Третий раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Глубже в Javascript',
+  position: section_position,
+  slug: 'deeper-into-javascript',
+  description: 'Вы можете сделать многое даже с простым Javascript, jQuery и пытливым умом. Но этот раздел погрузит вас глубже в то, как Javacscipt работает и даст вам инструменты для создания более продвинутой функциональности для ваших сайтов. Некоторые предыдущие проекты, возможно, несколько выходили за горизонты вашего понимания Javascript, но теперь мы это исправим.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Объекты, "Классы" и Прототипы',
+  position: lesson_position,
+  slug: 'objects-classes-and-prototypes',
+  description: 'Узнайте, как эффективно использовать объекты Javascript и сократить ваш код, используя прототипы.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/11_objects_prototypes.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Область видимости и замыкания',
+  position: lesson_position,
+  slug: 'scope-and-closures',
+  description: 'Область видимости может быть несколько неочевидной в Javascript, поскольку функции передаются и вызываются во множестве различных контекстов.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/12_scope_closures.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Крестики-нолики',
+  position: lesson_position,
+  slug: 'project-tip-tac-toe',
+  description: 'Давайте воссоздадим классическую игру "Крестики-нолики" в браузере.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/javascript/13_project_scopes_closures.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Сравниваем Javascript и Ruby',
+  position: lesson_position,
+  slug: 'comparing-js-and-ruby',
+  description: 'Короткий пример, показывающий, как можно использовать знание Ruby при работе с Javascript.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/14_comparing_to_ruby.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'По-настоящему понимаем функции в Javascript',
+  position: lesson_position,
+  slug: 'comparing-js-and-ruby',
+  description: 'Функции Javascript чрезвычайно важны, и здесь вы узнаете, почему.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/15_deep_dive_functions.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: "Сапер"',
+  position: lesson_position,
+  slug: 'project-minesweeper',
+  description: 'Настало время написать что-то посложнее. Создадим "Сапер", единственную достойную игру, идущую в комплекте с Windows.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/javascript/16_project_functions.md'
+  )
+
+# = Третий раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Продвинутая работа браузера',
+  position: section_position,
+  slug: 'advanced-browser-work',
+  description: 'При помощи браузера и Javascript можно делать намного больше, чем просто манипулировать DOM, используя jQuery. Если вы хотите собирать данные с сайтов или с собственного бэкенда, отправлять формы или создавать более сложные игры, вам придется понять, как Javascript работает с такими вещами, как коллбеки. Так же мы расскажем о том, как создавать игры, используя элемент `<canvas>`, появившийся в HTML5. Здесь Javascript пригодится нам для рисования фигур.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Загружаем Javascript в браузер',
+  position: lesson_position,
+  slug: 'loading-js-in-the-browser',
+  description: 'Кратко о том, как и когда загружать Javascript.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/17_js_to_browser.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Коллбеки: жизнь в мире, управляемом событиями',
+  position: lesson_position,
+  slug: 'callbacks-living-in-events-driven-world',
+  description: 'Этот урок свяжет в единое целое ваше знание о событиях со стандартным паттерном для взаимодействия с этими событиями.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/18_event_driven.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Коллбеки',
+  position: lesson_position,
+  slug: 'project-callbacks',
+  description: 'Возможность применить полученные знания о коллбеках, создав еще одно браузерное приложение.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/javascript/19_project_callbacks.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Используем канвас для рисования и не только',
+  position: lesson_position,
+  slug: 'using-canvas-for-drawing-and-more',
+  description: 'Когда вы поймете принцип работы canvas, вы будете ограничены лишь собственным воображением (и, возможно, своими навыками в геометрии).',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/20_canvas.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Создаем игры при помощи Canvas',
+  position: lesson_position,
+  slug: 'project-building-games-with-canvas',
+  description: 'Посмотрим, насколько весело будет создавать при помощи canvas, воссоздадим классическую игру Missile Command!',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/javascript/21_project_canvas.md'
+  )
+
+# = Четвертый раздел = #
+
+In this section you'll learn about AJAX, the technology which allows you to send data from the browser to your web application without needing to refresh the page. It's commonly used with forms, but really represents a whole world of possibility for crafting performant user experiences.
+
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Улучшаем формы, используя jQuery и AJAX',
+  position: section_position,
+  slug: 'better-forms-using-jquery-and-ajax',
+  description: 'В этом разделе вы изучите AJAX, технологию, которая позволяет отправлять данные из браузера в ваше веб-приложение без необходимости перезагружать страницу. AJAX очень часто используется с формами, но помимо них представляет целый мир возможностей для создания приятного UX.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Валидируем формы при помощи jQuery',
+  position: lesson_position,
+  slug: 'validating-forms-using-jquery',
+  description: 'Теперь вы эксперт в формах, но здесь мы сфокусируемся на использовании jQuery при работе с ними.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/22_jquery_forms.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Валидируем формы при помощи jQuery',
+  position: lesson_position,
+  slug: 'project-validating-forms-with-jquery',
+  description: 'Возможность использовать плагин jQuery Validate, а затем создать собственную валидацию для форм.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/javascript/23_project_forms.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Отправляем форму без перезагрузки, используя AJAX',
+  position: lesson_position,
+  slug: 'submitting-form-with-ajax',
+  description: 'AJAX - недостающее звено между бесшовным клиентским UX и вашим серверным кодом.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/24_ajax.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: бесконечная прокрутка и отправка форм при помощи AJAX',
+  position: lesson_position,
+  slug: 'project-infinite-scroll-and-submitting-forms-with-ajax',
+  description: 'Мы поиграем с AJAX, используя его для запросов к открытому API OMDB и создадим простую форму и страницу со списком фильмов, которая будет использовать бесконечную прокрутку.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/javascript/25_project_ajax_forms.md'
   )
 
 # = Седьмой курс = #
