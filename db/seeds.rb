@@ -2172,9 +2172,6 @@ create_or_update_lesson(
 
 # = Четвертый раздел = #
 
-In this section you'll learn about AJAX, the technology which allows you to send data from the browser to your web application without needing to refresh the page. It's commonly used with forms, but really represents a whole world of possibility for crafting performant user experiences.
-
-
 section_position += 1
 section = create_or_update_section(
   title: 'Улучшаем формы, используя jQuery и AJAX',
@@ -2230,6 +2227,210 @@ create_or_update_lesson(
   section: section,
   course: course,
   url: '/javascript/25_project_ajax_forms.md'
+  )
+
+# = Пятый раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Соединяем фронтенд с API и вашим бэкендом на Rails',
+  position: section_position,
+  slug: 'linking-to-apis-andyour-rails-backend',
+  description: 'Полноценное веб-приложение нуждается в бэкенде, чтобы соханять свои данные и выполнять необходимые операции. Здесь вы узнаете, как использовать AJAX для отправки данных и запросов к вашему бэкенду на Rails. Так же вы сможете поработать со внешними API, такими как Google Maps, что вы, вероятнее всего, будете делать довольно часто, работая над своими будущими проектами.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Работаем с API при помощи Javascript',
+  position: lesson_position,
+  slug: 'working-with-javascript-apis',
+  description: 'Работа с удаленными API с клиентской части вашего приложения может быть отличным способом добавления динамической функциональности к вашим сайтам.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/26_javascript_apis.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Вставляем Google Maps на ваш сайт',
+  position: lesson_position,
+  slug: 'project-putting-google-maps-on-your-site',
+  description: 'Практически каждый бизнес должен иметь на своем сайте страничку с контактными данными и картой, указывающей адрес компании на ней. Сделайте это при помощи Google Maps API.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/javascript/27_project_apis.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Используем Ruby on Rails в качестве бэкенда',
+  position: lesson_position,
+  slug: 'using-ruby-on-rails-for-your-backend',
+  description: 'Вы уже поработали с внешними API, настало время использовать ваш бэкенд на Ruby on Rails в этом качестве.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/28_rails_backend.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Найдите Уолдо',
+  position: lesson_position,
+  slug: 'projet-where-is-waldo',
+  description: 'Используйте все, что вы изучили, чтобы создать игру "Найдите Уолдо".',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/29_project_rails_backend.md'
+  )
+
+# = Шестой раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Серверный Javascript и Javascript-фреймворки',
+  position: section_position,
+  slug: 'server-side-js-and-js-frameworks',
+  description: 'Это НЕОБЯЗАТЕЛЬНЫЙ раздел, где вы узнаете об использовании Javascript на вашем сервере (вместо Ruby) и о фреймворках на Javascript, которые позволят вам создать полноценный сайт в виде single-page application, используя Javascript для молниеносно быстрого UX.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Node.js и серверный Javascript',
+  position: lesson_position,
+  slug: 'node-js-and-server-side-js',
+  description: 'В наши дни можно не расставаться с любимым Javascript, потому что теперь его можно писать и для серверной стороны, используя Node.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/30_server_side_js.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Node.js',
+  position: lesson_position,
+  slug: 'project-node-js',
+  description: 'Запустите сервер на Node и поиграйтесь с ним, потому что только так мы и учимся новому.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/javascript/31_project_node.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Используем шаблоны',
+  position: lesson_position,
+  slug: 'using-templates',
+  description: 'Шаблонизаторы предоставляют волшебную возможность использовать макеты на клиентской стороне снова и снова.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/32_templating.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Javascript MV* фреймворки, такие как Angular.js и Backbone.js',
+  position: lesson_position,
+  slug: 'using-templates',
+  description: 'Фронтенд-фреймворки помогут вам организовать мешанину из AJAX-вызовов, шаблонов и jQuery-кода и позволят вам невероятно ускорить создание превосходного фронтенда.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/33_js_frameworks.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Javascript MV* фреймворки, такие как Angular.js и Backbone.js',
+  position: lesson_position,
+  slug: 'js-frameworks-angularjs-backbonejs',
+  description: 'Фронтенд-фреймворки помогут вам организовать мешанину из AJAX-вызовов, шаблонов и jQuery-кода и позволят вам невероятно ускорить создание превосходного фронтенда.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/33_js_frameworks.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Создаем SPA при помощи Angular.js и Backbone.js',
+  position: lesson_position,
+  slug: 'project-build-spa-with-angularjs-backbonejs',
+  description: 'Выберите фреймворки и опробуйте его на этих туториалах.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/javascript/34_project_js_frameworks.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Рабочие инструменты, набор технологий и управление зависимостями',
+  position: lesson_position,
+  slug: 'workflow-tools-tech-stack-dependency-management',
+  description: 'Несколько инструментов, которые облегчат вам работу.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/35_workflow_tools.md'
+  )
+
+# = Седьмой раздел = #
+
+You've learned everything you need and all that remains to do is apply that knowledge to a worthy task. In this section, we'll briefly cover how to test Javascript using Jasmine and then get you started with your capstone project so you can show off your range of skills.
+
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Заканчиваем с Javascript',
+  position: section_position,
+  slug: 'finishing-up-with-javascript',
+  description: 'Вы изучили все, что вам необходимо, и осталось лишь применить ваши знания в достойной задаче. В этом разделе мы кратко расскажем о том, как тестировать Javascript при помощи Jasmine и затем предложим вам выполнить завершающий проект, в котором вы сможете продемонстрировать все полученные знания.',
+  course: course
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Тестирование Javascript с Jasmine',
+  position: lesson_position,
+  slug: 'testing-javascript-with-jasmine',
+  description: '...потому что если вы это не протестируете, вы не узнаете, что оно сломалось, когда это произойдет.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/36_js_testing.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Финальный проект',
+  position: lesson_position,
+  slug: 'js-final-project',
+  description: 'Соберите все, что вы узнали, изучая этот курс, и примените это в проекте, где вы создадите ваш любимый сайт с нуля.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/javascript/37_project_final_js.md'
+  )
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Заключение',
+  position: lesson_position,
+  slug: 'js-conclusion',
+  description: 'Что-ж, это было несложно, верно?',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/javascript/38_conclusion.md'
   )
 
 # = Седьмой курс = #
