@@ -1869,7 +1869,7 @@ course = create_or_update_course(
   description: 'Javascript прямо сейчас захватывает мир -- веб-приложения становятся все более и более завязанными на фронтенд. Хотя JS пока чаще всего используется для анимации выпадающих меню и валидации форм, он (при некоторой помощи магии jQuery) вырос в инструмент для создания полноценных фронтенд-приложений, включая одностраничные.',
   you_learn: ['Как создавать интерактивные игры при помощи HTML5 canvas', 'Как использовать весь набор jQuery-эффектов на DOM', 'Как организовать ваш JS-код в модульные части'],
   you_build: ['Javascript-фронтенд для вашего Rails-бэкенда', 'Собственный Javascript-фреймворк', 'Змейку, Ракеты и многое другое'],
-  teaser: 'Скоро будет доступно!',
+  teaser: 'Заставит ваш сайт танцевать!',
   position: course_position,
   is_active: true
   )
@@ -2079,7 +2079,7 @@ lesson_position += 1
 create_or_update_lesson(
   title: 'По-настоящему понимаем функции в Javascript',
   position: lesson_position,
-  slug: 'comparing-js-and-ruby',
+  slug: 'understanding-functions-in-js',
   description: 'Функции Javascript чрезвычайно важны, и здесь вы узнаете, почему.',
   is_project: false,
   section: section,
@@ -2282,7 +2282,7 @@ create_or_update_lesson(
   position: lesson_position,
   slug: 'project-where-is-waldo',
   description: 'Используйте все, что вы изучили, чтобы создать игру "Где Уолли".',
-  is_project: false,
+  is_project: true,
   section: section,
   course: course,
   url: '/javascript/29_project_rails_backend.md'
