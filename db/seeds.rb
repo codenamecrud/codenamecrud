@@ -250,7 +250,7 @@ create_or_update_lesson(
 
 lesson_position += 1
 create_or_update_lesson(
-  title: 'Проект: установки',
+  title: 'Проект: Установки',
   position: lesson_position,
   slug: 'project-installations',
   description: 'Несколько вещей, которые необходимо установить, прежде чем начать писать код',
@@ -337,7 +337,7 @@ create_or_update_lesson(
   position: lesson_position,
   slug: 'project-javascript-and-jquery',
   description: 'Создайте собственную "рисовалку"',
-  is_project: false,
+  is_project: true,
   section: section,
   course: course,
   url: '/web_development_101/11_project_js_jquery.md'
@@ -646,7 +646,7 @@ create_or_update_lesson(
 
 lesson_position += 1
 create_or_update_lesson(
-  title: 'Проект: строительные блоки',
+  title: 'Проект: Строительные блоки',
   position: lesson_position,
   slug: 'project-building-blocks',
   description: 'Настало время привыкать писать скрипты без подстраховки.',
@@ -670,7 +670,7 @@ create_or_update_lesson(
 
 lesson_position += 1
 create_or_update_lesson(
-  title: 'Проект: продвинутые строительные блоки',
+  title: 'Проект: Продвинутые строительные блоки',
   position: lesson_position,
   slug: 'project-advanced-building-blocks',
   description: 'Вы можете применить изученное на практике, создав простой шифр и воссоздав методы Enumerable, которые постоянно будут использоваться позднее.',
@@ -991,7 +991,7 @@ create_or_update_lesson(
 
 lesson_position += 1
 create_or_update_lesson(
-  title: 'Проект: первые шаги',
+  title: 'Проект: Первые шаги',
   position: lesson_position,
   slug: 'getting-your-feet-wet',
   description: 'Здесь мы создадим первое приложение на Rails, используя некоторые из предоставляемых нам фреймворком инструменты.',
@@ -1216,7 +1216,7 @@ create_or_update_lesson(
 
 lesson_position += 1
 create_or_update_lesson(
-  title: 'Проект: аутентификация',
+  title: 'Проект: Аутентификация',
   position: lesson_position,
   slug: 'project-authentification',
   description: 'Вы создадите закрытое сообщество, позволяющее анонимно делиться сплетнями с миром.',
@@ -1505,7 +1505,7 @@ create_or_update_lesson(
 
 lesson_position += 1
 create_or_update_lesson(
-  title: 'Проект: вставлем изображения и видео',
+  title: 'Проект: Вставлем изображения и видео',
   position: lesson_position,
   slug: 'project-embedding-images-and-video',
   description: 'Чтобы попрактиковать свежеобретенные навыки, вы воспроизведете главную страницу YouTube.',
@@ -1911,7 +1911,7 @@ create_or_update_lesson(
 
 lesson_position += 1
 create_or_update_lesson(
-  title: 'Проект: калькулятор',
+  title: 'Проект: Калькулятор',
   position: lesson_position,
   slug: 'project-calculator',
   description: 'На практике попробуем написание JS-кода, создав калькулятор.',
@@ -1935,7 +1935,7 @@ create_or_update_lesson(
 
 lesson_position += 1
 create_or_update_lesson(
-  title: 'Проект: редактируем DOM при помощи jQuery',
+  title: 'Проект: Редактируем DOM при помощи jQuery',
   position: lesson_position,
   slug: 'manipulating-dom-with-jquery',
   description: 'Создадим одностраничное приложение для ресторана, используя только JS и jQuery.',
@@ -2219,7 +2219,7 @@ create_or_update_lesson(
 
 lesson_position += 1
 create_or_update_lesson(
-  title: 'Проект: бесконечная прокрутка и отправка форм при помощи AJAX',
+  title: 'Проект: Бесконечная прокрутка и отправка форм при помощи AJAX',
   position: lesson_position,
   slug: 'project-infinite-scroll-and-submitting-forms-with-ajax',
   description: 'Мы поиграем с AJAX, используя его для запросов к открытому API OMDB и создадим простую форму и страницу со списком фильмов, которая будет использовать бесконечную прокрутку.',
