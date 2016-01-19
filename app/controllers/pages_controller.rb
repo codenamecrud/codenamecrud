@@ -24,17 +24,28 @@ class PagesController < ApplicationController
     @codenamecrud = JSON.load(codenamecrud)
 
     @developers = []
-    git_comments = ["https://api.github.com/repos/codenamecrud/codenamecrud/issues/comments",
-                    "https://api.github.com/repos/codenamecrud/codenamecrud/pulls/comments",
-                    "https://api.github.com/repos/codenamecrud/codenamecrud/comments"]
 
-    git_comments.each do |source|
-      comments = open "#{source}?client_id=#{ENV['GITHUB_KEY']}&client_secret=#{ENV['GITHUB_SECRET']}"
-      comments_json = JSON.load(comments)
+    git_comments_sources = ["https://api.github.com/repos/codenamecrud/codenamecrud/issues/comments",
+                            "https://api.github.com/repos/codenamecrud/codenamecrud/pulls/comments",
+                            "https://api.github.com/repos/codenamecrud/codenamecrud/comments"]
 
-      comments_json.each do |comment|
-        current_dev = comment['user']
-        @developers.push(current_dev)
+    git_comments_sources.each do |source|
+      page = 1
+      keep_going = true
+
+      while keep_going
+        comments = open "#{source}?page=#{page}&client_id=#{ENV['GITHUB_KEY']}&client_secret=#{ENV['GITHUB_SECRET']}"
+        comments_json = JSON.load(comments)
+
+        if comments_json.length > 0
+          comments_json.each do |comment|
+            current_dev = comment['user']
+            @developers.push(current_dev)
+          end
+          page += 1
+        else
+          keep_going = false
+        end
       end
     end
 
