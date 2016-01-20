@@ -26,6 +26,7 @@ module ApplicationHelper
   end
 
   def nice_russian_date(date)
+    # TODO: Заменить на client-side (moment.js)
     "#{time_ago_in_words(date)} назад"
   end
 
