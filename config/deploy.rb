@@ -78,7 +78,7 @@ set :repository,    'git@github.com:codenamecrud/codenamecrud.git'
 
 before 'deploy:finalize_update', 'set_current_release'
 task :set_current_release, roles: :app do
-    set :current_release, latest_release
+  set :current_release, latest_release
 end
 
 set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"

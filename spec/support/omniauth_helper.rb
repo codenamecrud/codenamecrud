@@ -16,6 +16,6 @@ module OmniauthHelpers
             'gravatar_id' => '123456789'
           }
         }
-      }
+    }
   end
 end
