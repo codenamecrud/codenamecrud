@@ -28,7 +28,7 @@ def create_or_update_course(course_attrs)
     course.update_attributes(course_attrs)
     puts "Обновлен существующий << КУРС >>: #{course_attrs[:title]}"
   end
-  return course
+  course
 end
 
 def create_or_update_section(section_attrs)
@@ -42,7 +42,7 @@ def create_or_update_section(section_attrs)
     section.update_attributes(section_attrs)
     puts "Обновлен существующий РАЗДЕЛ: #{section_attrs[:title]}"
   end
-  return section
+  section
 end
 
 def create_or_update_lesson(lesson_attrs)
@@ -60,7 +60,7 @@ def create_or_update_lesson(lesson_attrs)
     lesson.update_attributes(lesson_attrs)
     puts "Обновлен существующий урок: #{lesson_attrs[:title]}"
   end
-  return lesson
+  lesson
 end
 
 

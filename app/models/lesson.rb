@@ -13,15 +13,15 @@ class Lesson < ActiveRecord::Base
   validates :title, :slug, :description, :section_id, :position, presence: true
 
   def next
-    self.course.lessons.where('id > ?', id).first
+    course.lessons.where('id > ?', id).first
   end
 
   def previous
-    self.course.lessons.where('id < ?', id).last
+    course.lessons.where('id < ?', id).last
   end
 
   def get_section_lessons(course)
-    section = course.lessons.find(self.id).section
+    section = course.lessons.find(id).section
     section.lessons.where(course_id: course.id).order(:id)
   end
 

@@ -11,11 +11,11 @@ class LessonUser < ActiveRecord::Base
   private
 
   def record_object
-    PaperTrail::Version.last.update(object: self.lesson_id)
+    PaperTrail::Version.last.update(object: lesson_id)
   end
 
   def check_completion
-    user_lesson_doubles = PaperTrail::Version.where(whodunnit: self.user_id, object: self.lesson_id)
+    user_lesson_doubles = PaperTrail::Version.where(whodunnit: user_id, object: lesson_id)
     if user_lesson_doubles.count > 0
       user_lesson_doubles.delete_all
     end
