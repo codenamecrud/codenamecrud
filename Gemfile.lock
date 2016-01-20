@@ -262,7 +262,8 @@ GEM
     request_store (1.3.0)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
-    rollbar (2.1.2)
+    rollbar (2.7.1)
+      multi_json
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -296,8 +297,8 @@ GEM
       sprockets (> 2.11)
       tilt
     shellany (0.0.1)
-    shoulda-matchers (3.1.0)
-      activesupport (>= 4.0.0)
+    shoulda-matchers (2.8.0)
+      activesupport (>= 3.0.0)
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
@@ -389,7 +390,7 @@ DEPENDENCIES
   rollbar
   rspec-rails
   sassc-rails
-  shoulda-matchers
+  shoulda-matchers (~> 2.8)
   simple_form
   sitemap_generator (~> 5.0.5)
   slim-rails

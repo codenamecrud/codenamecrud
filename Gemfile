@@ -15,6 +15,7 @@ gem 'pg'
 gem 'rails', '~> 4.2.2'
 gem 'rails-i18n'
 gem 'redcarpet'
+gem 'rollbar'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'sitemap_generator', '~> 5.0.5'
@@ -46,12 +47,11 @@ group :test do
   gem 'database_cleaner', '~> 1.3'
   gem 'email_spec'
   gem 'launchy', '~> 2.4'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers', '~> 2.8'
 end
 
 group :production do
   gem 'newrelic_rpm'
-  gem 'rollbar'
   gem 'unicorn'
 end
 
