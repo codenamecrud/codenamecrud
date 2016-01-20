@@ -25,7 +25,7 @@ feature 'Progress bar' do
     sign_in_with(user.name, user.password)
     course.lessons.each do |lesson|
       visit course_lesson_path(course.id, lesson.id)
-      within ('div.row.bs-wizard') do
+      within('div.row.bs-wizard') do
         expect(page).to have_css('div.col-xs-1.bs-wizard-step.disabled', count: course.lessons.count)
         expect(page).to_not have_css('div.col-xs-1.bs-wizard-step.complete')
         expect(first('div.bs-wizard-info.text-center')).to_not have_content('%')
@@ -49,7 +49,7 @@ feature 'Progress bar' do
     visit course_lesson_path(course.id, lesson2.id)
     page.execute_script('$("a.mark-as-completed").click()')
     visit course_lesson_path(course.id, lesson3.id)
-    within ('div.row.bs-wizard') do
+    within('div.row.bs-wizard') do
       expect(page).to have_css('div.col-xs-1.bs-wizard-step.complete', count: 4)
       expect(first('div.bs-wizard-info.text-center')).to have_content('100%')
       expect(first('div.bs-wizard-info.text-center')).to have_content("#{user.completed_lessons(section1).to_i}%")
@@ -64,7 +64,7 @@ feature 'Progress bar' do
     visit course_lesson_path(course.id, lesson1.id)
     page.execute_script('$("a.mark-as-uncompleted").click()')
     visit course_lesson_path(course.id, lesson3.id)
-    within ('div.row.bs-wizard') do
+    within('div.row.bs-wizard') do
       expect(page).to have_css('div.col-xs-1.bs-wizard-step.complete', count: 0)
       expect(first('div.bs-wizard-info.text-center')).not_to have_content('25%')
       expect(first('div.bs-wizard-info.text-center')).not_to have_content("#{user.completed_lessons(section1).to_i}%")
