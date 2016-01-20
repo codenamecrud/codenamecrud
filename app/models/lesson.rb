@@ -13,7 +13,7 @@ class Lesson < ActiveRecord::Base
   validates :title, :slug, :description, :section_id, :position, presence: true
 
   def next
-    course.lessons.where('id > ?', id).first
+    course.lessons.find_by('id > ?', id)
   end
 
   def previous
