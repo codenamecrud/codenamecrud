@@ -2,13 +2,13 @@ class User < ActiveRecord::Base
   include Concerns::Roles
 
   devise :database_authenticatable,
-    :registerable,
-    :recoverable,
-    :rememberable,
-    :trackable,
-    :validatable,
-    :omniauthable, omniauth_providers: [:github],
-    authentication_keys: [:login]
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :omniauthable, omniauth_providers: [:github],
+                        authentication_keys: [:login]
 
   has_many :lesson_users
   has_many :lessons, through: :lesson_users
