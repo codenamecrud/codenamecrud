@@ -16,8 +16,6 @@ class LessonUser < ActiveRecord::Base
 
   def check_completion
     user_lesson_doubles = PaperTrail::Version.where(whodunnit: user_id, object: lesson_id)
-    if user_lesson_doubles.count > 0
-      user_lesson_doubles.delete_all
-    end
+    user_lesson_doubles.delete_all if user_lesson_doubles.count > 0
   end
 end
