@@ -36,7 +36,12 @@ group :development, :test do
 end
 
 group :development do
+  gem 'bullet'
   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
+  gem 'rails_best_practices', require: false
+  gem 'rubocop', require: false
+  gem 'rubycritic', require: false
+  gem 'traceroute'
 end
 
 group :test do
