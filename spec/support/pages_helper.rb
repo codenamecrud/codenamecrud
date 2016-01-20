@@ -21,4 +21,4 @@ def contribute
   end
 
   @developers.uniq!
-  end
+end
