@@ -14,6 +14,7 @@ class MarkdownPresenter
         superscript: true,
         space_after_headers: true
     }
-    Redcarpet::Markdown.new(renderer, options).render(text).html_safe
+    str = Redcarpet::Markdown.new(renderer, options).render(text)
+    TermsRenderer.new(str).render.html_safe
   end
 end
