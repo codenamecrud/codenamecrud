@@ -386,7 +386,7 @@ DEPENDENCIES
   rails-assets-normalize-css!
   rails-i18n
   redcarpet
-  rollbar (~> 2.1.1)
+  rollbar
   rspec-rails
   sassc-rails
   shoulda-matchers
