@@ -63,7 +63,6 @@ def create_or_update_lesson(lesson_attrs)
   lesson
 end
 
-
 # == Первый курс == #
 
 course_position += 1
@@ -148,7 +147,6 @@ create_or_update_lesson(
   url: '/introduction_to_web_development/05_the_best_web_devs.md'
   )
 
-
 lesson_position += 1
 create_or_update_lesson(
   title: 'Ищем работу в качестве веб-разработчика',
@@ -160,7 +158,6 @@ create_or_update_lesson(
   course: course,
   url: '/introduction_to_web_development/06_getting_hired_as_a_web_dev.md'
   )
-
 
 lesson_position += 1
 create_or_update_lesson(
@@ -416,7 +413,6 @@ create_or_update_lesson(
 
 # == Четвертый раздел == #
 
-
 section_position += 1
 section = create_or_update_section(
   title: 'Фреймворки для веб-разработки',
@@ -476,7 +472,6 @@ create_or_update_lesson(
 
 # == Пятый раздел == #
 
-
 section_position += 1
 section = create_or_update_section(
   title: 'Дополнительные важные темы',
@@ -485,7 +480,6 @@ section = create_or_update_section(
   description: 'Этот раздел содержит набор коротких уроков, которые позволят вам освоиться с основами нескольких сопутствующих технологий, умение работать с которыми потребуется вам на вашем пути к карьере веб-разработчика.',
   course: course
   )
-
 
 lesson_position += 1
 create_or_update_lesson(
@@ -535,7 +529,6 @@ create_or_update_lesson(
   url: '/web_development_101/24_ftp_basics.md'
   )
 
-
 section_position += 1
 section = create_or_update_section(
   title: 'Собираем все воедино',
@@ -580,7 +573,6 @@ create_or_update_lesson(
   course: course,
   url: '/web_development_101/27_conclusion.md'
   )
-
 
 # = Третий курс = #
 
@@ -844,7 +836,6 @@ create_or_update_lesson(
   course: course,
   url: '/ruby/16_project_data_structures_algorithms.md'
   )
-
 
 # = Пятый раздел = #
 
@@ -1428,7 +1419,6 @@ create_or_update_lesson(
   url: '/rails/33_conclusion.md'
   )
 
-
 # = Пятый курс = #
 
 course_position += 1
@@ -1857,7 +1847,6 @@ create_or_update_lesson(
   course: course,
   url: '/html5_and_css3/29_conclusion.md'
   )
-
 
 # = Шестой курс = #
 

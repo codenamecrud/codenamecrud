@@ -24,5 +24,4 @@ class Lesson < ActiveRecord::Base
     section = course.lessons.find(id).section
     section.lessons.where(course_id: course.id).order(:id)
   end
-
 end

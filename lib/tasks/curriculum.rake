@@ -1,5 +1,4 @@
 namespace :curriculum do
-
   desc 'Get lessons from Github'
   task update_content: :environment do
     puts 'Getting content...'

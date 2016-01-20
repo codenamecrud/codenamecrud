@@ -100,5 +100,4 @@ feature 'Progress bar' do
       expect(dot.trigger(:mouseover)).to have_content(dot_title)
     end
   end
-
 end

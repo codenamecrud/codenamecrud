@@ -8,5 +8,4 @@ FactoryGirl.define do
     you_build %w(test test test)
     is_active false
   end
-
 end

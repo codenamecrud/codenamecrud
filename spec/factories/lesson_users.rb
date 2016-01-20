@@ -4,5 +4,4 @@ FactoryGirl.define do
     user_id 1
     completed false
   end
-
 end

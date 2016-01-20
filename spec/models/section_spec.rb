@@ -25,5 +25,4 @@ describe Section do
 
     expect(section.next_lesson_in_the_section(lesson1)).to eq(nil)
   end
-
 end

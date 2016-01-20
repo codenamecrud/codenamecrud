@@ -18,8 +18,6 @@ describe CoursesHelper do
 
     it 'shows NEW COURSE remark if it is new' do
       expect(helper.course_link(course, index, true)).to eq(link_to "#{index}: #{course.title} <span class=\"text-success\">(Новый курс!)</span>".html_safe, course)
-
     end
   end
-
 end

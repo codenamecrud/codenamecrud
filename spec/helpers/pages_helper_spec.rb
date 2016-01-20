@@ -13,7 +13,6 @@ describe PagesHelper do
       contribute
 
       @curriculum.each do |contributor|
-
         item = show_contributor(contributor)
 
         expect(item).to have_css('div.contributor')
@@ -27,8 +26,6 @@ describe PagesHelper do
             end
           end)
       end
-
     end
   end
-
 end

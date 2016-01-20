@@ -43,5 +43,4 @@ describe 'Registration Email' do
   it 'email sender' do
     expect(mail).to deliver_from('frey@list.ru')
   end
-
 end

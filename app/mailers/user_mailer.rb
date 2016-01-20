@@ -8,5 +8,4 @@ class UserMailer < ApplicationMailer
                           template_path: 'user_mailer',
                           template_name: 'welcome_email')
   end
-
 end

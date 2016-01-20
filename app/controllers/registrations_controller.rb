@@ -1,5 +1,4 @@
 class RegistrationsController < Devise::RegistrationsController
-
   def update
     @user = current_user
 

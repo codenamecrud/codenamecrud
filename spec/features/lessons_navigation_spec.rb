@@ -48,5 +48,4 @@ feature 'Navigating between lessons' do
     visit "/#{course.slug}/#{lesson3.slug}"
     expect(page.current_path).to eql("/#{course.slug}/#{lesson3.slug}")
   end
-
 end

@@ -5,5 +5,4 @@ FactoryGirl.define do
     course { create(:course) }
     description 'MyText'
   end
-
 end

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe RegistrationsController do
-
   login_user
 
   it 'have a current_user' do
