@@ -17,11 +17,11 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   private
-  
+
   def needs_password?
     params[:user][:password].present?
   end
-  
+
   def update_password
     return @user.update_with_password(safe_params) if needs_password?
     params[:user].delete(:current_password)
