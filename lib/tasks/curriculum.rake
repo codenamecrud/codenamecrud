@@ -1,6 +1,6 @@
 namespace :curriculum do
 
-  desc "Get lessons from Github"
+  desc 'Get lessons from Github'
   task update_content: :environment do
     puts 'Getting content...'
 
@@ -29,7 +29,7 @@ namespace :curriculum do
         puts
       else
         puts "\n\n\n\n\n\n FAILED TO ADD CONTENT TO THE LESSON!!!\n\n\n\n\n\n"
-        raise "Failed to add content to the lesson (tried to add `nil`)!"
+        raise 'Failed to add content to the lesson (tried to add `nil`)!'
       end
     end
 
@@ -44,7 +44,7 @@ namespace :curriculum do
   end
 
   # Only for tests
-  desc "DB populate"
+  desc 'DB populate'
   task :db_populate do
     Rails.env = ENV['RAILS_ENV'] = 'test'
     Rake::Task['db:drop'].invoke

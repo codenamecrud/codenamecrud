@@ -95,7 +95,7 @@ describe ApplicationHelper do
       links_course.each.with_index(1) do |item, index|
         res = git.contents.get path: item
         article = Base64.decode64(res['content']).force_encoding('UTF-8')
-        article_in_db = Lesson.find_by_sql(["SELECT content FROM lessons WHERE id = ?", index])
+        article_in_db = Lesson.find_by_sql(['SELECT content FROM lessons WHERE id = ?', index])
 
         expect(article).to eq(article_in_db[0][:content])
       end

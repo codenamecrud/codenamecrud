@@ -44,7 +44,7 @@ module ApplicationHelper
 
   def next_lesson_path
     begin
-      id_to_lesson = LessonUser.find_by_sql(["SELECT user_id, lesson_id FROM lesson_users WHERE user_id = ?", current_user.id])
+      id_to_lesson = LessonUser.find_by_sql(['SELECT user_id, lesson_id FROM lesson_users WHERE user_id = ?', current_user.id])
       ids_lesson = []
       id_to_lesson.each do |item|
         ids_lesson.push(item[:lesson_id])
@@ -54,13 +54,13 @@ module ApplicationHelper
       course = lesson.course
       link_to_last_lesson =  "#{course.slug}/#{lesson.slug}"
     rescue
-      ""
+      ''
     end
   end
 
   def get_id_to_lock_lesson
     begin
-      id_lock = LessonUser.find_by_sql(["SELECT lesson_id FROM lesson_users WHERE user_id = ? ORDER BY lesson_id DESC", current_user.id])
+      id_lock = LessonUser.find_by_sql(['SELECT lesson_id FROM lesson_users WHERE user_id = ? ORDER BY lesson_id DESC', current_user.id])
       { id_lesson_lock: id_lock[0][:lesson_id] }
     rescue
       { id_lesson_lock: 0 }

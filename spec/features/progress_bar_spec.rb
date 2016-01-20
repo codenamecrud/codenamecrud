@@ -38,7 +38,7 @@ feature 'Progress bar' do
     sign_in_with(user.name, user.password)
     visit course_lesson_path(course.id, lesson1.id)
     expect(page).to have_css('div.col-xs-1.bs-wizard-step.complete', count: 0)
-    expect(page).to have_css("a.mark-as-completed", count: 0)
+    expect(page).to have_css('a.mark-as-completed', count: 0)
     expect(page).to have_css('div.progress-bar')
   end
 
