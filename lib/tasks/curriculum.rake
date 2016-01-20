@@ -29,15 +29,15 @@ namespace :curriculum do
         puts
       else
         puts "\n\n\n\n\n\n FAILED TO ADD CONTENT TO THE LESSON!!!\n\n\n\n\n\n"
-        raise 'Failed to add content to the lesson (tried to add `nil`)!'
+        fail 'Failed to add content to the lesson (tried to add `nil`)!'
       end
     end
 
     puts "\nChecking for any nils or blanks in the database"
     Lesson.all.each do |l|
       print '.'
-      raise "Nil lesson content error! Lesson was #{l.title}." if l.content.nil?
-      raise "Blank lesson content error! Lesson was #{l.title}." if l.content.blank?
+      fail "Nil lesson content error! Lesson was #{l.title}." if l.content.nil?
+      fail "Blank lesson content error! Lesson was #{l.title}." if l.content.blank?
     end
     puts "\n...All lessons appear to have content."
     puts '...so we\'re ALL DONE! Updated the curriculum.'
