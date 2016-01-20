@@ -8,8 +8,8 @@ feature 'Check if change password function works properly' do
     sign_in_with(user.email, user.password)
     click_on 'Настройки'
 
-    fill_in 'user_password', :with => NEW_PASSWORD
-    fill_in 'user_password_confirmation', :with => "#{NEW_PASSWORD}2"
+    fill_in 'user_password', with: NEW_PASSWORD
+    fill_in 'user_password_confirmation', with: "#{NEW_PASSWORD}2"
     click_on 'Обновить'
 
     expect(page).to have_content 'не совпадает с полем Новый пароль'
@@ -19,9 +19,9 @@ feature 'Check if change password function works properly' do
     sign_in_with(user.email, user.password)
     click_on 'Настройки'
 
-    fill_in 'user_password', :with => NEW_PASSWORD
-    fill_in 'user_password_confirmation', :with => NEW_PASSWORD
-    fill_in 'user_current_password', :with => user.password
+    fill_in 'user_password', with: NEW_PASSWORD
+    fill_in 'user_password_confirmation', with: NEW_PASSWORD
+    fill_in 'user_current_password', with: user.password
     click_on 'Обновить'
 
     sign_in_with(user.email, NEW_PASSWORD)
