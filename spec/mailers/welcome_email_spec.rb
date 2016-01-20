@@ -1,4 +1,4 @@
-require 'rails_helper';
+require 'rails_helper'
 
 describe 'Registration Email' do
   let(:user) { build(:user) }
@@ -17,7 +17,7 @@ describe 'Registration Email' do
   end
 
   pending 'sends email after sing up' do
-    expect { sign_up_with(user.name, user.email, user.password) }.to change { User.count and ActionMailer::Base.deliveries.count }.by(1)
+    expect { sign_up_with(user.name, user.email, user.password) }.to change { User.count && ActionMailer::Base.deliveries.count }.by(1)
   end
 
   it 'deliver email to user' do
@@ -43,5 +43,4 @@ describe 'Registration Email' do
   it 'email sender' do
     expect(mail).to deliver_from('frey@list.ru')
   end
-
 end

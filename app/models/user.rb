@@ -2,13 +2,13 @@ class User < ActiveRecord::Base
   include Concerns::Roles
 
   devise :database_authenticatable,
-    :registerable,
-    :recoverable,
-    :rememberable,
-    :trackable,
-    :validatable,
-    :omniauthable, omniauth_providers: [:github],
-    authentication_keys: [:login]
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :omniauthable, omniauth_providers: [:github],
+                        authentication_keys: [:login]
 
   has_many :lesson_users
   has_many :lessons, through: :lesson_users
@@ -21,12 +21,12 @@ class User < ActiveRecord::Base
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
-      where(conditions).where(['lower(name) = :value OR lower(email) = :value', { value: login.mb_chars.downcase }]).first
+      where(conditions).find_by(['lower(name) = :value OR lower(email) = :value', { value: login.mb_chars.downcase }])
     else
       if conditions[:name].nil?
-        where(conditions).first
+        find_by(conditions)
       else
-        where(name: conditions[:name]).first
+        find_by(name: conditions[:name])
       end
     end
   end
@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
-      user.name = auth.info.name   # assuming the user model has a name
+      user.name = auth.info.name # assuming the user model has a name
       user.github_name = auth.info.nickname
     end
   end

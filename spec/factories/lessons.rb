@@ -6,5 +6,4 @@ FactoryGirl.define do
     section { create(:section) }
     is_project false
   end
-
 end

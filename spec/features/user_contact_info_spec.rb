@@ -1,4 +1,4 @@
-require 'rails_helper';
+require 'rails_helper'
 
 feature 'Edit User Info' do
   given!(:user) { create(:user) }

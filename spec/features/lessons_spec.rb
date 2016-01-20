@@ -28,5 +28,4 @@ feature 'Completing lessons' do
     expect(page).to have_selector('.mark-as-uncompleted')
     expect(another_user.lessons.include? lesson).to be_truthy
   end
-
 end

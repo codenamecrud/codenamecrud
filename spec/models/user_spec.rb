@@ -116,11 +116,11 @@ describe User do
 
     describe '#next_lesson' do
       it 'should have next lesson' do
-        expect(user.next_lesson(lesson1)).to  eq(lesson2)
+        expect(user.next_lesson(lesson1)).to eq(lesson2)
       end
 
       it "shouldn't have next lesson" do
-        expect(user.next_lesson(lesson5)).to  eq(nil)
+        expect(user.next_lesson(lesson5)).to eq(nil)
       end
     end
 
@@ -136,14 +136,14 @@ describe User do
 
     describe '#lessons_length' do
       it 'should length == 1' do
-        expect(user.lessons_length(lesson1)).to  eq(1)
-        expect(user.lessons_length(lesson2)).to  eq(1)
-        expect(user2.lessons_length(lesson3)).to  eq(1)
+        expect(user.lessons_length(lesson1)).to eq(1)
+        expect(user.lessons_length(lesson2)).to eq(1)
+        expect(user2.lessons_length(lesson3)).to eq(1)
       end
 
       it 'should length == 0' do
-        expect(user.lessons_length(lesson3)).to  eq(0)
-        expect(user2.lessons_length(lesson1)).to  eq(0)
+        expect(user.lessons_length(lesson3)).to eq(0)
+        expect(user2.lessons_length(lesson1)).to eq(0)
       end
     end
   end
