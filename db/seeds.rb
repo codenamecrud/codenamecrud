@@ -9,9 +9,9 @@
 
 # to avoid duplication
 incrementer = 1000
-Course.find_each { |c| c.update_attribute(:position, c.position + incrementer)}
-Section.find_each { |s| s.update_attribute(:position, s.position + incrementer)}
-Lesson.find_each { |l| l.update_attribute(:position, l.position + incrementer)}
+Course.find_each { |c| c.update_attribute(:position, c.position + incrementer) }
+Section.find_each { |s| s.update_attribute(:position, s.position + incrementer) }
+Lesson.find_each { |l| l.update_attribute(:position, l.position + incrementer) }
 
 course_position = 0
 section_position = 0

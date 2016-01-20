@@ -18,7 +18,7 @@ namespace :curriculum do
       decoded_file = Base64.decode64(response['content'])
 
       if decoded_file
-        snippet_end = decoded_file.index("\n")-1 || 03
+        snippet_end = decoded_file.index("\n") - 1 || 03
         if lesson.content == decoded_file
           puts '    ...No new content.'
         else
