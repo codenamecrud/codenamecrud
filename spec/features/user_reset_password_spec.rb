@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Reset password' do
   given(:user) { create(:user) }
 
-  %i[name email].each do |login|
+  %i(name email).each do |login|
     scenario "User resets password using his #{login}" do
       visit new_user_password_path
 

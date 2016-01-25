@@ -5,8 +5,6 @@ class UserMailer < ApplicationMailer
     @user = user
     @url  = 'http://codenamecrud.ru/'
     mail(to: @user.email, subject: 'Добро пожаловать на Сodenamecrud.ru',
-                          template_path: 'user_mailer',
-                          template_name: 'welcome_email')
+         template_path: 'user_mailer', template_name: 'welcome_email')
   end
-
 end

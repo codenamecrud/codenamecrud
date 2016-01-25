@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   namespace :admin do
     root 'home#index'
   end
@@ -29,6 +28,4 @@ Rails.application.routes.draw do
       post :toggle_check, on: :member
     end
   end
-
-
 end

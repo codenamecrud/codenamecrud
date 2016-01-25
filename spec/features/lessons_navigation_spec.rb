@@ -34,7 +34,7 @@ feature 'Navigating between lessons' do
     expect(current_path).to eql("/#{course.slug}/#{lesson2.slug}")
   end
 
-  it' has a link "Предыдущий урок" that navigates to the previous lesson' do
+  it 'has a link "Предыдущий урок" that navigates to the previous lesson' do
     visit course_lesson_path(course.id, lesson2.id)
     page.click_link('Предыдущий урок')
     expect(current_path).to eql("/#{course.slug}/#{lesson1.slug}")
@@ -48,5 +48,4 @@ feature 'Navigating between lessons' do
     visit "/#{course.slug}/#{lesson3.slug}"
     expect(page.current_path).to eql("/#{course.slug}/#{lesson3.slug}")
   end
-
 end

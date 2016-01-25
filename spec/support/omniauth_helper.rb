@@ -11,11 +11,11 @@ module OmniauthHelpers
         'email' => 'hi@natashatherobot.com',
         'nickname' => 'NatashaTheRobot'
       },
-        'extra' => { 'raw_info' =>
+      'extra' => { 'raw_info' =>
           { 'location' => 'San Francisco',
             'gravatar_id' => '123456789'
           }
         }
-      }
+    }
   end
 end

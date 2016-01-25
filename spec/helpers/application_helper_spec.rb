@@ -34,7 +34,7 @@ describe ApplicationHelper do
         '/introduction_to_web_development/05_the_best_web_devs.md',
         '/introduction_to_web_development/06_getting_hired_as_a_web_dev.md',
         '/introduction_to_web_development/07_conclusion.md',
-        #7
+        # 7
         '/web_development_101/01_how_this_course_will_work.md',
         '/web_development_101/02_how_does_the_web_work.md',
         '/web_development_101/03_how_does_your_computer_work.md',
@@ -62,7 +62,7 @@ describe ApplicationHelper do
         '/web_development_101/25_how_are_websites_built.md',
         '/web_development_101/26_principles_of_good_programming.md',
         '/web_development_101/27_conclusion.md',
-        #34
+        # 34
         '/ruby/01_how_this_course_will_work.md',
         '/ruby/01_how_this_course_will_work.md',
         '/ruby/02_building_blocks.md',
@@ -86,7 +86,7 @@ describe ApplicationHelper do
         '/ruby/20_using_git_in_the_real_world.md',
         '/ruby/21_project_final.md',
         '/ruby/22_conclusion.md'
-        #56
+        # 56
       ]
     end
     let(:git) { Github::Client::Repos.new user: 'codenamecrud', repo: 'curriculum', oauth_token: "#{ENV['GITHUB_API_TOKEN']}" }
@@ -95,7 +95,7 @@ describe ApplicationHelper do
       links_course.each.with_index(1) do |item, index|
         res = git.contents.get path: item
         article = Base64.decode64(res['content']).force_encoding('UTF-8')
-        article_in_db = Lesson.find_by_sql(["SELECT content FROM lessons WHERE id = ?", index])
+        article_in_db = Lesson.find_by_sql(['SELECT content FROM lessons WHERE id = ?', index])
 
         expect(article).to eq(article_in_db[0][:content])
       end

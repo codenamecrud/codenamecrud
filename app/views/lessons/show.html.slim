@@ -25,8 +25,7 @@
             hr
             = render 'shared/horizontal_bottom'
             hr
-
-          = render partial: 'lessons_navigation', locals: { lesson: @lesson, course: @course }
+          = render 'lessons_navigation', lesson: @lesson, course: @course
           = render 'shared/yandex_share'
 
       .row

@@ -1,4 +1,4 @@
-require 'rails_helper';
+require 'rails_helper'
 
 describe 'Edit User Info' do
   let(:user) { build(:user) }
@@ -21,7 +21,6 @@ describe 'Edit User Info' do
     click_on 'Обновить'
     click_on("Привет, #{new_user_info.name}")
     expect(page).not_to have_content(user.email)
-
   end
 
   it 'displays email if checkbox unchecked' do
@@ -33,5 +32,4 @@ describe 'Edit User Info' do
     click_on("Привет, #{new_user_info.name}")
     expect(page).to have_content(user.email)
   end
-
 end

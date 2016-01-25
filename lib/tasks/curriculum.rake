@@ -1,6 +1,5 @@
 namespace :curriculum do
-
-  desc "Get lessons from Github"
+  desc 'Get lessons from Github'
   task update_content: :environment do
     puts 'Getting content...'
 
@@ -18,7 +17,7 @@ namespace :curriculum do
       decoded_file = Base64.decode64(response['content'])
 
       if decoded_file
-        snippet_end = decoded_file.index("\n")-1 || 03
+        snippet_end = decoded_file.index("\n") - 1 || 03
         if lesson.content == decoded_file
           puts '    ...No new content.'
         else
@@ -29,22 +28,22 @@ namespace :curriculum do
         puts
       else
         puts "\n\n\n\n\n\n FAILED TO ADD CONTENT TO THE LESSON!!!\n\n\n\n\n\n"
-        raise "Failed to add content to the lesson (tried to add `nil`)!"
+        fail 'Failed to add content to the lesson (tried to add `nil`)!'
       end
     end
 
     puts "\nChecking for any nils or blanks in the database"
     Lesson.all.each do |l|
       print '.'
-      raise "Nil lesson content error! Lesson was #{l.title}." if l.content.nil?
-      raise "Blank lesson content error! Lesson was #{l.title}." if l.content.blank?
+      fail "Nil lesson content error! Lesson was #{l.title}." if l.content.nil?
+      fail "Blank lesson content error! Lesson was #{l.title}." if l.content.blank?
     end
     puts "\n...All lessons appear to have content."
     puts '...so we\'re ALL DONE! Updated the curriculum.'
   end
 
   # Only for tests
-  desc "DB populate"
+  desc 'DB populate'
   task :db_populate do
     Rails.env = ENV['RAILS_ENV'] = 'test'
     Rake::Task['db:drop'].invoke
