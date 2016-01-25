@@ -11,26 +11,16 @@
           - if user_signed_in?
             .text-center
               h2.toggle-check id=(dom_id @lesson)
-                - checked_lock = get_id_to_lock_lesson
                 - if current_user.lessons.include?(@lesson)
-                  - if @lesson.id == checked_lock[:id_lesson_lock]
-                    .lesson_completed
-                      i.fa.fa-fw.fa-check-square.lesson_completed__icon
-                      .lesson_completed__text Урок Завершен
-                      .clear_b
-                    = link_to "Изменить статус на: \"Урок не завершен\"".html_safe, toggle_check_course_lesson_path(@course, @lesson), class: "mark-as-uncompleted", remote: true, method: :post
-                  - else
-                    .lesson_completed
-                      i.fa.fa-fw.fa-check-square.lesson_completed__icon
-                      .lesson_completed__text Урок Завершен
-                      .clear_b
+                  .lesson_completed
+                    i.fa.fa-fw.fa-check-square.lesson_completed__icon
+                    .lesson_completed__text Урок Завершен
+                    .clear_b
+                  = link_to "Изменить статус на: \"Урок не завершен\"".html_safe, toggle_check_course_lesson_path(@course, @lesson), class: "mark-as-uncompleted", remote: true, method: :post
                 - else
-                  - if checked_lock[:id_lesson_lock] == 0 && @lesson.id == 1
                     = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-completed', remote: true, method: :post do
                       i.glyphicon.glyphicon-unchecked
-                  - elsif @lesson.id == checked_lock[:id_lesson_lock] + 1
-                    = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-completed', remote: true, method: :post do
-                      i.glyphicon.glyphicon-unchecked
+
           .text-center.charity
             hr
             = render 'shared/horizontal_bottom'

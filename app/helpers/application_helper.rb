@@ -56,11 +56,4 @@ module ApplicationHelper
   rescue
     ''
   end
-
-  def get_id_to_lock_lesson
-    id_lock = LessonUser.find_by_sql(['SELECT lesson_id FROM lesson_users WHERE user_id = ? ORDER BY lesson_id DESC', current_user.id])
-    { id_lesson_lock: id_lock[0][:lesson_id] }
-  rescue
-    { id_lesson_lock: 0 }
-  end
 end
