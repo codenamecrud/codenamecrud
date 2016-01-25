@@ -8,7 +8,6 @@
       p.text-muted= @course.description
 
   .col-sm-8.col-sm-offset-2.col-lg-8.col-lg-offset-2
-    - checked_lock = get_id_to_lock_lesson
     - @course.sections.order_by_position.each do |section|
         h2 id=("section-#{section.slug}") = section.title
         .section-description
@@ -28,10 +27,8 @@
               - section.lessons.order_by_position.each.with_index(1) do |lesson, index|
                 li.row
                   .toggle-check id=(dom_id(lesson))
-                    - if user_signed_in?
-
-                      - if lesson.id <= checked_lock[:id_lesson_lock]
-                        i.glyphicon.glyphicon-check
+                    - if user_signed_in? && current_user.lessons.include?(lesson)
+                      i.glyphicon.glyphicon-check
 
                   = link_to [@course, lesson], class: 'link-to-lesson' do
                     h2.text-muted
