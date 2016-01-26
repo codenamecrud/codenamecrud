@@ -4,7 +4,8 @@
       .lesson
         .content
           - if user_signed_in?
-           = render partial: 'lessons/lessons_progress_bar', locals: { lesson: @lesson, course: @course }
+            .text-center
+              = render partial: 'lessons/lessons_progress_bar', locals: { lesson: @lesson, course: @course }
 
           = MarkdownPresenter.call @lesson.content
 

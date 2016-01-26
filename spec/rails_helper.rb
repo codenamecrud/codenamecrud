@@ -12,6 +12,10 @@ ActiveRecord::Migration.maintain_test_schema!
 
 Capybara.javascript_driver = :webkit
 
+Capybara::Webkit.configure do |config|
+  config.block_unknown_urls
+end
+
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
@@ -27,7 +31,7 @@ RSpec.configure do |config|
   config.before(:each) { DatabaseCleaner.strategy = :transaction }
   config.before(:each, js: true) do
     DatabaseCleaner.strategy = :truncation
-    page.driver.block_unknown_urls
+    # page.driver.block_unknown_urls
   end
   config.before(:each) { DatabaseCleaner.start }
   config.after(:each) { DatabaseCleaner.clean }
