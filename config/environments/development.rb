@@ -44,4 +44,6 @@ Rails.application.configure do
     Bullet.enable = true
     Bullet.console = true
   end
+
+  config.middleware.use Rack::LiveReload
 end
