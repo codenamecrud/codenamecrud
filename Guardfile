@@ -1,3 +1,32 @@
+interactor :simple
+
+guard :livereload do
+  watch(%r{app/views/.+.(erb|slim)$})
+  watch(%r{app/helpers/.+.rb})
+  watch(%r{app/assets/.+.yml})
+  watch(%r{public/.+.(css|js|html)})
+  watch(%r{config/locales/.+.yml})
+  watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }
+  watch(%r{(app|vendor)(/assets/\w+/(.+\.(sass))).*}) do |m|
+    "/assets/#{m[3].sub!('.sass', '.css')}"
+  end
+  watch(%r{(app|vendor)(/assets/\w+/(.+\.(scss))).*}) do |m|
+    "/assets/#{m[3].sub!('.scss', '.css')}"
+  end
+  watch(%r{(app|vendor)(/assets/\w+/(.+\.(coffee))).*}) do |m|
+    "/assets/#{m[3].sub!('.coffee', '.js')}"
+  end
+end
+
+guard :bundler do
+  watch('Gemfile')
+end
+
+guard :rails do
+  watch('Gemfile.lock')
+  watch(%r{^(config|lib|api)/.*})
+end
+
 guard :rspec, cmd: 'CODECLIMATE_REPO_TOKEN=922a1d5f9bd1031196c6f7aef399a7d015f407d681231bcb0961a37562840980 bundle exec rspec' do
   require 'guard/rspec/dsl'
   dsl = Guard::RSpec::Dsl.new(self)

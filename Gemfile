@@ -27,7 +27,6 @@ gem 'will_paginate'
 group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails'
-  gem 'guard-rspec', require: false
   gem 'letter_opener'
   gem 'meta_request'
   gem 'pry-rails'
@@ -39,6 +38,12 @@ end
 group :development do
   gem 'bullet'
   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
+  gem 'guard', require: false
+  gem 'guard-bundler', require: false
+  gem 'guard-livereload', require: false
+  gem 'guard-rails', require: false
+  gem 'guard-rspec', require: false
+  gem 'rack-livereload'
   gem 'rails_best_practices', require: false
   gem 'rubocop', require: false
   gem 'rubycritic', require: false
