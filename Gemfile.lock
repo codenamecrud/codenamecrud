@@ -331,7 +331,7 @@ GEM
     rspec-mocks (3.4.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
-    rspec-rails (3.4.0)
+    rspec-rails (3.4.1)
       actionpack (>= 3.0, < 4.3)
       activesupport (>= 3.0, < 4.3)
       railties (>= 3.0, < 4.3)
@@ -360,12 +360,11 @@ GEM
       bundler
       ffi (~> 1.9.6)
       sass (>= 3.3.0)
-    sassc-rails (1.2.0)
-      railties (>= 4.0.0)
+    sassc-rails (1.1.0)
+      rails (>= 4.0.0)
       sass
       sassc (~> 1.6)
       sprockets (> 2.11)
-      sprockets-rails
       tilt
     sexp_processor (4.6.1)
     shellany (0.0.1)
@@ -481,7 +480,7 @@ DEPENDENCIES
   rspec-rails
   rubocop
   rubycritic
-  sassc-rails
+  sassc-rails (~> 1.1.0)
   shoulda-matchers (~> 2.8)
   simple_form
   sitemap_generator (~> 5.0.5)
