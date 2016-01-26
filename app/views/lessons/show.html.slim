@@ -18,8 +18,8 @@
                     .clear_b
                   = link_to "Изменить статус на: \"Урок не завершен\"".html_safe, toggle_check_course_lesson_path(@course, @lesson), class: "mark-as-uncompleted", remote: true, method: :post
                 - else
-                    = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-completed', remote: true, method: :post do
-                      i.glyphicon.glyphicon-unchecked
+                  = link_to toggle_check_course_lesson_path(@course, @lesson), class: 'mark-as-completed', remote: true, method: :post do
+                    i.glyphicon.glyphicon-unchecked
 
           .text-center.charity
             hr
