@@ -15,7 +15,8 @@ module ApplicationHelper
   end
 
   def show_activity(activity)
-    lesson = Lesson.find(activity.object.to_i)
+    lesson = Lesson.find_by_id(activity.object.to_i)
+
     if lesson.present?
       lesson_user = LessonUser.find_by(lesson: lesson, user: activity_user(activity))
 
