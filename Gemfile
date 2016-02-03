@@ -23,6 +23,7 @@ gem 'slim-rails'
 gem 'uglifier'
 gem 'whenever', '~> 0.9.4', require: false
 gem 'will_paginate'
+gem 'rack-attack'
 
 group :development, :test do
   gem 'byebug'
