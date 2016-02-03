@@ -26,7 +26,33 @@
 <noscript><div><img src="//mc.yandex.ru/watch/29896594" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
-<script src="http://www.mistype.co/js" data-owner="39d5bf55d3ac8c3f57b0eaeab73a88f8" data-text="Спасибо, сообщение об опечатке отправлено авторам" data-typo async></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/tarampampam/jquery.textmistake/master/src/jquery.textmistake.js"></script>
+<script type="text/javascript">
+  (function(e){
+    jQuery(document).textmistake({
+      'mailTo': 'frey(d0g)list.ru'.replace(/\(d0g\)/, '@'),
+      'mailFrom': 'frey(d0g)list.ru'.replace(/\(d0g\)/, '@'),
+      'mandrillKey': 'W9fG7ZABBKq61123zAYNuA',
+      'l10n': {
+        'title': 'Сообщить автору об опечатке:',
+        'urlHint': 'Адрес страницы с ошибкой:',
+        'errTextHint': 'Текст с ошибкой:',
+        'yourComment': 'Ваш комментарий',
+        'commentPlaceholder': 'Введите комментарий',
+        'userComment': 'Комментарий пользователя:',
+        'cancel': 'Отменить',
+        'send': 'Отправить',
+        'mailSubject': 'Ошибка на сайте CodenameCRUD',
+        'mailTitle': 'Ошибка на сайте CodenameCRUD',
+        'mailSended': 'Сообщение отправлено',
+        'mailSendedDesc': 'Ваше сообщение успешно отправлено. Спасибо за ваш вклад!',
+        'mailNotSended': 'Отправка ошибки',
+        'mailNotSendedDesc': 'Ваше сообщение не было отправлено, извините.'
+              /* etc */
+      }
+    });
+  })(jQuery)
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
