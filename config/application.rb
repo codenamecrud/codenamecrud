@@ -37,6 +37,8 @@ module Codenamecrud
     config.assets.enabled = true
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
 
+    config.middleware.use Rack::Attack
+
     config.generators do |g|
       g.test_framework :rspec,
                        view_specs:    false,
