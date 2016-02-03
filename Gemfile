@@ -46,6 +46,7 @@ group :development do
   gem 'guard-rspec', require: false
   gem 'rack-livereload'
   gem 'rails_best_practices', require: false
+  gem 'rb-inotify', github: 'kvokka/rb-inotify', require: false
   gem 'rubocop', require: false
   gem 'rubycritic', require: false
   gem 'traceroute'
