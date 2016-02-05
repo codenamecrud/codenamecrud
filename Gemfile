@@ -60,6 +60,8 @@ group :test do
   gem 'email_spec'
   gem 'launchy', '~> 2.4'
   gem 'shoulda-matchers', '~> 2.8'
+  gem 'vcr'
+  gem 'webmock', '~>1.21'
 end
 
 group :production do

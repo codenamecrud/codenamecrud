@@ -10,6 +10,13 @@ GIT
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
 
+GIT
+  remote: git://github.com/kvokka/rb-inotify.git
+  revision: 7789cb6260e91f8e94abb3f7c9a57e7874f7fbfb
+  specs:
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -107,6 +114,8 @@ GEM
       adamantium (~> 0.2.0)
       equalizer (~> 0.0.9)
     concurrent-ruby (1.0.0)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     database_cleaner (1.5.1)
     debug_inspector (0.0.2)
     descendants_tracker (0.0.4)
@@ -190,6 +199,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    hashdiff (0.2.3)
     hashie (3.4.3)
     highline (1.7.8)
     htmlentities (4.3.4)
@@ -325,8 +335,6 @@ GEM
     raindrops (0.15.0)
     rake (10.5.0)
     rb-fsevent (0.9.7)
-    rb-inotify (0.9.5)
-      ffi (>= 0.5.0)
     redcarpet (3.3.4)
     reek (3.8.1)
       codeclimate-engine-rb (~> 0.1.0)
@@ -376,6 +384,7 @@ GEM
       parser (>= 2.2.0, < 3.0)
       reek (= 3.8.1)
       virtus (~> 1.0)
+    safe_yaml (1.0.4)
     sass (3.4.21)
     sassc (1.8.4)
       bundler
@@ -443,6 +452,7 @@ GEM
       equalizer (~> 0.0.9)
       parser (~> 2.3.0)
       procto (~> 0.0.2)
+    vcr (3.0.1)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -455,6 +465,10 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    webmock (1.22.6)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
     whenever (0.9.4)
       chronic (>= 0.6.3)
     will_paginate (3.1.0)
@@ -502,6 +516,7 @@ DEPENDENCIES
   rails-assets-normalize-css!
   rails-i18n
   rails_best_practices
+  rb-inotify!
   redcarpet
   rollbar
   rspec-rails
@@ -516,7 +531,9 @@ DEPENDENCIES
   traceroute
   uglifier
   unicorn
+  vcr
   web-console (~> 2.1)
+  webmock (~> 1.21)
   whenever (~> 0.9.4)
   will_paginate
 

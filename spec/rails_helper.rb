@@ -16,6 +16,13 @@ Capybara::Webkit.configure do |config|
   config.block_unknown_urls
 end
 
+VCR.configure do |config|
+  config.cassette_library_dir = Rails.root.join('spec/fixtures/vcr_cassetes')
+  config.hook_into :webmock # or :fakeweb
+  config.ignore_localhost = true
+  config.ignore_hosts 'codeclimate.com'
+end
+
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
