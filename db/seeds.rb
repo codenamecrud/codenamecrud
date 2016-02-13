@@ -2422,7 +2422,7 @@ create_or_update_lesson(
 # = Седьмой курс = #
 
 course_position += 1
-create_or_update_course(
+course = create_or_update_course(
   title: 'Ищем работу в качестве веб-разработчика',
   slug: 'getting-hired-as-a-web-developer',
   short_description: 'Вы зашли чертовски далеко и готовы работать веб-разработчиком, но, как вы могли понять, дорога открытий лишь начинается. К счастью, теперь вы достаточно полезны, чтобы другие платили вам за то, что вы будете продолжать создавать и обучаться... и в этом коротком курсе мы покажем, как этого добиться.',
@@ -2432,4 +2432,194 @@ create_or_update_course(
   teaser: 'Скоро будет доступно!',
   position: course_position,
   is_active: false
+)
+
+# = Первый раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Готовимся к поиску работы',
+  position: section_position,
+  slug: 'preparing-for-job-search',
+  description: 'Поиск работы начинается задолго до того, как вы впервые отправите свое резюме, так что убедитесь, что вы определились со своей стратегией поиска, и что вы честны перед собой в отношении ваших целей, нужд и ожиданий.',
+  course: course
+)
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Как работает этот курс',
+  position: lesson_position,
+  slug: 'jobs-how-this-course-will-work',
+  description: 'Этот курс несколько отличается от остальных, стоит ознакомиться с тем, как он работает.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/jobs/01_introduction.md'
+)
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Стратегия',
+  position: lesson_position,
+  slug: 'strategy',
+  description: 'Чтобы не тратить впустую время, вам нужно подготовить подходящую стратегию для поиска работы.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/jobs/02_strategy.md'
+)
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Все начинается с ВАС',
+  position: lesson_position,
+  slug: 'it-starts-with-you',
+  description: 'Вас никуда не наймут, если вы не будете честны с самим собой.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/jobs/03_starts_with_you.md'
+)
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Чего хотят компании',
+  position: lesson_position,
+  slug: 'what-companies-want',
+  description: 'При продаже своих навыков важно осознавать, чего же на самом деле хотят нанимающие компании.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/jobs/04_what_companies_want.md'
+)
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Что вы можете сделать, чтобы быть готовым',
+  position: lesson_position,
+  slug: 'what-you-can-do-to-prepare',
+  description: 'При подготовке к поиску работы можно сделать множество вещей, которые увеличат ваши шансы быть нанятым.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/jobs/05_preparation.md'
+)
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Создание личного сайта',
+  position: lesson_position,
+  slug: 'project-building-personal-website',
+  description: 'Ничто не покажет вашу работу лучше, чем созданный вами сайт. Главное, не увлекайтесь.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/jobs/06_project_portfolio.md'
+)
+
+# = Первый раздел = #
+
+section_position += 1
+section = create_or_update_section(
+  title: 'Отправка резюме и прохождение интервью',
+  position: section_position,
+  slug: 'applying-to-and-interviewing',
+  description: 'Здесь как повезет, поэтому вам нужно структурировать ваш план и сконцентрироваться на наиболее применимых подходах и целях. В этом разделе мы поговорим о том, как выглядит типичный процесс устройства на работу и о луших способах увеличить ваши шансы на успех.',
+  course: course
+)
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Сбор информации о подходящих вакансиях',
+  position: lesson_position,
+  slug: 'collecting-job-leads',
+  description: 'Ваш первый шаг в поиске идеальной работы: нужно узнать, где искать и собирать подходящие вакансии.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/jobs/07_collect_leads.md'
+)
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Классификация вакансий',
+  position: lesson_position,
+  slug: 'qualify-leads',
+  description: 'Нужно решить, какие из найденных вакансий стоят вашего внимания, а какие будут пустой тратой времени.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/jobs/08_qualify_leads.md'
+)
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Проект: Создание резюме',
+  position: lesson_position,
+  slug: 'project-building-resume',
+  description: 'Даже в наши дни резюме является основным способом рассказать о себе другим людям.',
+  is_project: true,
+  section: section,
+  course: course,
+  url: '/jobs/09_project_resume.md'
+)
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Отклик на вакансии в веб-разработке',
+  position: lesson_position,
+  slug: 'applying-for-web-development',
+  description: 'Несколько подсказок, которые помогут увеличить ваши шансы при отправке отклика.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/jobs/10_applying.md'
+)
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Подготовка к собеседованию и само собеседование',
+  position: lesson_position,
+  slug: 'preparing-for-interview-and-interviewing',
+  description: 'Собеседования сложны и напрягающи, но через них придется пройти. Мы поможем вам подготовиться.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/jobs/11_preparing_to_interview.md'
+)
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Работа над предложениями о работе',
+  position: lesson_position,
+  slug: 'handling-job-offer',
+  description: 'Юуухууу! Что теперь?!.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/jobs/12_handling_an_offer.md'
+)
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Альтернативные пути поиска работы в веб-разработке',
+  position: lesson_position,
+  slug: 'alternate-paths-to-web-development',
+  description: 'Рассмотрим несколько альтернативных способов найти работу в сфере веб-разработки.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/jobs/13_alternatives.md'
+)
+
+lesson_position += 1
+create_or_update_lesson(
+  title: 'Заключение',
+  position: lesson_position,
+  slug: 'getting-hired-conclusion',
+  description: 'Подводим итоге CodenameCRUD и тому, что вы можете сделать, чтобы иметь устойчивую карьеру.',
+  is_project: false,
+  section: section,
+  course: course,
+  url: '/jobs/14_conclusion.md'
 )
