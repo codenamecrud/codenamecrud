@@ -14,8 +14,8 @@
     .courses
       ul.courses-list
         - @courses.with_index(1) do |course, index|
-          li.row.course class=('well' if new_one(course, 'Javascript и jQuery'))
-            h1 = course_link(course, index, new_one(course, 'Javascript и jQuery'))
+          li.row.course class=('well' if new_one(course, 'Ищем работу в качестве веб-разработчика'))
+            h1 = course_link(course, index, new_one(course, 'Ищем работу в качестве веб-разработчика'))
             .col-sm-4.col-md-3.teaser
               h3 = course.teaser
 
