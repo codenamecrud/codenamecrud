@@ -12,7 +12,7 @@ gem 'jquery-rails'
 gem 'omniauth-github'
 gem 'paper_trail', '~> 4.0.0.beta'
 gem 'pg'
-gem 'rails', '~> 4.2.2'
+gem 'rails', '~> 4.2.5.2'
 gem 'rails-i18n'
 gem 'redcarpet'
 gem 'rollbar'
@@ -33,10 +33,10 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'spring'
-  gem 'web-console', '~> 2.1'
 end
 
 group :development do
+  gem 'web-console', '~> 2.1'
   gem 'bullet'
   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
   gem 'guard', require: false
