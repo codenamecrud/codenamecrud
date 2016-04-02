@@ -65,7 +65,7 @@ class User < ActiveRecord::Base
   end
 
   def next_lesson(completed_by_user_lesson)
-    lessons.find_by(id: completed_by_user_lesson.id + 1)
+    lessons.find_by(position: completed_by_user_lesson.position + 1)
   end
 
   def last_lesson(section_id)
