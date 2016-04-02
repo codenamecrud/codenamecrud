@@ -6,9 +6,10 @@ feature 'Navigating between lessons' do
 
   given(:section1) { create(:section, course: course) }
 
-  given!(:lesson1) { create(:lesson, course: course, section: section1) }
-  given!(:lesson2) { create(:lesson, course: course, section: section1) }
-  given!(:lesson3) { create(:lesson, course: course, section: section1) }
+  given!(:lesson1) { create(:lesson, course: course, section: section1, position: 1) }
+  given!(:lesson2) { create(:lesson, course: course, section: section1, position: 4) }
+  given!(:lesson3) { create(:lesson, course: course, section: section1, position: 3) }
+  given!(:lesson4) { create(:lesson, course: course, section: section1, position: 2) }
 
   it 'on the first lesson page, displays a link only to the next lesson' do
     visit course_lesson_path(course.id, lesson1.id)
@@ -17,13 +18,13 @@ feature 'Navigating between lessons' do
   end
 
   it 'on the next page has a links - to the previous and next lessons' do
-    visit course_lesson_path(course.id, lesson2.id)
+    visit course_lesson_path(course.id, lesson4.id)
     find_link('Предыдущий урок').visible?
     find_link('Следующий урок').visible?
   end
 
   it 'does not have a link to next lesson on the last lesson page' do
-    visit course_lesson_path(course.id, lesson3.id)
+    visit course_lesson_path(course.id, lesson2.id)
     find_link('Предыдущий урок').visible?
     expect(page).to_not have_content('Следующий урок')
   end

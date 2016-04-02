@@ -93,11 +93,11 @@ describe User do
     let(:user2) { FactoryGirl.create(:user) }
     let!(:course) { FactoryGirl.create(:course) }
     let!(:section) { FactoryGirl.create(:section, course: course) }
-    let!(:lesson1) { FactoryGirl.create(:lesson, course: course, section: section) }
-    let!(:lesson2) { FactoryGirl.create(:lesson, course: course, section: section) }
-    let!(:lesson3) { FactoryGirl.create(:lesson, course: course, section: section) }
-    let!(:lesson4) { FactoryGirl.create(:lesson, course: course, section: section) }
-    let!(:lesson5) { FactoryGirl.create(:lesson, course: course, section: section) }
+    let!(:lesson1) { FactoryGirl.create(:lesson, course: course, section: section, position: 1) }
+    let!(:lesson2) { FactoryGirl.create(:lesson, course: course, section: section, position: 2) }
+    let!(:lesson3) { FactoryGirl.create(:lesson, course: course, section: section, position: 3) }
+    let!(:lesson4) { FactoryGirl.create(:lesson, course: course, section: section, position: 4) }
+    let!(:lesson5) { FactoryGirl.create(:lesson, course: course, section: section, position: 5) }
     let!(:lesson_user1) { FactoryGirl.create(:lesson_user, lesson_id: lesson1.id, user_id: user.id, completed: true, lesson: lesson1) }
     let!(:lesson_user2) { FactoryGirl.create(:lesson_user, lesson_id: lesson2.id, user_id: user.id, completed: true, lesson: lesson2) }
     let!(:lesson_user3) { FactoryGirl.create(:lesson_user, lesson_id: lesson3.id, user_id: user2.id, completed: true, lesson: lesson3) }
