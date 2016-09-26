@@ -1,3 +1,3 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'frey@list.ru'
+  default from: 'postmaster@codenamecrud.ru'
 end
