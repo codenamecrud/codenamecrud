@@ -41,6 +41,6 @@ describe 'Registration Email' do
   end
 
   it 'email sender' do
-    expect(mail).to deliver_from('frey@list.ru')
+    expect(mail).to deliver_from('postmaster@codenamecrud.ru')
   end
 end

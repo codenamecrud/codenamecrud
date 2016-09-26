@@ -1,5 +1,5 @@
 Devise.setup do |config|
-  config.mailer_sender = 'frey@list.ru'
+  config.mailer_sender = 'postmaster@codenamecrud.ru'
   require 'devise/orm/active_record'
   config.case_insensitive_keys = [:email]
   config.strip_whitespace_keys = [:email]
