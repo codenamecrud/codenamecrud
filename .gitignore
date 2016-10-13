@@ -20,4 +20,6 @@ capybara-*.html
 rails_best_practices_output.html
 REVISION
 .idea
+.powenv
+.powrc
 
