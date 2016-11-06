@@ -39,23 +39,15 @@ group :development do
   gem 'web-console', '~> 2.1'
   gem 'bullet'
   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
-  gem 'guard', require: false
-  gem 'guard-bundler', require: false
-  gem 'guard-livereload', require: false
-  gem 'guard-rails', require: false
-  gem 'guard-rspec', require: false
-  gem 'rack-livereload'
-  gem 'rails_best_practices', require: false
-  gem 'rb-inotify', github: 'kvokka/rb-inotify', require: false
   gem 'rubocop', require: false
-  gem 'rubycritic', require: false
   gem 'traceroute'
 end
 
 group :test do
   gem 'capybara', '~> 2.4.0'
   gem 'capybara-webkit'
-  gem 'codeclimate-test-reporter', require: nil
+  gem 'simplecov'
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'database_cleaner', '~> 1.3'
   gem 'email_spec'
   gem 'launchy', '~> 2.4'
