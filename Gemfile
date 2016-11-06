@@ -39,16 +39,7 @@ group :development do
   gem 'web-console', '~> 2.1'
   gem 'bullet'
   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
-  gem 'guard', require: false
-  gem 'guard-bundler', require: false
-  gem 'guard-livereload', require: false
-  gem 'guard-rails', require: false
-  gem 'guard-rspec', require: false
-  gem 'rack-livereload'
-  gem 'rails_best_practices', require: false
-  gem 'rb-inotify', github: 'kvokka/rb-inotify', require: false
   gem 'rubocop', require: false
-  gem 'rubycritic', require: false
   gem 'traceroute'
 end
 
