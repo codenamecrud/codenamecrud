@@ -1,8 +1,8 @@
-require 'codeclimate-test-reporter'
+require 'simplecov'
 require 'email_spec'
 require 'devise'
 
-CodeClimate::TestReporter.start
+SimpleCov.start
 
 RSpec.configure do |config|
   config.include(EmailSpec::Helpers)

@@ -55,7 +55,8 @@ end
 group :test do
   gem 'capybara', '~> 2.4.0'
   gem 'capybara-webkit'
-  gem 'codeclimate-test-reporter', require: nil
+  gem 'simplecov'
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'database_cleaner', '~> 1.3'
   gem 'email_spec'
   gem 'launchy', '~> 2.4'
