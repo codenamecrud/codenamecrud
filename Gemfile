@@ -38,7 +38,10 @@ end
 group :development do
   gem 'web-console', '~> 2.1'
   gem 'bullet'
-  gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm', github: 'capistrano/rvm'
   gem 'rubocop', require: false
   gem 'traceroute'
 end
