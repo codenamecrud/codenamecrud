@@ -44,6 +44,7 @@ group :development do
   gem 'capistrano-rvm', github: 'capistrano/rvm'
   gem 'rubocop', require: false
   gem 'traceroute'
+  gem 'rack-livereload'
 end
 
 group :test do

@@ -217,6 +217,8 @@ GEM
     rack-contrib (1.4.0)
       git-version-bump (~> 0.15)
       rack (~> 1.4)
+    rack-livereload (0.3.16)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.7.1)
@@ -391,6 +393,7 @@ DEPENDENCIES
   pg
   pry-rails
   rack-attack
+  rack-livereload
   rails (~> 4.2.6)
   rails-assets-normalize-css!
   rails-i18n
@@ -415,4 +418,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.13.6
+   1.14.6
