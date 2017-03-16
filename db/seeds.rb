@@ -1,6 +1,6 @@
 # user = User.new(
 #     name: 'Frey',
-#     email: "frey@list.ru",
+#     email: "mail@codenamecrud.ru",
 #     password: "00000000",
 #     password_confirmation: "00000000",
 #     role: 'admin'
