@@ -78,12 +78,22 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   port:           587,
+  #   address:        'smtp.mailgun.org',
+  #   domain:         'codenamecrud.ru',
+  #   user_name:      ENV['MAILGUN_USERNAME'],
+  #   password:       ENV['MAILGUN_PASSWORD'],
+  #   authentication: :plain,
+  # }
+
   config.action_mailer.smtp_settings = {
-    port:           587,
-    address:        'smtp.mailgun.org',
-    domain:         'codenamecrud.ru',
-    user_name:      ENV['MAILGUN_USERNAME'],
-    password:       ENV['MAILGUN_PASSWORD'],
-    authentication: :plain,
+      address:              'smtp.sendgrid.net',
+      port:                 587,
+      authentication:       :plain,
+      enable_starttls_auto: true,
+      domain:         'codenamecrud.ru',
+      user_name:      ENV['SENDGRID_USERNAME'],
+      password:       ENV['SENDGRID_PASSWORD']
   }
 end
