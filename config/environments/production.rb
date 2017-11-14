@@ -92,7 +92,7 @@ Rails.application.configure do
       port:                 587,
       authentication:       :plain,
       enable_starttls_auto: true,
-      domain:         'codenamecrud.ru',
+      domain:         'postmaster.codenamecrud.ru',
       user_name:      ENV['SENDGRID_USERNAME'],
       password:       ENV['SENDGRID_PASSWORD']
   }
