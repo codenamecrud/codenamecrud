@@ -1,5 +1,6 @@
 html
   head
+    = render 'shared/tagmanager'
     title = yield(:title)
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
@@ -17,6 +18,7 @@ html
 
 
   body
+    = render 'shared/tagmanager_body'
     = render 'shared/navbar'
 
     .container
